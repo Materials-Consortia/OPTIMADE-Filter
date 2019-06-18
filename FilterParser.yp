@@ -3,6 +3,7 @@
 %{
 
 use warnings;
+use OPTiMaDe::FilterParser::Zip;
 
 our $OPTiMaDe_VERSION = 'v0.9.8-develop';
 
@@ -124,7 +125,8 @@ identifier_first_comparison: identifier value_op_rhs
                                 }
                            | identifier set_zip_op_rhs
                                 {
-                                    return [ @_[1..$#_] ];
+                                    $_[2]->unshift_identifier( $_[1] );
+                                    return $_[2];
                                 }
                            ;
 
@@ -202,23 +204,33 @@ set_op_rhs: HAS value
 
 set_zip_op_rhs: identifier_zip_addon HAS value_zip
                 {
-                    return [ @_[1..$#_] ];
+                    $_[1]->set_operator( $_[2] );
+                    $_[1]->set_values( $_[3] );
+                    return $_[1];
                 }
               | identifier_zip_addon HAS ONLY value_zip_list
                 {
-                    return [ @_[1..$#_] ];
+                    $_[1]->set_operator( "$_[2] $_[3]" );
+                    $_[1]->set_values( $_[4] );
+                    return $_[1];
                 }
               | identifier_zip_addon HAS ALL value_zip_list
                 {
-                    return [ @_[1..$#_] ];
+                    $_[1]->set_operator( "$_[2] $_[3]" );
+                    $_[1]->set_values( $_[4] );
+                    return $_[1];
                 }
               | identifier_zip_addon HAS EXACTLY value_zip_list
                 {
-                    return [ @_[1..$#_] ];
+                    $_[1]->set_operator( "$_[2] $_[3]" );
+                    $_[1]->set_values( $_[4] );
+                    return $_[1];
                 }
               | identifier_zip_addon HAS ANY value_zip_list
                 {
-                    return [ @_[1..$#_] ];
+                    $_[1]->set_operator( "$_[2] $_[3]" );
+                    $_[1]->set_values( $_[4] );
+                    return $_[1];
                 }
               ;
 
@@ -230,11 +242,14 @@ length_comparison: LENGTH identifier operator value
 
 identifier_zip_addon: colon identifier
                         {
-                            return [ $_[2] ];
+                            my $zip = OPTiMaDe::FilterParser::Zip->new;
+                            $zip->add_identifier( $_[2] );
+                            return $zip;
                         }
                     | identifier_zip_addon colon identifier
                         {
-                            return [ @{$_[1]}, $_[3] ];
+                            $_[1]->add_identifier( $_[3] );
+                            return $_[1];
                         }
                     ;
 

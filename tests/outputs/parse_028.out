@@ -1,125 +1,111 @@
 $VAR1 = [
-          [
-            'elements',
-            [
-              [
-                '_exmpl_element_counts'
-              ],
-              'HAS',
-              [
-                '"H"',
-                [
-                  undef,
-                  '6'
-                ]
-              ]
-            ]
-          ],
+          bless( {
+                   'identifiers' => [
+                                      'elements',
+                                      '_exmpl_element_counts'
+                                    ],
+                   'operator' => 'HAS',
+                   'values' => [
+                                 '"H"',
+                                 [
+                                   undef,
+                                   '6'
+                                 ]
+                               ]
+                 }, 'OPTiMaDe::FilterParser::Zip' ),
           'AND',
           [
-            [
-              'elements',
-              [
-                [
-                  '_exmpl_element_counts'
-                ],
-                'HAS',
-                'ALL',
-                [
-                  [
-                    '"H"',
-                    [
-                      undef,
-                      '6'
-                    ]
-                  ],
-                  ',',
-                  [
-                    '"He"',
-                    [
-                      undef,
-                      '7'
-                    ]
-                  ]
-                ]
-              ]
-            ],
+            bless( {
+                     'identifiers' => [
+                                        'elements',
+                                        '_exmpl_element_counts'
+                                      ],
+                     'operator' => 'HAS ALL',
+                     'values' => [
+                                   [
+                                     '"H"',
+                                     [
+                                       undef,
+                                       '6'
+                                     ]
+                                   ],
+                                   ',',
+                                   [
+                                     '"He"',
+                                     [
+                                       undef,
+                                       '7'
+                                     ]
+                                   ]
+                                 ]
+                   }, 'OPTiMaDe::FilterParser::Zip' ),
             'AND',
             [
-              [
-                'elements',
-                [
-                  [
-                    '_exmpl_element_counts'
-                  ],
-                  'HAS',
-                  'EXACTLY',
-                  [
-                    '"H"',
-                    [
-                      undef,
-                      '6'
-                    ]
-                  ]
-                ]
-              ],
+              bless( {
+                       'identifiers' => [
+                                          'elements',
+                                          '_exmpl_element_counts'
+                                        ],
+                       'operator' => 'HAS EXACTLY',
+                       'values' => [
+                                     '"H"',
+                                     [
+                                       undef,
+                                       '6'
+                                     ]
+                                   ]
+                     }, 'OPTiMaDe::FilterParser::Zip' ),
               'AND',
               [
-                [
-                  'elements',
-                  [
-                    [
-                      '_exmpl_element_counts'
-                    ],
-                    'HAS',
-                    'ANY',
-                    [
-                      [
-                        '"H"',
-                        [
-                          undef,
-                          '6'
-                        ]
-                      ],
-                      ',',
-                      [
-                        '"He"',
-                        [
-                          undef,
-                          '7'
-                        ]
-                      ]
-                    ]
-                  ]
-                ],
+                bless( {
+                         'identifiers' => [
+                                            'elements',
+                                            '_exmpl_element_counts'
+                                          ],
+                         'operator' => 'HAS ANY',
+                         'values' => [
+                                       [
+                                         '"H"',
+                                         [
+                                           undef,
+                                           '6'
+                                         ]
+                                       ],
+                                       ',',
+                                       [
+                                         '"He"',
+                                         [
+                                           undef,
+                                           '7'
+                                         ]
+                                       ]
+                                     ]
+                       }, 'OPTiMaDe::FilterParser::Zip' ),
                 'AND',
-                [
-                  'elements',
-                  [
-                    [
-                      '_exmpl_element_counts'
-                    ],
-                    'HAS',
-                    'ONLY',
-                    [
-                      [
-                        '"H"',
-                        [
-                          undef,
-                          '6'
-                        ]
-                      ],
-                      ',',
-                      [
-                        '"He"',
-                        [
-                          undef,
-                          '7'
-                        ]
-                      ]
-                    ]
-                  ]
-                ]
+                bless( {
+                         'identifiers' => [
+                                            'elements',
+                                            '_exmpl_element_counts'
+                                          ],
+                         'operator' => 'HAS ONLY',
+                         'values' => [
+                                       [
+                                         '"H"',
+                                         [
+                                           undef,
+                                           '6'
+                                         ]
+                                       ],
+                                       ',',
+                                       [
+                                         '"He"',
+                                         [
+                                           undef,
+                                           '7'
+                                         ]
+                                       ]
+                                     ]
+                       }, 'OPTiMaDe::FilterParser::Zip' )
               ]
             ]
           ]
