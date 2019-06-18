@@ -3,6 +3,8 @@
 %{
 
 use warnings;
+
+use OPTiMaDe::FilterParser::Identifier;
 use OPTiMaDe::FilterParser::Zip;
 
 our $OPTiMaDe_VERSION = 'v0.9.8-develop';
@@ -359,7 +361,7 @@ sub _Lexer
     # Handling identifiers
     if( $self->YYData->{INPUT} =~ s/^([a-z_][a-z0-9_]*)// ) {
         $self->{USER}{CHARNO} += length( $1 );
-        return( 'identifier', $1 );
+        return( 'identifier', OPTiMaDe::FilterParser::Identifier->new( $1 ) );
     }
 
     # Handling boolean relations

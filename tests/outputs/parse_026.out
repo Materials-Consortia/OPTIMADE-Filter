@@ -1,13 +1,17 @@
 $VAR1 = [
           [
-            'elements',
+            bless( {
+                     'name' => 'elements'
+                   }, 'OPTiMaDe::FilterParser::Identifier' ),
             'HAS',
             '"H"'
           ],
           'AND',
           [
             [
-              'elements',
+              bless( {
+                       'name' => 'elements'
+                     }, 'OPTiMaDe::FilterParser::Identifier' ),
               'HAS',
               'ALL',
               [
@@ -24,7 +28,9 @@ $VAR1 = [
             'AND',
             [
               [
-                'elements',
+                bless( {
+                         'name' => 'elements'
+                       }, 'OPTiMaDe::FilterParser::Identifier' ),
                 'HAS',
                 'EXACTLY',
                 [
@@ -40,7 +46,9 @@ $VAR1 = [
               ],
               'AND',
               [
-                'elements',
+                bless( {
+                         'name' => 'elements'
+                       }, 'OPTiMaDe::FilterParser::Identifier' ),
                 'HAS',
                 'ANY',
                 [

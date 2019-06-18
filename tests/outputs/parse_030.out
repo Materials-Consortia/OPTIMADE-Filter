@@ -1,8 +1,14 @@
 $VAR1 = bless( {
                  'identifiers' => [
-                                    'elements',
-                                    '_exmpl_element_counts',
-                                    '_exmpl_element_weights'
+                                    bless( {
+                                             'name' => 'elements'
+                                           }, 'OPTiMaDe::FilterParser::Identifier' ),
+                                    bless( {
+                                             'name' => '_exmpl_element_counts'
+                                           }, 'OPTiMaDe::FilterParser::Identifier' ),
+                                    bless( {
+                                             'name' => '_exmpl_element_weights'
+                                           }, 'OPTiMaDe::FilterParser::Identifier' )
                                   ],
                  'operator' => 'HAS ANY',
                  'values' => [

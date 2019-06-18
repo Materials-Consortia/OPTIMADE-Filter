@@ -1,5 +1,7 @@
 $VAR1 = [
-          'field',
+          bless( {
+                   'name' => 'field'
+                 }, 'OPTiMaDe::FilterParser::Identifier' ),
           '=',
           '"!#$%&\'()*+,-./:;<=>?@[]^`{|}~%"'
         ];

@@ -1,5 +1,9 @@
 $VAR1 = [
-          'te',
+          bless( {
+                   'name' => 'te'
+                 }, 'OPTiMaDe::FilterParser::Identifier' ),
           '<',
-          'st'
+          bless( {
+                   'name' => 'st'
+                 }, 'OPTiMaDe::FilterParser::Identifier' )
         ];

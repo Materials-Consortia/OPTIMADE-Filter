@@ -3,13 +3,17 @@ $VAR1 = [
           [
             [
               [
-                'chemical_formula',
+                bless( {
+                         'name' => 'chemical_formula'
+                       }, 'OPTiMaDe::FilterParser::Identifier' ),
                 '=',
                 '"Al"'
               ],
               'AND',
               [
-                'prototype_formula',
+                bless( {
+                         'name' => 'prototype_formula'
+                       }, 'OPTiMaDe::FilterParser::Identifier' ),
                 '=',
                 '"A"'
               ]
@@ -17,7 +21,9 @@ $VAR1 = [
             'OR',
             [
               [
-                'prototype_formula',
+                bless( {
+                         'name' => 'prototype_formula'
+                       }, 'OPTiMaDe::FilterParser::Identifier' ),
                 '=',
                 '"H2O"'
               ],
@@ -25,7 +31,9 @@ $VAR1 = [
               [
                 'NOT',
                 [
-                  'chemical_formula',
+                  bless( {
+                           'name' => 'chemical_formula'
+                         }, 'OPTiMaDe::FilterParser::Identifier' ),
                   '=',
                   '"Ti"'
                 ]

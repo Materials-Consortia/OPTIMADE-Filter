@@ -1,13 +1,17 @@
 $VAR1 = [
           [
-            '_exmpl_aax',
+            bless( {
+                     'name' => '_exmpl_aax'
+                   }, 'OPTiMaDe::FilterParser::Identifier' ),
             '<=',
             '+.1e8'
           ],
           'OR',
           [
             [
-              'nelements',
+              bless( {
+                       'name' => 'nelements'
+                     }, 'OPTiMaDe::FilterParser::Identifier' ),
               '>=',
               '10'
             ],
@@ -16,7 +20,9 @@ $VAR1 = [
               'NOT',
               [
                 [
-                  '_exmpl_x',
+                  bless( {
+                           'name' => '_exmpl_x'
+                         }, 'OPTiMaDe::FilterParser::Identifier' ),
                   '!=',
                   '"Some string"'
                 ],
@@ -24,7 +30,9 @@ $VAR1 = [
                 [
                   'NOT',
                   [
-                    '_exmpl_a',
+                    bless( {
+                             'name' => '_exmpl_a'
+                           }, 'OPTiMaDe::FilterParser::Identifier' ),
                     '=',
                     '7'
                   ]

@@ -1,12 +1,16 @@
 $VAR1 = [
           [
-            '_mp_bandgap',
+            bless( {
+                     'name' => '_mp_bandgap'
+                   }, 'OPTiMaDe::FilterParser::Identifier' ),
             '>',
             '5.0'
           ],
           'AND',
           [
-            '_cod_molecular_weight',
+            bless( {
+                     'name' => '_cod_molecular_weight'
+                   }, 'OPTiMaDe::FilterParser::Identifier' ),
             '<',
             '350'
           ]

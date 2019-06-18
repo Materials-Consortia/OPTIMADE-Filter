@@ -1,13 +1,17 @@
 $VAR1 = [
           [
-            '_exmpl_element_counts',
+            bless( {
+                     'name' => '_exmpl_element_counts'
+                   }, 'OPTiMaDe::FilterParser::Identifier' ),
             'HAS',
             '<',
             '3'
           ],
           'AND',
           [
-            '_exmpl_element_counts',
+            bless( {
+                     'name' => '_exmpl_element_counts'
+                   }, 'OPTiMaDe::FilterParser::Identifier' ),
             'HAS',
             'ANY',
             [

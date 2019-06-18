@@ -1,12 +1,16 @@
 $VAR1 = [
           [
-            'prototype_formula',
+            bless( {
+                     'name' => 'prototype_formula'
+                   }, 'OPTiMaDe::FilterParser::Identifier' ),
             'CONTAINS',
             '"C2"'
           ],
           'AND',
           [
-            'prototype_formula',
+            bless( {
+                     'name' => 'prototype_formula'
+                   }, 'OPTiMaDe::FilterParser::Identifier' ),
             'STARTS',
             'WITH',
             '"A2"'

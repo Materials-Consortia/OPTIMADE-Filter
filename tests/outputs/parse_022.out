@@ -2,14 +2,20 @@ $VAR1 = [
           [
             'NOT',
             [
-              '_exmpl_a',
+              bless( {
+                       'name' => '_exmpl_a'
+                     }, 'OPTiMaDe::FilterParser::Identifier' ),
               '>',
-              '_exmpl_b'
+              bless( {
+                       'name' => '_exmpl_b'
+                     }, 'OPTiMaDe::FilterParser::Identifier' )
             ]
           ],
           'AND',
           [
-            '_exmpl_x',
+            bless( {
+                     'name' => '_exmpl_x'
+                   }, 'OPTiMaDe::FilterParser::Identifier' ),
             '>',
             '0'
           ]

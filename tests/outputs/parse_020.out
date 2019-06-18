@@ -1,5 +1,7 @@
 $VAR1 = [
-          '_exmpl_some_string_property',
+          bless( {
+                   'name' => '_exmpl_some_string_property'
+                 }, 'OPTiMaDe::FilterParser::Identifier' ),
           '=',
           '42'
         ];

@@ -1,5 +1,7 @@
 $VAR1 = [
-          'author',
+          bless( {
+                   'name' => 'author'
+                 }, 'OPTiMaDe::FilterParser::Identifier' ),
           '=',
           '"Sąžininga Žąsis"'
         ];

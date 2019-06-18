@@ -1,19 +1,25 @@
 $VAR1 = [
           [
-            '_cod_melting_point',
+            bless( {
+                     'name' => '_cod_melting_point'
+                   }, 'OPTiMaDe::FilterParser::Identifier' ),
             '<',
             '300'
           ],
           'AND',
           [
             [
-              'nelements',
+              bless( {
+                       'name' => 'nelements'
+                     }, 'OPTiMaDe::FilterParser::Identifier' ),
               '=',
               '4'
             ],
             'AND',
             [
-              'elements',
+              bless( {
+                       'name' => 'elements'
+                     }, 'OPTiMaDe::FilterParser::Identifier' ),
               '=',
               '"Si,O2"'
             ]

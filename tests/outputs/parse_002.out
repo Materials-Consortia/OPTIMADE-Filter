@@ -1,5 +1,7 @@
 $VAR1 = [
-          'spacegroup',
+          bless( {
+                   'name' => 'spacegroup'
+                 }, 'OPTiMaDe::FilterParser::Identifier' ),
           '=',
           '"P2"'
         ];

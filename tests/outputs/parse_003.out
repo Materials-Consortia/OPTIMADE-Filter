@@ -1,5 +1,7 @@
 $VAR1 = [
-          '_cod_cell_volume',
+          bless( {
+                   'name' => '_cod_cell_volume'
+                 }, 'OPTiMaDe::FilterParser::Identifier' ),
           '<',
           '100.0'
         ];

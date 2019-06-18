@@ -1,89 +1,115 @@
 $VAR1 = [
           [
-            'a',
+            bless( {
+                     'name' => 'a'
+                   }, 'OPTiMaDe::FilterParser::Identifier' ),
             '=',
             '12345'
           ],
           'AND',
           [
             [
-              'b',
+              bless( {
+                       'name' => 'b'
+                     }, 'OPTiMaDe::FilterParser::Identifier' ),
               '=',
               '+12'
             ],
             'AND',
             [
               [
-                'c',
+                bless( {
+                         'name' => 'c'
+                       }, 'OPTiMaDe::FilterParser::Identifier' ),
                 '=',
                 '-34'
               ],
               'AND',
               [
                 [
-                  'd',
+                  bless( {
+                           'name' => 'd'
+                         }, 'OPTiMaDe::FilterParser::Identifier' ),
                   '=',
                   '1.2'
                 ],
                 'AND',
                 [
                   [
-                    'e',
+                    bless( {
+                             'name' => 'e'
+                           }, 'OPTiMaDe::FilterParser::Identifier' ),
                     '=',
                     '.2E7'
                   ],
                   'AND',
                   [
                     [
-                      'f',
+                      bless( {
+                               'name' => 'f'
+                             }, 'OPTiMaDe::FilterParser::Identifier' ),
                       '=',
                       '-.2E+7'
                     ],
                     'AND',
                     [
                       [
-                        'g',
+                        bless( {
+                                 'name' => 'g'
+                               }, 'OPTiMaDe::FilterParser::Identifier' ),
                         '=',
                         '+10.01E-10'
                       ],
                       'AND',
                       [
                         [
-                          'h',
+                          bless( {
+                                   'name' => 'h'
+                                 }, 'OPTiMaDe::FilterParser::Identifier' ),
                           '=',
                           '6.03e23'
                         ],
                         'AND',
                         [
                           [
-                            'i',
+                            bless( {
+                                     'name' => 'i'
+                                   }, 'OPTiMaDe::FilterParser::Identifier' ),
                             '=',
                             '.1E1'
                           ],
                           'AND',
                           [
                             [
-                              'j',
+                              bless( {
+                                       'name' => 'j'
+                                     }, 'OPTiMaDe::FilterParser::Identifier' ),
                               '=',
                               '-.1e1'
                             ],
                             'AND',
                             [
                               [
-                                'k',
+                                bless( {
+                                         'name' => 'k'
+                                       }, 'OPTiMaDe::FilterParser::Identifier' ),
                                 '=',
                                 '1.e-12'
                               ],
                               'AND',
                               [
                                 [
-                                  'l',
+                                  bless( {
+                                           'name' => 'l'
+                                         }, 'OPTiMaDe::FilterParser::Identifier' ),
                                   '=',
                                   '-.1e-12'
                                 ],
                                 'AND',
                                 [
-                                  'm',
+                                  bless( {
+                                           'name' => 'm'
+                                         }, 'OPTiMaDe::FilterParser::Identifier' ),
                                   '=',
                                   '1000000000.E1000000000'
                                 ]

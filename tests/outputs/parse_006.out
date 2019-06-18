@@ -1,54 +1,70 @@
 $VAR1 = [
           [
-            'number',
+            bless( {
+                     'name' => 'number'
+                   }, 'OPTiMaDe::FilterParser::Identifier' ),
             '=',
             '0.'
           ],
           'AND',
           [
             [
-              'number',
+              bless( {
+                       'name' => 'number'
+                     }, 'OPTiMaDe::FilterParser::Identifier' ),
               '=',
               '.0'
             ],
             'AND',
             [
               [
-                'number',
+                bless( {
+                         'name' => 'number'
+                       }, 'OPTiMaDe::FilterParser::Identifier' ),
                 '=',
                 '0.0'
               ],
               'AND',
               [
                 [
-                  'number',
+                  bless( {
+                           'name' => 'number'
+                         }, 'OPTiMaDe::FilterParser::Identifier' ),
                   '=',
                   '+0'
                 ],
                 'AND',
                 [
                   [
-                    'n_u_m_b_e_r',
+                    bless( {
+                             'name' => 'n_u_m_b_e_r'
+                           }, 'OPTiMaDe::FilterParser::Identifier' ),
                     '=',
                     '-0'
                   ],
                   'AND',
                   [
                     [
-                      'number',
+                      bless( {
+                               'name' => 'number'
+                             }, 'OPTiMaDe::FilterParser::Identifier' ),
                       '=',
                       '0e1'
                     ],
                     'AND',
                     [
                       [
-                        'number',
+                        bless( {
+                                 'name' => 'number'
+                               }, 'OPTiMaDe::FilterParser::Identifier' ),
                         '=',
                         '0e-1'
                       ],
                       'AND',
                       [
-                        'number',
+                        bless( {
+                                 'name' => 'number'
+                               }, 'OPTiMaDe::FilterParser::Identifier' ),
                         '=',
                         '0e+1'
                       ]

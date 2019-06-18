@@ -1,8 +1,12 @@
 $VAR1 = [
           bless( {
                    'identifiers' => [
-                                      'elements',
-                                      '_exmpl_element_counts'
+                                      bless( {
+                                               'name' => 'elements'
+                                             }, 'OPTiMaDe::FilterParser::Identifier' ),
+                                      bless( {
+                                               'name' => '_exmpl_element_counts'
+                                             }, 'OPTiMaDe::FilterParser::Identifier' )
                                     ],
                    'operator' => 'HAS',
                    'values' => [
@@ -17,8 +21,12 @@ $VAR1 = [
           [
             bless( {
                      'identifiers' => [
-                                        'elements',
-                                        '_exmpl_element_counts'
+                                        bless( {
+                                                 'name' => 'elements'
+                                               }, 'OPTiMaDe::FilterParser::Identifier' ),
+                                        bless( {
+                                                 'name' => '_exmpl_element_counts'
+                                               }, 'OPTiMaDe::FilterParser::Identifier' )
                                       ],
                      'operator' => 'HAS ALL',
                      'values' => [
@@ -42,8 +50,12 @@ $VAR1 = [
             [
               bless( {
                        'identifiers' => [
-                                          'elements',
-                                          '_exmpl_element_counts'
+                                          bless( {
+                                                   'name' => 'elements'
+                                                 }, 'OPTiMaDe::FilterParser::Identifier' ),
+                                          bless( {
+                                                   'name' => '_exmpl_element_counts'
+                                                 }, 'OPTiMaDe::FilterParser::Identifier' )
                                         ],
                        'operator' => 'HAS EXACTLY',
                        'values' => [
@@ -58,8 +70,12 @@ $VAR1 = [
               [
                 bless( {
                          'identifiers' => [
-                                            'elements',
-                                            '_exmpl_element_counts'
+                                            bless( {
+                                                     'name' => 'elements'
+                                                   }, 'OPTiMaDe::FilterParser::Identifier' ),
+                                            bless( {
+                                                     'name' => '_exmpl_element_counts'
+                                                   }, 'OPTiMaDe::FilterParser::Identifier' )
                                           ],
                          'operator' => 'HAS ANY',
                          'values' => [
@@ -82,8 +98,12 @@ $VAR1 = [
                 'AND',
                 bless( {
                          'identifiers' => [
-                                            'elements',
-                                            '_exmpl_element_counts'
+                                            bless( {
+                                                     'name' => 'elements'
+                                                   }, 'OPTiMaDe::FilterParser::Identifier' ),
+                                            bless( {
+                                                     'name' => '_exmpl_element_counts'
+                                                   }, 'OPTiMaDe::FilterParser::Identifier' )
                                           ],
                          'operator' => 'HAS ONLY',
                          'values' => [

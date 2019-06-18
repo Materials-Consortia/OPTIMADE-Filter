@@ -1,5 +1,7 @@
 $VAR1 = [
-          'elements',
+          bless( {
+                   'name' => 'elements'
+                 }, 'OPTiMaDe::FilterParser::Identifier' ),
           'HAS',
           'ONLY',
           [

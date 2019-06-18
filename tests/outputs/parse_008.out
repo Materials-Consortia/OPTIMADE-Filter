@@ -1,5 +1,9 @@
 $VAR1 = [
-          'key',
+          bless( {
+                   'name' => 'key'
+                 }, 'OPTiMaDe::FilterParser::Identifier' ),
           '=',
-          'value'
+          bless( {
+                   'name' => 'value'
+                 }, 'OPTiMaDe::FilterParser::Identifier' )
         ];

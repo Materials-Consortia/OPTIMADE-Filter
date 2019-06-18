@@ -1,5 +1,7 @@
 $VAR1 = [
           '5',
           '<',
-          '_exmpl_a'
+          bless( {
+                   'name' => '_exmpl_a'
+                 }, 'OPTiMaDe::FilterParser::Identifier' )
         ];
