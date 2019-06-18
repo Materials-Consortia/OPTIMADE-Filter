@@ -3,5 +3,5 @@ $VAR1 = [
                    'name' => 'spacegroup'
                  }, 'OPTiMaDe::FilterParser::Identifier' ),
           '=',
-          '"P2"'
+          'P2'
         ];

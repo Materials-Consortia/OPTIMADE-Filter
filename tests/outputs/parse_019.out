@@ -24,7 +24,7 @@ $VAR1 = [
                            'name' => '_exmpl_x'
                          }, 'OPTiMaDe::FilterParser::Identifier' ),
                   '!=',
-                  '"Some string"'
+                  'Some string'
                 ],
                 'OR',
                 [

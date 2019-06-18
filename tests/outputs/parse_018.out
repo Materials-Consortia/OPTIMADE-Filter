@@ -7,7 +7,7 @@ $VAR1 = [
                          'name' => 'chemical_formula'
                        }, 'OPTiMaDe::FilterParser::Identifier' ),
                 '=',
-                '"Al"'
+                'Al'
               ],
               'AND',
               [
@@ -15,7 +15,7 @@ $VAR1 = [
                          'name' => 'prototype_formula'
                        }, 'OPTiMaDe::FilterParser::Identifier' ),
                 '=',
-                '"A"'
+                'A'
               ]
             ],
             'OR',
@@ -25,7 +25,7 @@ $VAR1 = [
                          'name' => 'prototype_formula'
                        }, 'OPTiMaDe::FilterParser::Identifier' ),
                 '=',
-                '"H2O"'
+                'H2O'
               ],
               'AND',
               [
@@ -35,7 +35,7 @@ $VAR1 = [
                            'name' => 'chemical_formula'
                          }, 'OPTiMaDe::FilterParser::Identifier' ),
                   '=',
-                  '"Ti"'
+                  'Ti'
                 ]
               ]
             ]

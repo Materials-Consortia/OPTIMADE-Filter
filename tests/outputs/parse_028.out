@@ -10,7 +10,7 @@ $VAR1 = [
                                     ],
                    'operator' => 'HAS',
                    'values' => [
-                                 '"H"',
+                                 'H',
                                  [
                                    undef,
                                    '6'
@@ -31,14 +31,14 @@ $VAR1 = [
                      'operator' => 'HAS ALL',
                      'values' => [
                                    [
-                                     '"H"',
+                                     'H',
                                      [
                                        undef,
                                        '6'
                                      ]
                                    ],
                                    [
-                                     '"He"',
+                                     'He',
                                      [
                                        undef,
                                        '7'
@@ -59,7 +59,7 @@ $VAR1 = [
                                         ],
                        'operator' => 'HAS EXACTLY',
                        'values' => [
-                                     '"H"',
+                                     'H',
                                      [
                                        undef,
                                        '6'
@@ -80,14 +80,14 @@ $VAR1 = [
                          'operator' => 'HAS ANY',
                          'values' => [
                                        [
-                                         '"H"',
+                                         'H',
                                          [
                                            undef,
                                            '6'
                                          ]
                                        ],
                                        [
-                                         '"He"',
+                                         'He',
                                          [
                                            undef,
                                            '7'
@@ -108,14 +108,14 @@ $VAR1 = [
                          'operator' => 'HAS ONLY',
                          'values' => [
                                        [
-                                         '"H"',
+                                         'H',
                                          [
                                            undef,
                                            '6'
                                          ]
                                        ],
                                        [
-                                         '"He"',
+                                         'He',
                                          [
                                            undef,
                                            '7'

@@ -3,5 +3,5 @@ $VAR1 = [
                    'name' => 'author'
                  }, 'OPTiMaDe::FilterParser::Identifier' ),
           '=',
-          '"Sąžininga Žąsis"'
+          'Sąžininga Žąsis'
         ];

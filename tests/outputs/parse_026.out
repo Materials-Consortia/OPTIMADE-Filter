@@ -4,7 +4,7 @@ $VAR1 = [
                      'name' => 'elements'
                    }, 'OPTiMaDe::FilterParser::Identifier' ),
             'HAS',
-            '"H"'
+            'H'
           ],
           'AND',
           [
@@ -17,12 +17,12 @@ $VAR1 = [
               [
                 [
                   [
-                    '"H"',
-                    '"He"'
+                    'H',
+                    'He'
                   ],
-                  '"Ga"'
+                  'Ga'
                 ],
-                '"Ta"'
+                'Ta'
               ]
             ],
             'AND',
@@ -36,12 +36,12 @@ $VAR1 = [
                 [
                   [
                     [
-                      '"H"',
-                      '"He"'
+                      'H',
+                      'He'
                     ],
-                    '"Ga"'
+                    'Ga'
                   ],
-                  '"Ta"'
+                  'Ta'
                 ]
               ],
               'AND',
@@ -54,12 +54,12 @@ $VAR1 = [
                 [
                   [
                     [
-                      '"H"',
-                      '"He"'
+                      'H',
+                      'He'
                     ],
-                    '"Ga"'
+                    'Ga'
                   ],
-                  '"Ta"'
+                  'Ta'
                 ]
               ]
             ]

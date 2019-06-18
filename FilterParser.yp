@@ -327,34 +327,24 @@ sub _Lexer
     }
 
     # Handling strings
-    if( $self->YYData->{INPUT} =~ s/^(")// ) {
-        my $string = $1;
-        my $changed = 1;
-        while( $changed ) {
-            $changed = 0;
+    if( $self->YYData->{INPUT} =~ s/^"// ) {
+        $self->{USER}{CHARNO} ++;
+        my $string = '';
+        while( 1 ) {
             if( $self->YYData->{INPUT} =~
                     s/^([A-Za-z_0-9 \t!#\$\%&\'\(\)\*\+,\-\.\/\:;<=>\?@\[\]\^`\{\|\}\~\P{ASCII}]+)// ) {
+                $self->{USER}{CHARNO} += length( $1 );
                 $string .= $1;
-                $changed = 1;
-            }
-            if( $self->YYData->{INPUT} =~ s/^(\\\\)// ) {
+            } elsif( $self->YYData->{INPUT} =~ s/^\\([\\"])// ) {
+                $self->{USER}{CHARNO} ++;
                 $string .= $1;
-                $changed = 1;
+                next;
+            } elsif( $self->YYData->{INPUT} =~ s/^"// ) {
+                $self->{USER}{CHARNO} ++;
+                return( 'string', $string );
+            } else {
+                return( undef, undef );
             }
-            if( $self->YYData->{INPUT} =~ s/^(\\")// ) {
-                $string .= $1;
-                $changed = 1;
-            }
-            if( $self->YYData->{INPUT} =~ s/^(")// ) {
-                $string .= $1;
-                last;
-            }
-        }
-        if( $string =~ /"$/ ) {
-            $self->{USER}{CHARNO} += length( $string );
-            return( 'string', $string );
-        } else {
-            return( undef, undef );
         }
     }
 

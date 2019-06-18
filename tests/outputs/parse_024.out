@@ -4,7 +4,7 @@ $VAR1 = [
                      'name' => 'prototype_formula'
                    }, 'OPTiMaDe::FilterParser::Identifier' ),
             'CONTAINS',
-            '"C2"'
+            'C2'
           ],
           'AND',
           [
@@ -13,6 +13,6 @@ $VAR1 = [
                    }, 'OPTiMaDe::FilterParser::Identifier' ),
             'STARTS',
             'WITH',
-            '"A2"'
+            'A2'
           ]
         ];

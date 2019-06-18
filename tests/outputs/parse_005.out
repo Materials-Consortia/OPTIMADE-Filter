@@ -21,7 +21,7 @@ $VAR1 = [
                        'name' => 'elements'
                      }, 'OPTiMaDe::FilterParser::Identifier' ),
               '=',
-              '"Si,O2"'
+              'Si,O2'
             ]
           ]
         ];
