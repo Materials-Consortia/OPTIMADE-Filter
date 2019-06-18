@@ -4,6 +4,8 @@
 
 use warnings;
 
+our $OPTiMaDe_VERSION = 'v0.9.8-develop';
+
 %}
 
 %%
