@@ -58,7 +58,7 @@ value_zip_part: colon value
                 }
               | colon operator value
                 {
-                    return [ $_[1], $_[2] ];
+                    return [ $_[2], $_[3] ];
                 }
               ;
 
