@@ -1,13 +1,13 @@
 YP_FILE  = FilterParser.yp
-PM_FILE  = ${YP_FILE:%.yp=%.pm}
+PM_FILE  = ${YP_FILE:%.yp=lib/OPTiMaDe/%.pm}
 OUT_FILE = ${YP_FILE:%.yp=%.output}
 
 .PHONY: all clean-YAPP distclean-YAPP
 
 all tests: ${PM_FILE}
 
-%.pm: %.yp
-	yapp -v $<
+lib/OPTiMaDe/%.pm: %.yp
+	yapp -v -m OPTiMaDe::FilterParser -o $@ $<
 
 clean: clean-YAPP
 

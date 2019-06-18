@@ -2,12 +2,12 @@
 
 use strict;
 use warnings;
-use FilterParser;
+use OPTiMaDe::FilterParser;
 use Data::Dumper;
 
 @ARGV = ( '-' ) unless @ARGV;
 
 for (@ARGV) {
-    my $parser = new FilterParser;
+    my $parser = new OPTiMaDe::FilterParser;
     print Dumper( $parser->Run( $_ ) );
 }
