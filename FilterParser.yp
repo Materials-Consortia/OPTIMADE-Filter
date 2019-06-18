@@ -243,12 +243,12 @@ length_comparison: LENGTH identifier operator value
 identifier_zip_addon: colon identifier
                         {
                             my $zip = OPTiMaDe::FilterParser::Zip->new;
-                            $zip->add_identifier( $_[2] );
+                            $zip->push_identifier( $_[2] );
                             return $zip;
                         }
                     | identifier_zip_addon colon identifier
                         {
-                            $_[1]->add_identifier( $_[3] );
+                            $_[1]->push_identifier( $_[3] );
                             return $_[1];
                         }
                     ;

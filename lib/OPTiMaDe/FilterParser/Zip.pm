@@ -10,7 +10,7 @@ sub new {
                    values => [] }, $class;
 }
 
-sub add_identifier {
+sub push_identifier {
     my( $self, $identifier ) = @_;
     push @{$self->{identifiers}}, $identifier;
 }
@@ -18,11 +18,6 @@ sub add_identifier {
 sub unshift_identifier {
     my( $self, $identifier ) = @_;
     unshift @{$self->{identifiers}}, $identifier;
-}
-
-sub add_value {
-    my( $self, $value ) = @_;
-    push @{$self->{values}}, $value;
 }
 
 sub set_operator {
