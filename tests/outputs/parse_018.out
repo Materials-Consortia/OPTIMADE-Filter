@@ -3,6 +3,7 @@ $VAR1 = [
           [
             [
               bless( {
+                       'functions' => [],
                        'operands' => [
                                        bless( {
                                                 'name' => 'chemical_formula'
@@ -13,6 +14,7 @@ $VAR1 = [
                      }, 'OPTiMaDe::FilterParser::Comparison' ),
               'AND',
               bless( {
+                       'functions' => [],
                        'operands' => [
                                        bless( {
                                                 'name' => 'prototype_formula'
@@ -25,6 +27,7 @@ $VAR1 = [
             'OR',
             [
               bless( {
+                       'functions' => [],
                        'operands' => [
                                        bless( {
                                                 'name' => 'prototype_formula'
@@ -37,6 +40,7 @@ $VAR1 = [
               [
                 'NOT',
                 bless( {
+                         'functions' => [],
                          'operands' => [
                                          bless( {
                                                   'name' => 'chemical_formula'

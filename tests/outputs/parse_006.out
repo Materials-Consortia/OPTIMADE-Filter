@@ -1,5 +1,6 @@
 $VAR1 = [
           bless( {
+                   'functions' => [],
                    'operands' => [
                                    bless( {
                                             'name' => 'number'
@@ -11,6 +12,7 @@ $VAR1 = [
           'AND',
           [
             bless( {
+                     'functions' => [],
                      'operands' => [
                                      bless( {
                                               'name' => 'number'
@@ -22,6 +24,7 @@ $VAR1 = [
             'AND',
             [
               bless( {
+                       'functions' => [],
                        'operands' => [
                                        bless( {
                                                 'name' => 'number'
@@ -33,6 +36,7 @@ $VAR1 = [
               'AND',
               [
                 bless( {
+                         'functions' => [],
                          'operands' => [
                                          bless( {
                                                   'name' => 'number'
@@ -44,6 +48,7 @@ $VAR1 = [
                 'AND',
                 [
                   bless( {
+                           'functions' => [],
                            'operands' => [
                                            bless( {
                                                     'name' => 'n_u_m_b_e_r'
@@ -55,6 +60,7 @@ $VAR1 = [
                   'AND',
                   [
                     bless( {
+                             'functions' => [],
                              'operands' => [
                                              bless( {
                                                       'name' => 'number'
@@ -66,6 +72,7 @@ $VAR1 = [
                     'AND',
                     [
                       bless( {
+                               'functions' => [],
                                'operands' => [
                                                bless( {
                                                         'name' => 'number'
@@ -76,6 +83,7 @@ $VAR1 = [
                              }, 'OPTiMaDe::FilterParser::Comparison' ),
                       'AND',
                       bless( {
+                               'functions' => [],
                                'operands' => [
                                                bless( {
                                                         'name' => 'number'

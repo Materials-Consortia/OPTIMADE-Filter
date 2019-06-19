@@ -1,34 +1,46 @@
 $VAR1 = [
-          [
-            'LENGTH',
-            bless( {
-                     'name' => 'string'
-                   }, 'OPTiMaDe::FilterParser::Identifier' ),
-            '<',
-            '5'
-          ],
+          bless( {
+                   'functions' => [
+                                    'LENGTH'
+                                  ],
+                   'operands' => [
+                                   bless( {
+                                            'name' => 'string'
+                                          }, 'OPTiMaDe::FilterParser::Identifier' ),
+                                   '5'
+                                 ],
+                   'operator' => '<'
+                 }, 'OPTiMaDe::FilterParser::Comparison' ),
           'AND',
           [
-            [
-              'LENGTH',
-              bless( {
-                       'name' => 'string'
-                     }, 'OPTiMaDe::FilterParser::Identifier' ),
-              '=',
-              'four'
-            ],
+            bless( {
+                     'functions' => [
+                                      'LENGTH'
+                                    ],
+                     'operands' => [
+                                     bless( {
+                                              'name' => 'string'
+                                            }, 'OPTiMaDe::FilterParser::Identifier' ),
+                                     'four'
+                                   ],
+                     'operator' => '='
+                   }, 'OPTiMaDe::FilterParser::Comparison' ),
             'AND',
-            [
-              'LENGTH',
-              bless( {
-                       'name' => 'string'
-                     }, 'OPTiMaDe::FilterParser::Identifier' ),
-              '>=',
-              bless( {
-                       'name' => 'max_length_of_the_string'
-                     }, 'OPTiMaDe::FilterParser::Identifier' )
-            ]
+            bless( {
+                     'functions' => [
+                                      'LENGTH'
+                                    ],
+                     'operands' => [
+                                     bless( {
+                                              'name' => 'string'
+                                            }, 'OPTiMaDe::FilterParser::Identifier' ),
+                                     bless( {
+                                              'name' => 'max_length_of_the_string'
+                                            }, 'OPTiMaDe::FilterParser::Identifier' )
+                                   ],
+                     'operator' => '>='
+                   }, 'OPTiMaDe::FilterParser::Comparison' )
           ]
         ];
 == SQL ==
-((LENGTH 'string' < 5) AND ((LENGTH 'string' = four) AND (LENGTH 'string' >= 'max_length_of_the_string')))
+((LENGTH( 'string' ) < "5") AND ((LENGTH( 'string' ) = "four") AND (LENGTH( 'string' ) >= 'max_length_of_the_string')))

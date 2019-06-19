@@ -1,6 +1,7 @@
 $VAR1 = [
           'NOT',
           bless( {
+                   'functions' => [],
                    'operands' => [
                                    bless( {
                                             'name' => 'ice'

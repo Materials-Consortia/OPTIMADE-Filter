@@ -1,4 +1,5 @@
 $VAR1 = bless( {
+                 'functions' => [],
                  'operands' => [
                                  bless( {
                                           'name' => '_exmpl_some_string_property'

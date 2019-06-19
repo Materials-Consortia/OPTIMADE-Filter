@@ -6,7 +6,9 @@ use Scalar::Util qw(blessed);
 
 sub new {
     my( $class, $operator ) = @_;
-    return bless { operands => [], operator => $operator }, $class;
+    return bless { operands  => [],
+                   functions => [],
+                   operator  => $operator }, $class;
 }
 
 sub set_operator {
@@ -28,6 +30,12 @@ sub unshift_operand
     unshift @{$self->{operands}}, $operand;
 }
 
+sub set_function
+{
+    my( $self, $index, $function ) = @_;
+    $self->{functions}[$index] = $function;
+}
+
 sub to_SQL
 {
     my( $self, $delim ) = @_;
@@ -35,12 +43,18 @@ sub to_SQL
 
     my $operator = $self->{operator};
     my @operands;
-    for (@{$self->{operands}}) {
-        if( !ref $_ ) {
-            $_ =~ s/"/""/g;
-            $_ = "\"$_\"";
+    for my $i (0..$#{$self->{operands}}) {
+        my $arg = $self->{operands}[$i];
+        if( blessed $arg && $arg->can( 'to_SQL' ) ) {
+            $arg = $arg->to_SQL( $delim );
+        } else {
+            $arg =~ s/"/""/g;
+            $arg = "\"$arg\"";
         }
-        push @operands, $_;
+        if( $self->{functions}[$i] ) {
+            $arg = sprintf "$self->{functions}[$i]( %s )", $arg;
+        }
+        push @operands, $arg;
     }
 
     # Currently the 2nd operator is quaranteed to be string
@@ -56,13 +70,7 @@ sub to_SQL
         $operands[1] =~ s/^"/"%/;
     }
 
-    return '(' .
-           (blessed $operands[0] && $operands[0]->can( 'to_SQL' )
-                ? $operands[0]->to_SQL( $delim ) : "$operands[0]") .
-           " $operator " .
-           (blessed $operands[1] && $operands[1]->can( 'to_SQL' )
-                ? $operands[1]->to_SQL( $delim ) : "$operands[1]") .
-           ')';
+    return "($operands[0] $operator $operands[1])";
 }
 
 1;

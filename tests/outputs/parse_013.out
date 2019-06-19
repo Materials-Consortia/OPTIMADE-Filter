@@ -1,5 +1,6 @@
 $VAR1 = [
           bless( {
+                   'functions' => [],
                    'operands' => [
                                    bless( {
                                             'name' => 'a'
@@ -11,6 +12,7 @@ $VAR1 = [
           'AND',
           [
             bless( {
+                     'functions' => [],
                      'operands' => [
                                      bless( {
                                               'name' => 'b'
@@ -22,6 +24,7 @@ $VAR1 = [
             'AND',
             [
               bless( {
+                       'functions' => [],
                        'operands' => [
                                        bless( {
                                                 'name' => 'c'
@@ -33,6 +36,7 @@ $VAR1 = [
               'AND',
               [
                 bless( {
+                         'functions' => [],
                          'operands' => [
                                          bless( {
                                                   'name' => 'd'
@@ -44,6 +48,7 @@ $VAR1 = [
                 'AND',
                 [
                   bless( {
+                           'functions' => [],
                            'operands' => [
                                            bless( {
                                                     'name' => 'e'
@@ -55,6 +60,7 @@ $VAR1 = [
                   'AND',
                   [
                     bless( {
+                             'functions' => [],
                              'operands' => [
                                              bless( {
                                                       'name' => 'f'
@@ -66,6 +72,7 @@ $VAR1 = [
                     'AND',
                     [
                       bless( {
+                               'functions' => [],
                                'operands' => [
                                                bless( {
                                                         'name' => 'g'
@@ -77,6 +84,7 @@ $VAR1 = [
                       'AND',
                       [
                         bless( {
+                                 'functions' => [],
                                  'operands' => [
                                                  bless( {
                                                           'name' => 'h'
@@ -88,6 +96,7 @@ $VAR1 = [
                         'AND',
                         [
                           bless( {
+                                   'functions' => [],
                                    'operands' => [
                                                    bless( {
                                                             'name' => 'i'
@@ -99,6 +108,7 @@ $VAR1 = [
                           'AND',
                           [
                             bless( {
+                                     'functions' => [],
                                      'operands' => [
                                                      bless( {
                                                               'name' => 'j'
@@ -110,6 +120,7 @@ $VAR1 = [
                             'AND',
                             [
                               bless( {
+                                       'functions' => [],
                                        'operands' => [
                                                        bless( {
                                                                 'name' => 'k'
@@ -121,6 +132,7 @@ $VAR1 = [
                               'AND',
                               [
                                 bless( {
+                                         'functions' => [],
                                          'operands' => [
                                                          bless( {
                                                                   'name' => 'l'
@@ -131,6 +143,7 @@ $VAR1 = [
                                        }, 'OPTiMaDe::FilterParser::Comparison' ),
                                 'AND',
                                 bless( {
+                                         'functions' => [],
                                          'operands' => [
                                                          bless( {
                                                                   'name' => 'm'

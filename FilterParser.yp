@@ -273,7 +273,11 @@ set_zip_op_rhs: identifier_zip_addon HAS value_zip
 
 length_comparison: LENGTH identifier operator value
                     {
-                        return [ @_[1..$#_] ];
+                        my $cmp = OPTiMaDe::FilterParser::Comparison->new( $_[3] );
+                        $cmp->push_operand( $_[2] );
+                        $cmp->push_operand( $_[4] );
+                        $cmp->set_function( 0, $_[1] );
+                        return $cmp;
                     }
                  ;
 
