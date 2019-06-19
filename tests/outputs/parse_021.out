@@ -1,7 +1,9 @@
-$VAR1 = [
-          '5',
-          '<',
-          bless( {
-                   'name' => '_exmpl_a'
-                 }, 'OPTiMaDe::FilterParser::Identifier' )
-        ];
+$VAR1 = bless( {
+                 'operands' => [
+                                 '5',
+                                 bless( {
+                                          'name' => '_exmpl_a'
+                                        }, 'OPTiMaDe::FilterParser::Identifier' )
+                               ],
+                 'operator' => '<'
+               }, 'OPTiMaDe::FilterParser::Comparison' );

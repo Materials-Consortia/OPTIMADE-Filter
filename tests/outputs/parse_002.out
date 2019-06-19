@@ -1,7 +1,9 @@
-$VAR1 = [
-          bless( {
-                   'name' => 'spacegroup'
-                 }, 'OPTiMaDe::FilterParser::Identifier' ),
-          '=',
-          'P2'
-        ];
+$VAR1 = bless( {
+                 'operands' => [
+                                 bless( {
+                                          'name' => 'spacegroup'
+                                        }, 'OPTiMaDe::FilterParser::Identifier' ),
+                                 'P2'
+                               ],
+                 'operator' => '='
+               }, 'OPTiMaDe::FilterParser::Comparison' );

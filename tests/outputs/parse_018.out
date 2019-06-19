@@ -2,41 +2,49 @@ $VAR1 = [
           'NOT',
           [
             [
-              [
-                bless( {
-                         'name' => 'chemical_formula'
-                       }, 'OPTiMaDe::FilterParser::Identifier' ),
-                '=',
-                'Al'
-              ],
+              bless( {
+                       'operands' => [
+                                       bless( {
+                                                'name' => 'chemical_formula'
+                                              }, 'OPTiMaDe::FilterParser::Identifier' ),
+                                       'Al'
+                                     ],
+                       'operator' => '='
+                     }, 'OPTiMaDe::FilterParser::Comparison' ),
               'AND',
-              [
-                bless( {
-                         'name' => 'prototype_formula'
-                       }, 'OPTiMaDe::FilterParser::Identifier' ),
-                '=',
-                'A'
-              ]
+              bless( {
+                       'operands' => [
+                                       bless( {
+                                                'name' => 'prototype_formula'
+                                              }, 'OPTiMaDe::FilterParser::Identifier' ),
+                                       'A'
+                                     ],
+                       'operator' => '='
+                     }, 'OPTiMaDe::FilterParser::Comparison' )
             ],
             'OR',
             [
-              [
-                bless( {
-                         'name' => 'prototype_formula'
-                       }, 'OPTiMaDe::FilterParser::Identifier' ),
-                '=',
-                'H2O'
-              ],
+              bless( {
+                       'operands' => [
+                                       bless( {
+                                                'name' => 'prototype_formula'
+                                              }, 'OPTiMaDe::FilterParser::Identifier' ),
+                                       'H2O'
+                                     ],
+                       'operator' => '='
+                     }, 'OPTiMaDe::FilterParser::Comparison' ),
               'AND',
               [
                 'NOT',
-                [
-                  bless( {
-                           'name' => 'chemical_formula'
-                         }, 'OPTiMaDe::FilterParser::Identifier' ),
-                  '=',
-                  'Ti'
-                ]
+                bless( {
+                         'operands' => [
+                                         bless( {
+                                                  'name' => 'chemical_formula'
+                                                }, 'OPTiMaDe::FilterParser::Identifier' ),
+                                         'Ti'
+                                       ],
+                         'operator' => '='
+                       }, 'OPTiMaDe::FilterParser::Comparison' )
               ]
             ]
           ]

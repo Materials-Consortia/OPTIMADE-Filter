@@ -1,7 +1,9 @@
-$VAR1 = [
-          bless( {
-                   'name' => 'author'
-                 }, 'OPTiMaDe::FilterParser::Identifier' ),
-          '=',
-          ' someone '
-        ];
+$VAR1 = bless( {
+                 'operands' => [
+                                 bless( {
+                                          'name' => 'author'
+                                        }, 'OPTiMaDe::FilterParser::Identifier' ),
+                                 ' someone '
+                               ],
+                 'operator' => '='
+               }, 'OPTiMaDe::FilterParser::Comparison' );

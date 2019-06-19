@@ -1,5 +1,7 @@
-$VAR1 = [
-          '5',
-          '<',
-          '7'
-        ];
+$VAR1 = bless( {
+                 'operands' => [
+                                 '5',
+                                 '7'
+                               ],
+                 'operator' => '<'
+               }, 'OPTiMaDe::FilterParser::Comparison' );

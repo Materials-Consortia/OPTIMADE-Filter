@@ -1,41 +1,49 @@
 $VAR1 = [
-          [
-            bless( {
-                     'name' => '_exmpl_aax'
-                   }, 'OPTiMaDe::FilterParser::Identifier' ),
-            '<=',
-            '+.1e8'
-          ],
+          bless( {
+                   'operands' => [
+                                   bless( {
+                                            'name' => '_exmpl_aax'
+                                          }, 'OPTiMaDe::FilterParser::Identifier' ),
+                                   '+.1e8'
+                                 ],
+                   'operator' => '<='
+                 }, 'OPTiMaDe::FilterParser::Comparison' ),
           'OR',
           [
-            [
-              bless( {
-                       'name' => 'nelements'
-                     }, 'OPTiMaDe::FilterParser::Identifier' ),
-              '>=',
-              '10'
-            ],
+            bless( {
+                     'operands' => [
+                                     bless( {
+                                              'name' => 'nelements'
+                                            }, 'OPTiMaDe::FilterParser::Identifier' ),
+                                     '10'
+                                   ],
+                     'operator' => '>='
+                   }, 'OPTiMaDe::FilterParser::Comparison' ),
             'AND',
             [
               'NOT',
               [
-                [
-                  bless( {
-                           'name' => '_exmpl_x'
-                         }, 'OPTiMaDe::FilterParser::Identifier' ),
-                  '!=',
-                  'Some string'
-                ],
+                bless( {
+                         'operands' => [
+                                         bless( {
+                                                  'name' => '_exmpl_x'
+                                                }, 'OPTiMaDe::FilterParser::Identifier' ),
+                                         'Some string'
+                                       ],
+                         'operator' => '!='
+                       }, 'OPTiMaDe::FilterParser::Comparison' ),
                 'OR',
                 [
                   'NOT',
-                  [
-                    bless( {
-                             'name' => '_exmpl_a'
-                           }, 'OPTiMaDe::FilterParser::Identifier' ),
-                    '=',
-                    '7'
-                  ]
+                  bless( {
+                           'operands' => [
+                                           bless( {
+                                                    'name' => '_exmpl_a'
+                                                  }, 'OPTiMaDe::FilterParser::Identifier' ),
+                                           '7'
+                                         ],
+                           'operator' => '='
+                         }, 'OPTiMaDe::FilterParser::Comparison' )
                 ]
               ]
             ]

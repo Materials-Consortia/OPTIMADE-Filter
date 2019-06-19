@@ -1,12 +1,14 @@
 $VAR1 = [
           'NOT',
-          [
-            bless( {
-                     'name' => 'ice'
-                   }, 'OPTiMaDe::FilterParser::Identifier' ),
-            '=',
-            bless( {
-                     'name' => 'val'
-                   }, 'OPTiMaDe::FilterParser::Identifier' )
-          ]
+          bless( {
+                   'operands' => [
+                                   bless( {
+                                            'name' => 'ice'
+                                          }, 'OPTiMaDe::FilterParser::Identifier' ),
+                                   bless( {
+                                            'name' => 'val'
+                                          }, 'OPTiMaDe::FilterParser::Identifier' )
+                                 ],
+                   'operator' => '='
+                 }, 'OPTiMaDe::FilterParser::Comparison' )
         ];

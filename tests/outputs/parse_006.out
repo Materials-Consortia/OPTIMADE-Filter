@@ -1,73 +1,89 @@
 $VAR1 = [
-          [
-            bless( {
-                     'name' => 'number'
-                   }, 'OPTiMaDe::FilterParser::Identifier' ),
-            '=',
-            '0.'
-          ],
+          bless( {
+                   'operands' => [
+                                   bless( {
+                                            'name' => 'number'
+                                          }, 'OPTiMaDe::FilterParser::Identifier' ),
+                                   '0.'
+                                 ],
+                   'operator' => '='
+                 }, 'OPTiMaDe::FilterParser::Comparison' ),
           'AND',
           [
-            [
-              bless( {
-                       'name' => 'number'
-                     }, 'OPTiMaDe::FilterParser::Identifier' ),
-              '=',
-              '.0'
-            ],
+            bless( {
+                     'operands' => [
+                                     bless( {
+                                              'name' => 'number'
+                                            }, 'OPTiMaDe::FilterParser::Identifier' ),
+                                     '.0'
+                                   ],
+                     'operator' => '='
+                   }, 'OPTiMaDe::FilterParser::Comparison' ),
             'AND',
             [
-              [
-                bless( {
-                         'name' => 'number'
-                       }, 'OPTiMaDe::FilterParser::Identifier' ),
-                '=',
-                '0.0'
-              ],
+              bless( {
+                       'operands' => [
+                                       bless( {
+                                                'name' => 'number'
+                                              }, 'OPTiMaDe::FilterParser::Identifier' ),
+                                       '0.0'
+                                     ],
+                       'operator' => '='
+                     }, 'OPTiMaDe::FilterParser::Comparison' ),
               'AND',
               [
-                [
-                  bless( {
-                           'name' => 'number'
-                         }, 'OPTiMaDe::FilterParser::Identifier' ),
-                  '=',
-                  '+0'
-                ],
+                bless( {
+                         'operands' => [
+                                         bless( {
+                                                  'name' => 'number'
+                                                }, 'OPTiMaDe::FilterParser::Identifier' ),
+                                         '+0'
+                                       ],
+                         'operator' => '='
+                       }, 'OPTiMaDe::FilterParser::Comparison' ),
                 'AND',
                 [
-                  [
-                    bless( {
-                             'name' => 'n_u_m_b_e_r'
-                           }, 'OPTiMaDe::FilterParser::Identifier' ),
-                    '=',
-                    '-0'
-                  ],
+                  bless( {
+                           'operands' => [
+                                           bless( {
+                                                    'name' => 'n_u_m_b_e_r'
+                                                  }, 'OPTiMaDe::FilterParser::Identifier' ),
+                                           '-0'
+                                         ],
+                           'operator' => '='
+                         }, 'OPTiMaDe::FilterParser::Comparison' ),
                   'AND',
                   [
-                    [
-                      bless( {
-                               'name' => 'number'
-                             }, 'OPTiMaDe::FilterParser::Identifier' ),
-                      '=',
-                      '0e1'
-                    ],
+                    bless( {
+                             'operands' => [
+                                             bless( {
+                                                      'name' => 'number'
+                                                    }, 'OPTiMaDe::FilterParser::Identifier' ),
+                                             '0e1'
+                                           ],
+                             'operator' => '='
+                           }, 'OPTiMaDe::FilterParser::Comparison' ),
                     'AND',
                     [
-                      [
-                        bless( {
-                                 'name' => 'number'
-                               }, 'OPTiMaDe::FilterParser::Identifier' ),
-                        '=',
-                        '0e-1'
-                      ],
+                      bless( {
+                               'operands' => [
+                                               bless( {
+                                                        'name' => 'number'
+                                                      }, 'OPTiMaDe::FilterParser::Identifier' ),
+                                               '0e-1'
+                                             ],
+                               'operator' => '='
+                             }, 'OPTiMaDe::FilterParser::Comparison' ),
                       'AND',
-                      [
-                        bless( {
-                                 'name' => 'number'
-                               }, 'OPTiMaDe::FilterParser::Identifier' ),
-                        '=',
-                        '0e+1'
-                      ]
+                      bless( {
+                               'operands' => [
+                                               bless( {
+                                                        'name' => 'number'
+                                                      }, 'OPTiMaDe::FilterParser::Identifier' ),
+                                               '0e+1'
+                                             ],
+                               'operator' => '='
+                             }, 'OPTiMaDe::FilterParser::Comparison' )
                     ]
                   ]
                 ]

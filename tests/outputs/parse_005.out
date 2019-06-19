@@ -1,27 +1,33 @@
 $VAR1 = [
-          [
-            bless( {
-                     'name' => '_cod_melting_point'
-                   }, 'OPTiMaDe::FilterParser::Identifier' ),
-            '<',
-            '300'
-          ],
+          bless( {
+                   'operands' => [
+                                   bless( {
+                                            'name' => '_cod_melting_point'
+                                          }, 'OPTiMaDe::FilterParser::Identifier' ),
+                                   '300'
+                                 ],
+                   'operator' => '<'
+                 }, 'OPTiMaDe::FilterParser::Comparison' ),
           'AND',
           [
-            [
-              bless( {
-                       'name' => 'nelements'
-                     }, 'OPTiMaDe::FilterParser::Identifier' ),
-              '=',
-              '4'
-            ],
+            bless( {
+                     'operands' => [
+                                     bless( {
+                                              'name' => 'nelements'
+                                            }, 'OPTiMaDe::FilterParser::Identifier' ),
+                                     '4'
+                                   ],
+                     'operator' => '='
+                   }, 'OPTiMaDe::FilterParser::Comparison' ),
             'AND',
-            [
-              bless( {
-                       'name' => 'elements'
-                     }, 'OPTiMaDe::FilterParser::Identifier' ),
-              '=',
-              'Si,O2'
-            ]
+            bless( {
+                     'operands' => [
+                                     bless( {
+                                              'name' => 'elements'
+                                            }, 'OPTiMaDe::FilterParser::Identifier' ),
+                                     'Si,O2'
+                                   ],
+                     'operator' => '='
+                   }, 'OPTiMaDe::FilterParser::Comparison' )
           ]
         ];

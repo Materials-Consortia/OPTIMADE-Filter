@@ -1,7 +1,9 @@
-$VAR1 = [
-          bless( {
-                   'name' => 'field'
-                 }, 'OPTiMaDe::FilterParser::Identifier' ),
-          '=',
-          '!#$%&\'()*+,-./:;<=>?@[]^`{|}~%'
-        ];
+$VAR1 = bless( {
+                 'operands' => [
+                                 bless( {
+                                          'name' => 'field'
+                                        }, 'OPTiMaDe::FilterParser::Identifier' ),
+                                 '!#$%&\'()*+,-./:;<=>?@[]^`{|}~%'
+                               ],
+                 'operator' => '='
+               }, 'OPTiMaDe::FilterParser::Comparison' );

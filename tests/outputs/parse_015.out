@@ -1,25 +1,29 @@
 $VAR1 = [
           [
             'NOT',
-            [
-              bless( {
-                       'name' => 'a'
-                     }, 'OPTiMaDe::FilterParser::Identifier' ),
-              '>',
-              bless( {
-                       'name' => 'b'
-                     }, 'OPTiMaDe::FilterParser::Identifier' )
-            ]
+            bless( {
+                     'operands' => [
+                                     bless( {
+                                              'name' => 'a'
+                                            }, 'OPTiMaDe::FilterParser::Identifier' ),
+                                     bless( {
+                                              'name' => 'b'
+                                            }, 'OPTiMaDe::FilterParser::Identifier' )
+                                   ],
+                     'operator' => '>'
+                   }, 'OPTiMaDe::FilterParser::Comparison' )
           ],
           'AND',
           [
             'NOT',
-            [
-              bless( {
-                       'name' => 'x'
-                     }, 'OPTiMaDe::FilterParser::Identifier' ),
-              '>',
-              '0'
-            ]
+            bless( {
+                     'operands' => [
+                                     bless( {
+                                              'name' => 'x'
+                                            }, 'OPTiMaDe::FilterParser::Identifier' ),
+                                     '0'
+                                   ],
+                     'operator' => '>'
+                   }, 'OPTiMaDe::FilterParser::Comparison' )
           ]
         ];
