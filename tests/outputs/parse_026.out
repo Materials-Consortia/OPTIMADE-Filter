@@ -1,93 +1,93 @@
 $VAR1 = [
-          [
-            bless( {
-                     'name' => 'elements'
-                   }, 'OPTiMaDe::FilterParser::Identifier' ),
-            'HAS',
-            'H'
-          ],
+          bless( {
+                   'identifier' => bless( {
+                                            'name' => 'elements'
+                                          }, 'OPTiMaDe::FilterParser::Identifier' ),
+                   'operator' => 'HAS',
+                   'values' => [
+                                 '=',
+                                 'H'
+                               ]
+                 }, 'OPTiMaDe::FilterParser::ListComparison' ),
           'AND',
           [
-            [
-              bless( {
-                       'name' => 'elements'
-                     }, 'OPTiMaDe::FilterParser::Identifier' ),
-              'HAS',
-              'ALL',
-              [
-                [
-                  '=',
-                  'H'
-                ],
-                [
-                  '=',
-                  'He'
-                ],
-                [
-                  '=',
-                  'Ga'
-                ],
-                [
-                  '=',
-                  'Ta'
-                ]
-              ]
-            ],
+            bless( {
+                     'identifier' => bless( {
+                                              'name' => 'elements'
+                                            }, 'OPTiMaDe::FilterParser::Identifier' ),
+                     'operator' => 'HAS ALL',
+                     'values' => [
+                                   [
+                                     '=',
+                                     'H'
+                                   ],
+                                   [
+                                     '=',
+                                     'He'
+                                   ],
+                                   [
+                                     '=',
+                                     'Ga'
+                                   ],
+                                   [
+                                     '=',
+                                     'Ta'
+                                   ]
+                                 ]
+                   }, 'OPTiMaDe::FilterParser::ListComparison' ),
             'AND',
             [
-              [
-                bless( {
-                         'name' => 'elements'
-                       }, 'OPTiMaDe::FilterParser::Identifier' ),
-                'HAS',
-                'EXACTLY',
-                [
-                  [
-                    '=',
-                    'H'
-                  ],
-                  [
-                    '=',
-                    'He'
-                  ],
-                  [
-                    '=',
-                    'Ga'
-                  ],
-                  [
-                    '=',
-                    'Ta'
-                  ]
-                ]
-              ],
+              bless( {
+                       'identifier' => bless( {
+                                                'name' => 'elements'
+                                              }, 'OPTiMaDe::FilterParser::Identifier' ),
+                       'operator' => 'HAS EXACTLY',
+                       'values' => [
+                                     [
+                                       '=',
+                                       'H'
+                                     ],
+                                     [
+                                       '=',
+                                       'He'
+                                     ],
+                                     [
+                                       '=',
+                                       'Ga'
+                                     ],
+                                     [
+                                       '=',
+                                       'Ta'
+                                     ]
+                                   ]
+                     }, 'OPTiMaDe::FilterParser::ListComparison' ),
               'AND',
-              [
-                bless( {
-                         'name' => 'elements'
-                       }, 'OPTiMaDe::FilterParser::Identifier' ),
-                'HAS',
-                'ANY',
-                [
-                  [
-                    '=',
-                    'H'
-                  ],
-                  [
-                    '=',
-                    'He'
-                  ],
-                  [
-                    '=',
-                    'Ga'
-                  ],
-                  [
-                    '=',
-                    'Ta'
-                  ]
-                ]
-              ]
+              bless( {
+                       'identifier' => bless( {
+                                                'name' => 'elements'
+                                              }, 'OPTiMaDe::FilterParser::Identifier' ),
+                       'operator' => 'HAS ANY',
+                       'values' => [
+                                     [
+                                       '=',
+                                       'H'
+                                     ],
+                                     [
+                                       '=',
+                                       'He'
+                                     ],
+                                     [
+                                       '=',
+                                       'Ga'
+                                     ],
+                                     [
+                                       '=',
+                                       'Ta'
+                                     ]
+                                   ]
+                     }, 'OPTiMaDe::FilterParser::ListComparison' )
             ]
           ]
         ];
 == SQL ==
-(('elements' HAS H) AND (('elements' HAS ALL ((= H) (= He) (= Ga) (= Ta))) AND (('elements' HAS EXACTLY ((= H) (= He) (= Ga) (= Ta))) AND ('elements' HAS ANY ((= H) (= He) (= Ga) (= Ta))))))
+(<no SQL representation> AND (<no SQL representation> AND (<no SQL representation> AND <no SQL representation>)))

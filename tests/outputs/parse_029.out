@@ -1,38 +1,39 @@
 $VAR1 = [
-          [
-            bless( {
-                     'name' => '_exmpl_element_counts'
-                   }, 'OPTiMaDe::FilterParser::Identifier' ),
-            'HAS',
-            '<',
-            '3'
-          ],
+          bless( {
+                   'identifier' => bless( {
+                                            'name' => '_exmpl_element_counts'
+                                          }, 'OPTiMaDe::FilterParser::Identifier' ),
+                   'operator' => 'HAS',
+                   'values' => [
+                                 '<',
+                                 '3'
+                               ]
+                 }, 'OPTiMaDe::FilterParser::ListComparison' ),
           'AND',
-          [
-            bless( {
-                     'name' => '_exmpl_element_counts'
-                   }, 'OPTiMaDe::FilterParser::Identifier' ),
-            'HAS',
-            'ANY',
-            [
-              [
-                '>',
-                '3'
-              ],
-              [
-                '=',
-                '6'
-              ],
-              [
-                '=',
-                '4'
-              ],
-              [
-                '!=',
-                '8'
-              ]
-            ]
-          ]
+          bless( {
+                   'identifier' => bless( {
+                                            'name' => '_exmpl_element_counts'
+                                          }, 'OPTiMaDe::FilterParser::Identifier' ),
+                   'operator' => 'HAS ANY',
+                   'values' => [
+                                 [
+                                   '>',
+                                   '3'
+                                 ],
+                                 [
+                                   '=',
+                                   '6'
+                                 ],
+                                 [
+                                   '=',
+                                   '4'
+                                 ],
+                                 [
+                                   '!=',
+                                   '8'
+                                 ]
+                               ]
+                 }, 'OPTiMaDe::FilterParser::ListComparison' )
         ];
 == SQL ==
-(('_exmpl_element_counts' HAS < 3) AND ('_exmpl_element_counts' HAS ANY ((> 3) (= 6) (= 4) (!= 8))))
+(<no SQL representation> AND <no SQL representation>)

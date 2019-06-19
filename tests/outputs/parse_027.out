@@ -1,27 +1,26 @@
-$VAR1 = [
-          bless( {
-                   'name' => 'elements'
-                 }, 'OPTiMaDe::FilterParser::Identifier' ),
-          'HAS',
-          'ONLY',
-          [
-            [
-              '=',
-              'H'
-            ],
-            [
-              '=',
-              'He'
-            ],
-            [
-              '=',
-              'Ga'
-            ],
-            [
-              '=',
-              'Ta'
-            ]
-          ]
-        ];
+$VAR1 = bless( {
+                 'identifier' => bless( {
+                                          'name' => 'elements'
+                                        }, 'OPTiMaDe::FilterParser::Identifier' ),
+                 'operator' => 'HAS ONLY',
+                 'values' => [
+                               [
+                                 '=',
+                                 'H'
+                               ],
+                               [
+                                 '=',
+                                 'He'
+                               ],
+                               [
+                                 '=',
+                                 'Ga'
+                               ],
+                               [
+                                 '=',
+                                 'Ta'
+                               ]
+                             ]
+               }, 'OPTiMaDe::FilterParser::ListComparison' );
 == SQL ==
-('elements' HAS ONLY ((= H) (= He) (= Ga) (= Ta)))
+<no SQL representation>

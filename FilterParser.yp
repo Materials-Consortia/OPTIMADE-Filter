@@ -6,6 +6,7 @@ use warnings;
 
 use OPTiMaDe::FilterParser::Comparison;
 use OPTiMaDe::FilterParser::Identifier;
+use OPTiMaDe::FilterParser::ListComparison;
 use OPTiMaDe::FilterParser::Zip;
 
 our $OPTiMaDe_VERSION = 'v0.9.8-develop';
@@ -131,7 +132,8 @@ identifier_first_comparison: identifier value_op_rhs
                                 }
                            | identifier set_op_rhs
                                 {
-                                    return [ $_[1], @{$_[2]} ];
+                                    $_[2]->set_identifier( $_[1] );
+                                    return $_[2];
                                 }
                            | identifier set_zip_op_rhs
                                 {
@@ -201,27 +203,39 @@ fuzzy_string_op_rhs: CONTAINS string
 
 set_op_rhs: HAS value
             {
-                return [ @_[1..$#_] ];
+                my $lc = OPTiMaDe::FilterParser::ListComparison->new( $_[1] );
+                $lc->set_values( [ '=', $_[2] ] );
+                return $lc;
             }
           | HAS operator value
             {
-                return [ @_[1..$#_] ];
+                my $lc = OPTiMaDe::FilterParser::ListComparison->new( $_[1] );
+                $lc->set_values( [ $_[2], $_[3] ] );
+                return $lc;
             }
           | HAS ALL value_list
             {
-                return [ @_[1..$#_] ];
+                my $lc = OPTiMaDe::FilterParser::ListComparison->new( "$_[1] $_[2]" );
+                $lc->set_values( $_[3] );
+                return $lc;
             }
           | HAS EXACTLY value_list
             {
-                return [ @_[1..$#_] ];
+                my $lc = OPTiMaDe::FilterParser::ListComparison->new( "$_[1] $_[2]" );
+                $lc->set_values( $_[3] );
+                return $lc;
             }
           | HAS ANY value_list
             {
-                return [ @_[1..$#_] ];
+                my $lc = OPTiMaDe::FilterParser::ListComparison->new( "$_[1] $_[2]" );
+                $lc->set_values( $_[3] );
+                return $lc;
             }
           | HAS ONLY value_list
             {
-                return [ @_[1..$#_] ];
+                my $lc = OPTiMaDe::FilterParser::ListComparison->new( "$_[1] $_[2]" );
+                $lc->set_values( $_[3] );
+                return $lc;
             }
           ;
 
