@@ -24,3 +24,5 @@ $VAR1 = [
                    'operator' => '>'
                  }, 'OPTiMaDe::FilterParser::Comparison' )
         ];
+== SQL ==
+((NOT ('a' > 'b')) AND ('x' > "0"))

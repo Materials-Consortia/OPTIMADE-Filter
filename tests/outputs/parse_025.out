@@ -19,3 +19,5 @@ $VAR1 = [
                    'operator' => 'ENDS WITH'
                  }, 'OPTiMaDe::FilterParser::Comparison' )
         ];
+== SQL ==
+(('prototype_formula' STARTS "B2") AND ('prototype_formula' ENDS WITH "D2"))

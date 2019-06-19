@@ -7,3 +7,5 @@ $VAR1 = bless( {
                                ],
                  'operator' => '='
                }, 'OPTiMaDe::FilterParser::Comparison' );
+== SQL ==
+('_exmpl_some_string_property' = "42")

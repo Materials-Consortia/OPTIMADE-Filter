@@ -31,3 +31,5 @@ $VAR1 = [
                    }, 'OPTiMaDe::FilterParser::Comparison' )
           ]
         ];
+== SQL ==
+(('_cod_melting_point' < "300") AND (('nelements' = "4") AND ('elements' = "Si,O2")))

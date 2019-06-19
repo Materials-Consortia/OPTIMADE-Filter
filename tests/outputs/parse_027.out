@@ -15,3 +15,5 @@ $VAR1 = [
             'Ta'
           ]
         ];
+== SQL ==
+('elements' HAS ONLY (((H He) Ga) Ta))

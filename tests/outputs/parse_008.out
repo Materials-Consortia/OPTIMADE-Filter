@@ -9,3 +9,5 @@ $VAR1 = bless( {
                                ],
                  'operator' => '='
                }, 'OPTiMaDe::FilterParser::Comparison' );
+== SQL ==
+('key' = 'value')

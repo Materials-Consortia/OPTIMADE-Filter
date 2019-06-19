@@ -7,3 +7,5 @@ $VAR1 = bless( {
                                ],
                  'operator' => '<'
                }, 'OPTiMaDe::FilterParser::Comparison' );
+== SQL ==
+('_cod_cell_volume' < "100.0")

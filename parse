@@ -2,8 +2,9 @@
 
 use strict;
 use warnings;
-use OPTiMaDe::FilterParser;
 use Data::Dumper;
+use OPTiMaDe::FilterParser;
+use Scalar::Util qw(blessed);
 
 $Data::Dumper::Sortkeys = 1;
 
@@ -11,5 +12,23 @@ $Data::Dumper::Sortkeys = 1;
 
 for (@ARGV) {
     my $parser = new OPTiMaDe::FilterParser;
-    print Dumper( $parser->Run( $_ ) );
+    my $tree = $parser->Run( $_ );
+    print Dumper $tree;
+    print "== SQL ==\n";
+    print traverse( $tree ) . "\n";
+}
+
+sub traverse
+{
+    my( $node ) = @_;
+    if( blessed $node && $node->can( 'to_SQL' ) ) {
+        return $node->to_SQL;
+    } elsif( blessed $node ) {
+        return '<no SQL representation>';
+    } elsif( ref $node && ref $node eq 'ARRAY' ) {
+        my @parts = map { traverse( $_ ) } @{$node};
+        return '(' . join( ' ', @parts ) . ')';
+    } else {
+        return $node;
+    }
 }

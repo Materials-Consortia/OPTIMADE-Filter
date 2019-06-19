@@ -19,3 +19,5 @@ $VAR1 = [
                    'operator' => 'STARTS WITH'
                  }, 'OPTiMaDe::FilterParser::Comparison' )
         ];
+== SQL ==
+(('prototype_formula' CONTAINS "C2") AND ('prototype_formula' STARTS WITH "A2"))
