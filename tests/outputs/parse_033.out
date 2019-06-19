@@ -1,0 +1,34 @@
+$VAR1 = [
+          [
+            'LENGTH',
+            bless( {
+                     'name' => 'string'
+                   }, 'OPTiMaDe::FilterParser::Identifier' ),
+            '<',
+            '5'
+          ],
+          'AND',
+          [
+            [
+              'LENGTH',
+              bless( {
+                       'name' => 'string'
+                     }, 'OPTiMaDe::FilterParser::Identifier' ),
+              '=',
+              'four'
+            ],
+            'AND',
+            [
+              'LENGTH',
+              bless( {
+                       'name' => 'string'
+                     }, 'OPTiMaDe::FilterParser::Identifier' ),
+              '>=',
+              bless( {
+                       'name' => 'max_length_of_the_string'
+                     }, 'OPTiMaDe::FilterParser::Identifier' )
+            ]
+          ]
+        ];
+== SQL ==
+((LENGTH 'string' < 5) AND ((LENGTH 'string' = four) AND (LENGTH 'string' >= 'max_length_of_the_string')))
