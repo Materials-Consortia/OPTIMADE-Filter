@@ -1,18 +1,21 @@
 $VAR1 = [
-          [
-            bless( {
-                     'name' => 'prototype_formula'
-                   }, 'OPTiMaDe::FilterParser::Identifier' ),
-            'CONTAINS',
-            'C2'
-          ],
+          bless( {
+                   'operands' => [
+                                   bless( {
+                                            'name' => 'prototype_formula'
+                                          }, 'OPTiMaDe::FilterParser::Identifier' ),
+                                   'C2'
+                                 ],
+                   'operator' => 'CONTAINS'
+                 }, 'OPTiMaDe::FilterParser::Comparison' ),
           'AND',
-          [
-            bless( {
-                     'name' => 'prototype_formula'
-                   }, 'OPTiMaDe::FilterParser::Identifier' ),
-            'STARTS',
-            'WITH',
-            'A2'
-          ]
+          bless( {
+                   'operands' => [
+                                   bless( {
+                                            'name' => 'prototype_formula'
+                                          }, 'OPTiMaDe::FilterParser::Identifier' ),
+                                   'A2'
+                                 ],
+                   'operator' => 'STARTS WITH'
+                 }, 'OPTiMaDe::FilterParser::Comparison' )
         ];

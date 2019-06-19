@@ -4,6 +4,7 @@
 
 use warnings;
 
+use OPTiMaDe::FilterParser::Comparison;
 use OPTiMaDe::FilterParser::Identifier;
 use OPTiMaDe::FilterParser::Zip;
 
@@ -119,7 +120,8 @@ identifier_first_comparison: identifier value_op_rhs
                                 }
                            | identifier fuzzy_string_op_rhs
                                 {
-                                    return [ $_[1], @{$_[2]} ];
+                                    $_[2]->unshift_operand( $_[1] );
+                                    return $_[2];
                                 }
                            | identifier set_op_rhs
                                 {
@@ -158,23 +160,33 @@ known_op_rhs: IS KNOWN
 
 fuzzy_string_op_rhs: CONTAINS string
                         {
-                            return [ @_[1..$#_] ];
+                            my $cmp = OPTiMaDe::FilterParser::Comparison->new( $_[1] );
+                            $cmp->push_operand( $_[2] );
+                            return $cmp;
                         }
                    | STARTS string
                         {
-                            return [ @_[1..$#_] ];
+                            my $cmp = OPTiMaDe::FilterParser::Comparison->new( $_[1] );
+                            $cmp->push_operand( $_[2] );
+                            return $cmp;
                         }
                    | STARTS WITH string
                         {
-                            return [ @_[1..$#_] ];
+                            my $cmp = OPTiMaDe::FilterParser::Comparison->new( "$_[1] $_[2]" );
+                            $cmp->push_operand( $_[3] );
+                            return $cmp;
                         }
                    | ENDS string
                         {
-                            return [ @_[1..$#_] ];
+                            my $cmp = OPTiMaDe::FilterParser::Comparison->new( $_[1] );
+                            $cmp->push_operand( $_[2] );
+                            return $cmp;
                         }
                    | ENDS WITH string
                         {
-                            return [ @_[1..$#_] ];
+                            my $cmp = OPTiMaDe::FilterParser::Comparison->new( "$_[1] $_[2]" );
+                            $cmp->push_operand( $_[3] );
+                            return $cmp;
                         }
                    ;
 
