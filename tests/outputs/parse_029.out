@@ -16,20 +16,23 @@ $VAR1 = [
             'ANY',
             [
               [
-                [
-                  [
-                    '>',
-                    '3'
-                  ],
-                  '=',
-                  '6'
-                ],
+                '>',
+                '3'
+              ],
+              [
+                '=',
+                '6'
+              ],
+              [
+                '=',
                 '4'
               ],
-              '!=',
-              '8'
+              [
+                '!=',
+                '8'
+              ]
             ]
           ]
         ];
 == SQL ==
-(('_exmpl_element_counts' HAS < 3) AND ('_exmpl_element_counts' HAS ANY ((((> 3) = 6) 4) != 8)))
+(('_exmpl_element_counts' HAS < 3) AND ('_exmpl_element_counts' HAS ANY ((> 3) (= 6) (= 4) (!= 8))))

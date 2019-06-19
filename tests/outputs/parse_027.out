@@ -6,14 +6,22 @@ $VAR1 = [
           'ONLY',
           [
             [
-              [
-                'H',
-                'He'
-              ],
+              '=',
+              'H'
+            ],
+            [
+              '=',
+              'He'
+            ],
+            [
+              '=',
               'Ga'
             ],
-            'Ta'
+            [
+              '=',
+              'Ta'
+            ]
           ]
         ];
 == SQL ==
-('elements' HAS ONLY (((H He) Ga) Ta))
+('elements' HAS ONLY ((= H) (= He) (= Ga) (= Ta)))

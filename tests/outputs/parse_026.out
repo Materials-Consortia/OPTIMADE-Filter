@@ -16,13 +16,21 @@ $VAR1 = [
               'ALL',
               [
                 [
-                  [
-                    'H',
-                    'He'
-                  ],
+                  '=',
+                  'H'
+                ],
+                [
+                  '=',
+                  'He'
+                ],
+                [
+                  '=',
                   'Ga'
                 ],
-                'Ta'
+                [
+                  '=',
+                  'Ta'
+                ]
               ]
             ],
             'AND',
@@ -35,13 +43,21 @@ $VAR1 = [
                 'EXACTLY',
                 [
                   [
-                    [
-                      'H',
-                      'He'
-                    ],
+                    '=',
+                    'H'
+                  ],
+                  [
+                    '=',
+                    'He'
+                  ],
+                  [
+                    '=',
                     'Ga'
                   ],
-                  'Ta'
+                  [
+                    '=',
+                    'Ta'
+                  ]
                 ]
               ],
               'AND',
@@ -53,17 +69,25 @@ $VAR1 = [
                 'ANY',
                 [
                   [
-                    [
-                      'H',
-                      'He'
-                    ],
+                    '=',
+                    'H'
+                  ],
+                  [
+                    '=',
+                    'He'
+                  ],
+                  [
+                    '=',
                     'Ga'
                   ],
-                  'Ta'
+                  [
+                    '=',
+                    'Ta'
+                  ]
                 ]
               ]
             ]
           ]
         ];
 == SQL ==
-(('elements' HAS H) AND (('elements' HAS ALL (((H He) Ga) Ta)) AND (('elements' HAS EXACTLY (((H He) Ga) Ta)) AND ('elements' HAS ANY (((H He) Ga) Ta)))))
+(('elements' HAS H) AND (('elements' HAS ALL ((= H) (= He) (= Ga) (= Ta))) AND (('elements' HAS EXACTLY ((= H) (= He) (= Ga) (= Ta))) AND ('elements' HAS ANY ((= H) (= He) (= Ga) (= Ta))))))
