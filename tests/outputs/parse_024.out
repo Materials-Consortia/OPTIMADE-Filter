@@ -20,4 +20,4 @@ $VAR1 = [
                  }, 'OPTiMaDe::FilterParser::Comparison' )
         ];
 == SQL ==
-(('prototype_formula' CONTAINS "C2") AND ('prototype_formula' STARTS WITH "A2"))
+(('prototype_formula' LIKE "%C2%") AND ('prototype_formula' LIKE "A2%"))

@@ -33,6 +33,7 @@ sub to_SQL
     my( $self, $delim ) = @_;
     $delim = "'" unless $delim;
 
+    my $operator = $self->{operator};
     my @operands;
     for (@{$self->{operands}}) {
         if( !ref $_ ) {
@@ -41,10 +42,24 @@ sub to_SQL
         }
         push @operands, $_;
     }
+
+    # Currently the 2nd operator is quaranteed to be string
+    if(      $operator eq 'CONTAINS' ) {
+        $operator = 'LIKE';
+        $operands[1] =~ s/^"/"%/;
+        $operands[1] =~ s/"$/%"/;
+    } elsif( $operator =~ /^STARTS( WITH)?$/ ) {
+        $operator = 'LIKE';
+        $operands[1] =~ s/"$/%"/;
+    } elsif( $operator =~ /^ENDS( WITH)?$/ ) {
+        $operator = 'LIKE';
+        $operands[1] =~ s/^"/"%/;
+    }
+
     return '(' .
            (blessed $operands[0] && $operands[0]->can( 'to_SQL' )
                 ? $operands[0]->to_SQL( $delim ) : "$operands[0]") .
-           " $self->{operator} " .
+           " $operator " .
            (blessed $operands[1] && $operands[1]->can( 'to_SQL' )
                 ? $operands[1]->to_SQL( $delim ) : "$operands[1]") .
            ')';
