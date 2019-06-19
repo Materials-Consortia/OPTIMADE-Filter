@@ -1,0 +1,11 @@
+$VAR1 = bless( {
+                 'operands' => [
+                                 bless( {
+                                          'name' => 'list'
+                                        }, 'OPTiMaDe::FilterParser::Identifier' ),
+                                 'string"with"quotes'
+                               ],
+                 'operator' => 'CONTAINS'
+               }, 'OPTiMaDe::FilterParser::Comparison' );
+== SQL ==
+('list' LIKE "%string""with""quotes%")
