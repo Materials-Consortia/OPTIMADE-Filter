@@ -1,0 +1,15 @@
+$VAR1 = bless( {
+                 'functions' => [],
+                 'operands' => [
+                                 bless( {
+                                          'name' => [
+                                                      'species',
+                                                      'chemical_symbols'
+                                                    ]
+                                        }, 'OPTiMaDe::FilterParser::Property' ),
+                                 'Ti'
+                               ],
+                 'operator' => '='
+               }, 'OPTiMaDe::FilterParser::Comparison' );
+== SQL ==
+('species'.'chemical_symbols' = "Ti")
