@@ -3,8 +3,10 @@ $VAR1 = [
                    'functions' => [],
                    'operands' => [
                                    bless( {
-                                            'name' => '_exmpl_aax'
-                                          }, 'OPTiMaDe::FilterParser::Identifier' ),
+                                            'name' => [
+                                                        '_exmpl_aax'
+                                                      ]
+                                          }, 'OPTiMaDe::FilterParser::Property' ),
                                    '+.1e8'
                                  ],
                    'operator' => '<='
@@ -15,8 +17,10 @@ $VAR1 = [
                      'functions' => [],
                      'operands' => [
                                      bless( {
-                                              'name' => 'nelements'
-                                            }, 'OPTiMaDe::FilterParser::Identifier' ),
+                                              'name' => [
+                                                          'nelements'
+                                                        ]
+                                            }, 'OPTiMaDe::FilterParser::Property' ),
                                      '10'
                                    ],
                      'operator' => '>='
@@ -29,8 +33,10 @@ $VAR1 = [
                          'functions' => [],
                          'operands' => [
                                          bless( {
-                                                  'name' => '_exmpl_x'
-                                                }, 'OPTiMaDe::FilterParser::Identifier' ),
+                                                  'name' => [
+                                                              '_exmpl_x'
+                                                            ]
+                                                }, 'OPTiMaDe::FilterParser::Property' ),
                                          'Some string'
                                        ],
                          'operator' => '!='
@@ -42,8 +48,10 @@ $VAR1 = [
                            'functions' => [],
                            'operands' => [
                                            bless( {
-                                                    'name' => '_exmpl_a'
-                                                  }, 'OPTiMaDe::FilterParser::Identifier' ),
+                                                    'name' => [
+                                                                '_exmpl_a'
+                                                              ]
+                                                  }, 'OPTiMaDe::FilterParser::Property' ),
                                            '7'
                                          ],
                            'operator' => '='

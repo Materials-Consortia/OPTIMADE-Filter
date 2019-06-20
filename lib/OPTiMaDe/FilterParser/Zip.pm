@@ -5,19 +5,19 @@ use warnings;
 
 sub new {
     my( $class ) = @_;
-    return bless { identifiers => [],
+    return bless { properties => [],
                    operator => undef,
                    values => [] }, $class;
 }
 
-sub push_identifier {
-    my( $self, $identifier ) = @_;
-    push @{$self->{identifiers}}, $identifier;
+sub push_property {
+    my( $self, $property ) = @_;
+    push @{$self->{properties}}, $property;
 }
 
-sub unshift_identifier {
-    my( $self, $identifier ) = @_;
-    unshift @{$self->{identifiers}}, $identifier;
+sub unshift_property {
+    my( $self, $property ) = @_;
+    unshift @{$self->{properties}}, $property;
 }
 
 sub set_operator {

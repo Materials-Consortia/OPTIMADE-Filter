@@ -3,8 +3,10 @@ $VAR1 = [
                    'functions' => [],
                    'operands' => [
                                    bless( {
-                                            'name' => 'prototype_formula'
-                                          }, 'OPTiMaDe::FilterParser::Identifier' ),
+                                            'name' => [
+                                                        'prototype_formula'
+                                                      ]
+                                          }, 'OPTiMaDe::FilterParser::Property' ),
                                    'C2'
                                  ],
                    'operator' => 'CONTAINS'
@@ -14,8 +16,10 @@ $VAR1 = [
                    'functions' => [],
                    'operands' => [
                                    bless( {
-                                            'name' => 'prototype_formula'
-                                          }, 'OPTiMaDe::FilterParser::Identifier' ),
+                                            'name' => [
+                                                        'prototype_formula'
+                                                      ]
+                                          }, 'OPTiMaDe::FilterParser::Property' ),
                                    'A2'
                                  ],
                    'operator' => 'STARTS WITH'

@@ -2,8 +2,10 @@ $VAR1 = bless( {
                  'functions' => [],
                  'operands' => [
                                  bless( {
-                                          'name' => '_exmpl_some_string_property'
-                                        }, 'OPTiMaDe::FilterParser::Identifier' ),
+                                          'name' => [
+                                                      '_exmpl_some_string_property'
+                                                    ]
+                                        }, 'OPTiMaDe::FilterParser::Property' ),
                                  '42'
                                ],
                  'operator' => '='

@@ -1,9 +1,11 @@
 $VAR1 = [
           bless( {
-                   'identifier' => bless( {
-                                            'name' => '_exmpl_element_counts'
-                                          }, 'OPTiMaDe::FilterParser::Identifier' ),
                    'operator' => 'HAS',
+                   'property' => bless( {
+                                          'name' => [
+                                                      '_exmpl_element_counts'
+                                                    ]
+                                        }, 'OPTiMaDe::FilterParser::Property' ),
                    'values' => [
                                  '<',
                                  '3'
@@ -11,10 +13,12 @@ $VAR1 = [
                  }, 'OPTiMaDe::FilterParser::ListComparison' ),
           'AND',
           bless( {
-                   'identifier' => bless( {
-                                            'name' => '_exmpl_element_counts'
-                                          }, 'OPTiMaDe::FilterParser::Identifier' ),
                    'operator' => 'HAS ANY',
+                   'property' => bless( {
+                                          'name' => [
+                                                      '_exmpl_element_counts'
+                                                    ]
+                                        }, 'OPTiMaDe::FilterParser::Property' ),
                    'values' => [
                                  [
                                    '>',

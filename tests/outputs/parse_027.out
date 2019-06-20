@@ -1,8 +1,10 @@
 $VAR1 = bless( {
-                 'identifier' => bless( {
-                                          'name' => 'elements'
-                                        }, 'OPTiMaDe::FilterParser::Identifier' ),
                  'operator' => 'HAS ONLY',
+                 'property' => bless( {
+                                        'name' => [
+                                                    'elements'
+                                                  ]
+                                      }, 'OPTiMaDe::FilterParser::Property' ),
                  'values' => [
                                [
                                  '=',

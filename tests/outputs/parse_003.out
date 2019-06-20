@@ -2,8 +2,10 @@ $VAR1 = bless( {
                  'functions' => [],
                  'operands' => [
                                  bless( {
-                                          'name' => '_cod_cell_volume'
-                                        }, 'OPTiMaDe::FilterParser::Identifier' ),
+                                          'name' => [
+                                                      '_cod_cell_volume'
+                                                    ]
+                                        }, 'OPTiMaDe::FilterParser::Property' ),
                                  '100.0'
                                ],
                  'operator' => '<'

@@ -1,8 +1,10 @@
 $VAR1 = [
           [
             bless( {
-                     'name' => 'chemical_formula_hill'
-                   }, 'OPTiMaDe::FilterParser::Identifier' ),
+                     'name' => [
+                                 'chemical_formula_hill'
+                               ]
+                   }, 'OPTiMaDe::FilterParser::Property' ),
             'IS',
             'KNOWN'
           ],
@@ -11,8 +13,10 @@ $VAR1 = [
             'NOT',
             [
               bless( {
-                       'name' => 'chemical_formula_anonymous'
-                     }, 'OPTiMaDe::FilterParser::Identifier' ),
+                       'name' => [
+                                   'chemical_formula_anonymous'
+                                 ]
+                     }, 'OPTiMaDe::FilterParser::Property' ),
               'IS',
               'UNKNOWN'
             ]

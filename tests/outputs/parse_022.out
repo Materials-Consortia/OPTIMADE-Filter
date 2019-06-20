@@ -5,11 +5,15 @@ $VAR1 = [
                      'functions' => [],
                      'operands' => [
                                      bless( {
-                                              'name' => '_exmpl_a'
-                                            }, 'OPTiMaDe::FilterParser::Identifier' ),
+                                              'name' => [
+                                                          '_exmpl_a'
+                                                        ]
+                                            }, 'OPTiMaDe::FilterParser::Property' ),
                                      bless( {
-                                              'name' => '_exmpl_b'
-                                            }, 'OPTiMaDe::FilterParser::Identifier' )
+                                              'name' => [
+                                                          '_exmpl_b'
+                                                        ]
+                                            }, 'OPTiMaDe::FilterParser::Property' )
                                    ],
                      'operator' => '>'
                    }, 'OPTiMaDe::FilterParser::Comparison' )
@@ -19,8 +23,10 @@ $VAR1 = [
                    'functions' => [],
                    'operands' => [
                                    bless( {
-                                            'name' => '_exmpl_x'
-                                          }, 'OPTiMaDe::FilterParser::Identifier' ),
+                                            'name' => [
+                                                        '_exmpl_x'
+                                                      ]
+                                          }, 'OPTiMaDe::FilterParser::Property' ),
                                    '0'
                                  ],
                    'operator' => '>'

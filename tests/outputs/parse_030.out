@@ -1,16 +1,22 @@
 $VAR1 = bless( {
-                 'identifiers' => [
-                                    bless( {
-                                             'name' => 'elements'
-                                           }, 'OPTiMaDe::FilterParser::Identifier' ),
-                                    bless( {
-                                             'name' => '_exmpl_element_counts'
-                                           }, 'OPTiMaDe::FilterParser::Identifier' ),
-                                    bless( {
-                                             'name' => '_exmpl_element_weights'
-                                           }, 'OPTiMaDe::FilterParser::Identifier' )
-                                  ],
                  'operator' => 'HAS ANY',
+                 'properties' => [
+                                   bless( {
+                                            'name' => [
+                                                        'elements'
+                                                      ]
+                                          }, 'OPTiMaDe::FilterParser::Property' ),
+                                   bless( {
+                                            'name' => [
+                                                        '_exmpl_element_counts'
+                                                      ]
+                                          }, 'OPTiMaDe::FilterParser::Property' ),
+                                   bless( {
+                                            'name' => [
+                                                        '_exmpl_element_weights'
+                                                      ]
+                                          }, 'OPTiMaDe::FilterParser::Property' )
+                                 ],
                  'values' => [
                                [
                                  [

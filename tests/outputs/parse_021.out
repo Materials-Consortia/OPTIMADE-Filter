@@ -3,8 +3,10 @@ $VAR1 = bless( {
                  'operands' => [
                                  '5',
                                  bless( {
-                                          'name' => '_exmpl_a'
-                                        }, 'OPTiMaDe::FilterParser::Identifier' )
+                                          'name' => [
+                                                      '_exmpl_a'
+                                                    ]
+                                        }, 'OPTiMaDe::FilterParser::Property' )
                                ],
                  'operator' => '<'
                }, 'OPTiMaDe::FilterParser::Comparison' );

@@ -2,11 +2,15 @@ $VAR1 = bless( {
                  'functions' => [],
                  'operands' => [
                                  bless( {
-                                          'name' => 'key'
-                                        }, 'OPTiMaDe::FilterParser::Identifier' ),
+                                          'name' => [
+                                                      'key'
+                                                    ]
+                                        }, 'OPTiMaDe::FilterParser::Property' ),
                                  bless( {
-                                          'name' => 'value'
-                                        }, 'OPTiMaDe::FilterParser::Identifier' )
+                                          'name' => [
+                                                      'value'
+                                                    ]
+                                        }, 'OPTiMaDe::FilterParser::Property' )
                                ],
                  'operator' => '='
                }, 'OPTiMaDe::FilterParser::Comparison' );

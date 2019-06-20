@@ -6,8 +6,10 @@ $VAR1 = [
                        'functions' => [],
                        'operands' => [
                                        bless( {
-                                                'name' => 'chemical_formula'
-                                              }, 'OPTiMaDe::FilterParser::Identifier' ),
+                                                'name' => [
+                                                            'chemical_formula'
+                                                          ]
+                                              }, 'OPTiMaDe::FilterParser::Property' ),
                                        'Al'
                                      ],
                        'operator' => '='
@@ -17,8 +19,10 @@ $VAR1 = [
                        'functions' => [],
                        'operands' => [
                                        bless( {
-                                                'name' => 'prototype_formula'
-                                              }, 'OPTiMaDe::FilterParser::Identifier' ),
+                                                'name' => [
+                                                            'prototype_formula'
+                                                          ]
+                                              }, 'OPTiMaDe::FilterParser::Property' ),
                                        'A'
                                      ],
                        'operator' => '='
@@ -30,8 +34,10 @@ $VAR1 = [
                        'functions' => [],
                        'operands' => [
                                        bless( {
-                                                'name' => 'prototype_formula'
-                                              }, 'OPTiMaDe::FilterParser::Identifier' ),
+                                                'name' => [
+                                                            'prototype_formula'
+                                                          ]
+                                              }, 'OPTiMaDe::FilterParser::Property' ),
                                        'H2O'
                                      ],
                        'operator' => '='
@@ -43,8 +49,10 @@ $VAR1 = [
                          'functions' => [],
                          'operands' => [
                                          bless( {
-                                                  'name' => 'chemical_formula'
-                                                }, 'OPTiMaDe::FilterParser::Identifier' ),
+                                                  'name' => [
+                                                              'chemical_formula'
+                                                            ]
+                                                }, 'OPTiMaDe::FilterParser::Property' ),
                                          'Ti'
                                        ],
                          'operator' => '='

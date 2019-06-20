@@ -2,8 +2,10 @@ $VAR1 = bless( {
                  'functions' => [],
                  'operands' => [
                                  bless( {
-                                          'name' => 'list'
-                                        }, 'OPTiMaDe::FilterParser::Identifier' ),
+                                          'name' => [
+                                                      'list'
+                                                    ]
+                                        }, 'OPTiMaDe::FilterParser::Property' ),
                                  'string"with"quotes'
                                ],
                  'operator' => 'CONTAINS'

@@ -3,8 +3,10 @@ $VAR1 = [
                    'functions' => [],
                    'operands' => [
                                    bless( {
-                                            'name' => '_mp_bandgap'
-                                          }, 'OPTiMaDe::FilterParser::Identifier' ),
+                                            'name' => [
+                                                        '_mp_bandgap'
+                                                      ]
+                                          }, 'OPTiMaDe::FilterParser::Property' ),
                                    '5.0'
                                  ],
                    'operator' => '>'
@@ -14,8 +16,10 @@ $VAR1 = [
                    'functions' => [],
                    'operands' => [
                                    bless( {
-                                            'name' => '_cod_molecular_weight'
-                                          }, 'OPTiMaDe::FilterParser::Identifier' ),
+                                            'name' => [
+                                                        '_cod_molecular_weight'
+                                                      ]
+                                          }, 'OPTiMaDe::FilterParser::Property' ),
                                    '350'
                                  ],
                    'operator' => '<'

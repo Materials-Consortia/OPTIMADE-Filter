@@ -1,9 +1,11 @@
 $VAR1 = [
           bless( {
-                   'identifier' => bless( {
-                                            'name' => 'elements'
-                                          }, 'OPTiMaDe::FilterParser::Identifier' ),
                    'operator' => 'HAS',
+                   'property' => bless( {
+                                          'name' => [
+                                                      'elements'
+                                                    ]
+                                        }, 'OPTiMaDe::FilterParser::Property' ),
                    'values' => [
                                  '=',
                                  'H'
@@ -12,10 +14,12 @@ $VAR1 = [
           'AND',
           [
             bless( {
-                     'identifier' => bless( {
-                                              'name' => 'elements'
-                                            }, 'OPTiMaDe::FilterParser::Identifier' ),
                      'operator' => 'HAS ALL',
+                     'property' => bless( {
+                                            'name' => [
+                                                        'elements'
+                                                      ]
+                                          }, 'OPTiMaDe::FilterParser::Property' ),
                      'values' => [
                                    [
                                      '=',
@@ -38,10 +42,12 @@ $VAR1 = [
             'AND',
             [
               bless( {
-                       'identifier' => bless( {
-                                                'name' => 'elements'
-                                              }, 'OPTiMaDe::FilterParser::Identifier' ),
                        'operator' => 'HAS EXACTLY',
+                       'property' => bless( {
+                                              'name' => [
+                                                          'elements'
+                                                        ]
+                                            }, 'OPTiMaDe::FilterParser::Property' ),
                        'values' => [
                                      [
                                        '=',
@@ -63,10 +69,12 @@ $VAR1 = [
                      }, 'OPTiMaDe::FilterParser::ListComparison' ),
               'AND',
               bless( {
-                       'identifier' => bless( {
-                                                'name' => 'elements'
-                                              }, 'OPTiMaDe::FilterParser::Identifier' ),
                        'operator' => 'HAS ANY',
+                       'property' => bless( {
+                                              'name' => [
+                                                          'elements'
+                                                        ]
+                                            }, 'OPTiMaDe::FilterParser::Property' ),
                        'values' => [
                                      [
                                        '=',

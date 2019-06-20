@@ -6,14 +6,14 @@ use Scalar::Util qw(blessed);
 
 sub new {
     my( $class, $operator ) = @_;
-    return bless { identifier => undef,
+    return bless { property => undef,
                    operator => $operator,
                    values => undef }, $class;
 }
 
-sub set_identifier {
-    my( $self, $identifier ) = @_;
-    $self->{identifier} = $identifier;
+sub set_property {
+    my( $self, $property ) = @_;
+    $self->{property} = $property;
 }
 
 sub set_operator {

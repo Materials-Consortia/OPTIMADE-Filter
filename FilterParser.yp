@@ -5,8 +5,8 @@
 use warnings;
 
 use OPTiMaDe::FilterParser::Comparison;
-use OPTiMaDe::FilterParser::Identifier;
 use OPTiMaDe::FilterParser::ListComparison;
+use OPTiMaDe::FilterParser::Property;
 use OPTiMaDe::FilterParser::Zip;
 
 our $OPTiMaDe_VERSION = 'v0.9.8-develop';
@@ -25,7 +25,7 @@ filter: expression ;
 
 constant: string | number ;
 
-value: string | number | identifier ;
+value: string | number | property ;
 
 value_list: value
             {
@@ -114,30 +114,30 @@ expression_phrase: comparison
                     }
                  ;
 
-comparison: constant_first_comparison | identifier_first_comparison ;
+comparison: constant_first_comparison | property_first_comparison ;
 
-identifier_first_comparison: identifier value_op_rhs
+property_first_comparison: property value_op_rhs
                                 {
                                     $_[2]->unshift_operand( $_[1] );
                                     return $_[2];
                                 }
-                           | identifier known_op_rhs
+                           | property known_op_rhs
                                 {
                                     return [ $_[1], @{$_[2]} ];
                                 }
-                           | identifier fuzzy_string_op_rhs
+                           | property fuzzy_string_op_rhs
                                 {
                                     $_[2]->unshift_operand( $_[1] );
                                     return $_[2];
                                 }
-                           | identifier set_op_rhs
+                           | property set_op_rhs
                                 {
-                                    $_[2]->set_identifier( $_[1] );
+                                    $_[2]->set_property( $_[1] );
                                     return $_[2];
                                 }
-                           | identifier set_zip_op_rhs
+                           | property set_zip_op_rhs
                                 {
-                                    $_[2]->unshift_identifier( $_[1] );
+                                    $_[2]->unshift_property( $_[1] );
                                     return $_[2];
                                 }
                            ;
@@ -239,31 +239,31 @@ set_op_rhs: HAS value
             }
           ;
 
-set_zip_op_rhs: identifier_zip_addon HAS value_zip
+set_zip_op_rhs: property_zip_addon HAS value_zip
                 {
                     $_[1]->set_operator( $_[2] );
                     $_[1]->set_values( $_[3] );
                     return $_[1];
                 }
-              | identifier_zip_addon HAS ONLY value_zip_list
+              | property_zip_addon HAS ONLY value_zip_list
                 {
                     $_[1]->set_operator( "$_[2] $_[3]" );
                     $_[1]->set_values( $_[4] );
                     return $_[1];
                 }
-              | identifier_zip_addon HAS ALL value_zip_list
+              | property_zip_addon HAS ALL value_zip_list
                 {
                     $_[1]->set_operator( "$_[2] $_[3]" );
                     $_[1]->set_values( $_[4] );
                     return $_[1];
                 }
-              | identifier_zip_addon HAS EXACTLY value_zip_list
+              | property_zip_addon HAS EXACTLY value_zip_list
                 {
                     $_[1]->set_operator( "$_[2] $_[3]" );
                     $_[1]->set_values( $_[4] );
                     return $_[1];
                 }
-              | identifier_zip_addon HAS ANY value_zip_list
+              | property_zip_addon HAS ANY value_zip_list
                 {
                     $_[1]->set_operator( "$_[2] $_[3]" );
                     $_[1]->set_values( $_[4] );
@@ -271,7 +271,7 @@ set_zip_op_rhs: identifier_zip_addon HAS value_zip
                 }
               ;
 
-length_comparison: LENGTH identifier operator value
+length_comparison: LENGTH property operator value
                     {
                         my $cmp = OPTiMaDe::FilterParser::Comparison->new( $_[3] );
                         $cmp->push_operand( $_[2] );
@@ -281,24 +281,41 @@ length_comparison: LENGTH identifier operator value
                     }
                  ;
 
-identifier_zip_addon: colon identifier
+property_zip_addon: colon property
                         {
                             my $zip = OPTiMaDe::FilterParser::Zip->new;
-                            $zip->push_identifier( $_[2] );
+                            $zip->push_property( $_[2] );
                             return $zip;
                         }
-                    | identifier_zip_addon colon identifier
+                    | property_zip_addon colon property
                         {
-                            $_[1]->push_identifier( $_[3] );
+                            $_[1]->push_property( $_[3] );
                             return $_[1];
                         }
                     ;
+
+# Property
+
+property: identifier
+            {
+                my $id = OPTiMaDe::FilterParser::Property->new;
+                $id->push_identifier( $_[1] );
+                return $id;
+            }
+        | property dot identifier
+            {
+                $_[1]->push_identifier( $_[3] );
+                return $_[1];
+            }
+        ;
 
 # Separators
 
 openingbrace: '(' ;
 
 closingbrace: ')' ;
+
+dot: '.' ;
 
 comma: ',' ;
 
@@ -390,7 +407,7 @@ sub _Lexer
     # Handling identifiers
     if( $self->YYData->{INPUT} =~ s/^([a-z_][a-z0-9_]*)// ) {
         $self->{USER}{CHARNO} += length( $1 );
-        return( 'identifier', OPTiMaDe::FilterParser::Identifier->new( $1 ) );
+        return( 'identifier', $1 );
     }
 
     # Handling boolean relations
