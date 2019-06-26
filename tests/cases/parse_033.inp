@@ -1,1 +1,1 @@
-LENGTH string < 5 AND LENGTH string = "four" AND LENGTH string >= max_length_of_the_string
+LENGTH list < 5 AND LENGTH list = "four" AND LENGTH list >= max_length_of_the_list

@@ -273,10 +273,9 @@ set_zip_op_rhs: property_zip_addon HAS value_zip
 
 length_comparison: LENGTH property operator value
                     {
-                        my $cmp = OPTiMaDe::FilterParser::Comparison->new( $_[3] );
-                        $cmp->push_operand( $_[2] );
-                        $cmp->push_operand( $_[4] );
-                        $cmp->set_function( 0, $_[1] );
+                        my $cmp = OPTiMaDe::FilterParser::ListComparison->new( $_[1] );
+                        $cmp->set_property( $_[2] );
+                        $cmp->set_values( [ $_[3], $_[4] ] );
                         return $cmp;
                     }
                  ;
