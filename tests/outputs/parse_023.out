@@ -1,5 +1,4 @@
 $VAR1 = bless( {
-                 'functions' => [],
                  'operands' => [
                                  '5',
                                  '7'

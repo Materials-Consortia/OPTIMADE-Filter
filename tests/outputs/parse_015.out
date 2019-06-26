@@ -2,7 +2,6 @@ $VAR1 = [
           [
             'NOT',
             bless( {
-                     'functions' => [],
                      'operands' => [
                                      bless( {
                                               'name' => [
@@ -22,7 +21,6 @@ $VAR1 = [
           [
             'NOT',
             bless( {
-                     'functions' => [],
                      'operands' => [
                                      bless( {
                                               'name' => [

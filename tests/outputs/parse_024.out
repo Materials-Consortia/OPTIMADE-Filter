@@ -1,6 +1,5 @@
 $VAR1 = [
           bless( {
-                   'functions' => [],
                    'operands' => [
                                    bless( {
                                             'name' => [
@@ -13,7 +12,6 @@ $VAR1 = [
                  }, 'OPTiMaDe::FilterParser::Comparison' ),
           'AND',
           bless( {
-                   'functions' => [],
                    'operands' => [
                                    bless( {
                                             'name' => [

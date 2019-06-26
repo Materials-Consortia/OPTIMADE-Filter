@@ -6,9 +6,7 @@ use Scalar::Util qw(blessed);
 
 sub new {
     my( $class, $operator ) = @_;
-    return bless { operands  => [],
-                   functions => [],
-                   operator  => $operator }, $class;
+    return bless { operands  => [], operator  => $operator }, $class;
 }
 
 sub set_operator {
@@ -30,12 +28,6 @@ sub unshift_operand
     unshift @{$self->{operands}}, $operand;
 }
 
-sub set_function
-{
-    my( $self, $index, $function ) = @_;
-    $self->{functions}[$index] = $function;
-}
-
 sub to_SQL
 {
     my( $self, $delim ) = @_;
@@ -50,9 +42,6 @@ sub to_SQL
         } else {
             $arg =~ s/"/""/g;
             $arg = "\"$arg\"";
-        }
-        if( $self->{functions}[$i] ) {
-            $arg = sprintf "$self->{functions}[$i]( %s )", $arg;
         }
         push @operands, $arg;
     }

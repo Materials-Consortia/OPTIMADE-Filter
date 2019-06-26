@@ -1,6 +1,5 @@
 $VAR1 = [
           bless( {
-                   'functions' => [],
                    'operands' => [
                                    bless( {
                                             'name' => [
@@ -14,7 +13,6 @@ $VAR1 = [
           'OR',
           [
             bless( {
-                     'functions' => [],
                      'operands' => [
                                      bless( {
                                               'name' => [
@@ -30,7 +28,6 @@ $VAR1 = [
               'NOT',
               [
                 bless( {
-                         'functions' => [],
                          'operands' => [
                                          bless( {
                                                   'name' => [
@@ -45,7 +42,6 @@ $VAR1 = [
                 [
                   'NOT',
                   bless( {
-                           'functions' => [],
                            'operands' => [
                                            bless( {
                                                     'name' => [
