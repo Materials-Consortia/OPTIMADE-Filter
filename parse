@@ -8,6 +8,13 @@ use Scalar::Util qw(blessed);
 
 $Data::Dumper::Sortkeys = 1;
 
+my %options = map { $_ => 1 } grep { /^--/ } @ARGV;
+@ARGV = grep { !/^--/ } @ARGV;
+
+if( $options{'--allow-LIKE-operator'} ) {
+    $OPTiMaDe::FilterParser::allow_LIKE_operator = 1;
+}
+
 @ARGV = ( '-' ) unless @ARGV;
 
 for (@ARGV) {
