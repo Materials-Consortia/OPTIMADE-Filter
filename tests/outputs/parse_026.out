@@ -42,7 +42,7 @@ $VAR1 = [
             'AND',
             [
               bless( {
-                       'operator' => 'HAS EXACTLY',
+                       'operator' => 'HAS ONLY',
                        'property' => bless( {
                                               'name' => [
                                                           'elements'

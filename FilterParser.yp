@@ -227,12 +227,6 @@ set_op_rhs: HAS value
                 $lc->set_values( $_[3] );
                 return $lc;
             }
-          | HAS EXACTLY value_list
-            {
-                my $lc = OPTiMaDe::FilterParser::ListComparison->new( "$_[1] $_[2]" );
-                $lc->set_values( $_[3] );
-                return $lc;
-            }
           | HAS ANY value_list
             {
                 my $lc = OPTiMaDe::FilterParser::ListComparison->new( "$_[1] $_[2]" );
@@ -260,12 +254,6 @@ set_zip_op_rhs: property_zip_addon HAS value_zip
                     return $_[1];
                 }
               | property_zip_addon HAS ALL value_zip_list
-                {
-                    $_[1]->set_operator( "$_[2] $_[3]" );
-                    $_[1]->set_values( $_[4] );
-                    return $_[1];
-                }
-              | property_zip_addon HAS EXACTLY value_zip_list
                 {
                     $_[1]->set_operator( "$_[2] $_[3]" );
                     $_[1]->set_values( $_[4] );
@@ -421,7 +409,7 @@ sub _Lexer
     if( $self->YYData->{INPUT} =~ s/^(AND|NOT|OR|
                                       IS|UNKNOWN|KNOWN|
                                       CONTAINS|STARTS|ENDS|WITH|
-                                      LENGTH|HAS|ALL|ONLY|EXACTLY|ANY)//x ) {
+                                      LENGTH|HAS|ALL|ONLY|ANY)//x ) {
         $self->{USER}{CHARNO} += length( $1 );
         return( $1, $1 );
     }
