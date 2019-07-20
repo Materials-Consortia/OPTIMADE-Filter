@@ -9,8 +9,8 @@ use OPTiMaDe::FilterParser::ListComparison;
 use OPTiMaDe::FilterParser::Property;
 use OPTiMaDe::FilterParser::Zip;
 
-our $VERSION = '0.1.0';
-our $OPTiMaDe_VERSION = 'v0.9.8-develop';
+our $VERSION = '0.1.0-dev';
+our $OPTiMaDe_VERSION = '0.10.0';
 
 our $allow_LIKE_operator = 0;
 
