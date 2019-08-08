@@ -1,0 +1,9 @@
+0.1.1-wip 2019-08-08
+ 
+    [ FIX ]
+    - Combining 'IS' and 'KNOWN'/'UNKNOWN' lexems together.
+    - Fixing 'IS KNOWN'/'IS UNKNOWN' translation to SQL.
+ 
+0.1.0 2019-07-20
+
+    - Initial release.
