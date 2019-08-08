@@ -35,6 +35,10 @@ sub traverse
     } elsif( ref $node && ref $node eq 'ARRAY' ) {
         my @parts = map { traverse( $_ ) } @{$node};
         return '(' . join( ' ', @parts ) . ')';
+    } elsif( $node eq 'IS KNOWN' ) {
+        $node = 'IS NOT NULL';
+    } elsif( $node eq 'IS UNKNOWN' ) {
+        $node = 'IS NULL';
     } else {
         return $node;
     }
