@@ -5,8 +5,7 @@ $VAR1 = [
                                  'chemical_formula_hill'
                                ]
                    }, 'OPTiMaDe::FilterParser::Property' ),
-            'IS',
-            'KNOWN'
+            'IS KNOWN'
           ],
           'AND',
           [
@@ -17,8 +16,7 @@ $VAR1 = [
                                    'chemical_formula_anonymous'
                                  ]
                      }, 'OPTiMaDe::FilterParser::Property' ),
-              'IS',
-              'UNKNOWN'
+              'IS UNKNOWN'
             ]
           ]
         ];
