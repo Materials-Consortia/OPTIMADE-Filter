@@ -1,8 +1,10 @@
-0.1.1-wip 2019-08-08
+0.2.0 2019-08-12
  
-    [ FIX ]
     - Combining 'IS' and 'KNOWN'/'UNKNOWN' lexems together.
     - Fixing 'IS KNOWN'/'IS UNKNOWN' translation to SQL.
+    - Implementing backwards translation to the string representation.
+    - Unifying layout of parsed lists.
+    - Adding roundtrip tests.
  
 0.1.0 2019-07-20
 
