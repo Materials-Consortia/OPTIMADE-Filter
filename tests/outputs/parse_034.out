@@ -10,5 +10,7 @@ $VAR1 = bless( {
                                ],
                  'operator' => '='
                }, 'OPTiMaDe::FilterParser::Comparison' );
+== Filter ==
+(species.chemical_symbols = "Ti")
 == SQL ==
 ('species'.'chemical_symbols' = "Ti")

@@ -23,5 +23,7 @@ $VAR1 = [
                    'operator' => '<'
                  }, 'OPTiMaDe::FilterParser::Comparison' )
         ];
+== Filter ==
+((_mp_bandgap > "5.0") AND (_cod_molecular_weight < "350"))
 == SQL ==
 (('_mp_bandgap' > "5.0") AND ('_cod_molecular_weight' < "350"))

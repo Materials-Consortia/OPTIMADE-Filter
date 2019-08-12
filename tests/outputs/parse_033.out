@@ -7,8 +7,10 @@ $VAR1 = [
                                                     ]
                                         }, 'OPTiMaDe::FilterParser::Property' ),
                    'values' => [
-                                 '<',
-                                 '5'
+                                 [
+                                   '<',
+                                   '5'
+                                 ]
                                ]
                  }, 'OPTiMaDe::FilterParser::ListComparison' ),
           'AND',
@@ -21,8 +23,10 @@ $VAR1 = [
                                                       ]
                                           }, 'OPTiMaDe::FilterParser::Property' ),
                      'values' => [
-                                   '=',
-                                   'four'
+                                   [
+                                     '=',
+                                     'four'
+                                   ]
                                  ]
                    }, 'OPTiMaDe::FilterParser::ListComparison' ),
             'AND',
@@ -34,15 +38,19 @@ $VAR1 = [
                                                       ]
                                           }, 'OPTiMaDe::FilterParser::Property' ),
                      'values' => [
-                                   '>=',
-                                   bless( {
-                                            'name' => [
-                                                        'max_length_of_the_list'
-                                                      ]
-                                          }, 'OPTiMaDe::FilterParser::Property' )
+                                   [
+                                     '>=',
+                                     bless( {
+                                              'name' => [
+                                                          'max_length_of_the_list'
+                                                        ]
+                                            }, 'OPTiMaDe::FilterParser::Property' )
+                                   ]
                                  ]
                    }, 'OPTiMaDe::FilterParser::ListComparison' )
           ]
         ];
+== Filter ==
+((LENGTH list < "5") AND ((LENGTH list = "four") AND (LENGTH list >= max_length_of_the_list)))
 == SQL ==
 (<no SQL representation> AND (<no SQL representation> AND <no SQL representation>))

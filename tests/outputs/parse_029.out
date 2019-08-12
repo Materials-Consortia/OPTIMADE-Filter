@@ -7,8 +7,10 @@ $VAR1 = [
                                                     ]
                                         }, 'OPTiMaDe::FilterParser::Property' ),
                    'values' => [
-                                 '<',
-                                 '3'
+                                 [
+                                   '<',
+                                   '3'
+                                 ]
                                ]
                  }, 'OPTiMaDe::FilterParser::ListComparison' ),
           'AND',
@@ -39,5 +41,7 @@ $VAR1 = [
                                ]
                  }, 'OPTiMaDe::FilterParser::ListComparison' )
         ];
+== Filter ==
+((_exmpl_element_counts HAS < "3") AND (_exmpl_element_counts HAS ANY > "3", = "6", = "4", != "8"))
 == SQL ==
 (<no SQL representation> AND <no SQL representation>)

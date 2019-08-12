@@ -24,5 +24,7 @@ $VAR1 = bless( {
                                ]
                              ]
                }, 'OPTiMaDe::FilterParser::ListComparison' );
+== Filter ==
+(elements HAS ONLY = "H", = "He", = "Ga", = "Ta")
 == SQL ==
 <no SQL representation>

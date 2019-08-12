@@ -9,5 +9,7 @@ $VAR1 = bless( {
                                ],
                  'operator' => '='
                }, 'OPTiMaDe::FilterParser::Comparison' );
+== Filter ==
+(field = "!#$%&'()*+,-./:;<=>?@[]^`{|}~%")
 == SQL ==
 ('field' = "!#$%&'()*+,-./:;<=>?@[]^`{|}~%")

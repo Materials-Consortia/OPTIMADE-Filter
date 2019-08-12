@@ -30,5 +30,7 @@ $VAR1 = [
                    'operator' => '>'
                  }, 'OPTiMaDe::FilterParser::Comparison' )
         ];
+== Filter ==
+((NOT (a > b)) AND (x > "0"))
 == SQL ==
 ((NOT ('a' > 'b')) AND ('x' > "0"))

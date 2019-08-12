@@ -16,5 +16,7 @@ $VAR1 = [
                    'operator' => '='
                  }, 'OPTiMaDe::FilterParser::Comparison' )
         ];
+== Filter ==
+(NOT (ice = val))
 == SQL ==
 (NOT ('ice' = 'val'))

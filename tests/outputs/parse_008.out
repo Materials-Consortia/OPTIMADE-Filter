@@ -13,5 +13,7 @@ $VAR1 = bless( {
                                ],
                  'operator' => '='
                }, 'OPTiMaDe::FilterParser::Comparison' );
+== Filter ==
+(key = value)
 == SQL ==
 ('key' = 'value')

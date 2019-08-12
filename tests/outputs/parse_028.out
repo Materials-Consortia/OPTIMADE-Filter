@@ -14,10 +14,15 @@ $VAR1 = [
                                             }, 'OPTiMaDe::FilterParser::Property' )
                                    ],
                    'values' => [
-                                 'H',
                                  [
-                                   undef,
-                                   '6'
+                                   [
+                                     '=',
+                                     'H'
+                                   ],
+                                   [
+                                     '=',
+                                     '6'
+                                   ]
                                  ]
                                ]
                  }, 'OPTiMaDe::FilterParser::Zip' ),
@@ -39,16 +44,22 @@ $VAR1 = [
                                      ],
                      'values' => [
                                    [
-                                     'H',
                                      [
-                                       undef,
+                                       '=',
+                                       'H'
+                                     ],
+                                     [
+                                       '=',
                                        '6'
                                      ]
                                    ],
                                    [
-                                     'He',
                                      [
-                                       undef,
+                                       '=',
+                                       'He'
+                                     ],
+                                     [
+                                       '=',
                                        '7'
                                      ]
                                    ]
@@ -71,10 +82,15 @@ $VAR1 = [
                                                 }, 'OPTiMaDe::FilterParser::Property' )
                                        ],
                        'values' => [
-                                     'H',
                                      [
-                                       undef,
-                                       '6'
+                                       [
+                                         '=',
+                                         'H'
+                                       ],
+                                       [
+                                         '=',
+                                         '6'
+                                       ]
                                      ]
                                    ]
                      }, 'OPTiMaDe::FilterParser::Zip' ),
@@ -96,16 +112,22 @@ $VAR1 = [
                                          ],
                          'values' => [
                                        [
-                                         'H',
                                          [
-                                           undef,
+                                           '=',
+                                           'H'
+                                         ],
+                                         [
+                                           '=',
                                            '6'
                                          ]
                                        ],
                                        [
-                                         'He',
                                          [
-                                           undef,
+                                           '=',
+                                           'He'
+                                         ],
+                                         [
+                                           '=',
                                            '7'
                                          ]
                                        ]
@@ -128,16 +150,22 @@ $VAR1 = [
                                          ],
                          'values' => [
                                        [
-                                         'H',
                                          [
-                                           undef,
+                                           '=',
+                                           'H'
+                                         ],
+                                         [
+                                           '=',
                                            '6'
                                          ]
                                        ],
                                        [
-                                         'He',
                                          [
-                                           undef,
+                                           '=',
+                                           'He'
+                                         ],
+                                         [
+                                           '=',
                                            '7'
                                          ]
                                        ]
@@ -147,5 +175,7 @@ $VAR1 = [
             ]
           ]
         ];
+== Filter ==
+((elements:_exmpl_element_counts HAS = "H" : = "6") AND ((elements:_exmpl_element_counts HAS ALL = "H" : = "6", = "He" : = "7") AND ((elements:_exmpl_element_counts HAS ONLY = "H" : = "6") AND ((elements:_exmpl_element_counts HAS ANY = "H" : = "6", = "He" : = "7") AND (elements:_exmpl_element_counts HAS ONLY = "H" : = "6", = "He" : = "7")))))
 == SQL ==
 (<no SQL representation> AND (<no SQL representation> AND (<no SQL representation> AND (<no SQL representation> AND <no SQL representation>))))

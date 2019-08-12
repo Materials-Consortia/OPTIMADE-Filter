@@ -21,11 +21,28 @@ for (@ARGV) {
     my $parser = new OPTiMaDe::FilterParser;
     my $tree = $parser->Run( $_ );
     print Dumper $tree;
+    print "== Filter ==\n";
+    print to_filter( $tree ) . "\n";
     print "== SQL ==\n";
-    print traverse( $tree ) . "\n";
+    print to_SQL( $tree ) . "\n";
 }
 
-sub traverse
+sub to_filter
+{
+    my( $node ) = @_;
+    if( blessed $node && $node->can( 'to_filter' ) ) {
+        return $node->to_filter;
+    } elsif( blessed $node ) {
+        return '<no filter representation>';
+    } elsif( ref $node && ref $node eq 'ARRAY' ) {
+        my @parts = map { to_filter( $_ ) } @{$node};
+        return '(' . join( ' ', @parts ) . ')';
+    } else {
+        return $node;
+    }
+}
+
+sub to_SQL
 {
     my( $node ) = @_;
     if( blessed $node && $node->can( 'to_SQL' ) ) {
@@ -33,7 +50,7 @@ sub traverse
     } elsif( blessed $node ) {
         return '<no SQL representation>';
     } elsif( ref $node && ref $node eq 'ARRAY' ) {
-        my @parts = map { traverse( $_ ) } @{$node};
+        my @parts = map { to_SQL( $_ ) } @{$node};
         return '(' . join( ' ', @parts ) . ')';
     } elsif( $node eq 'IS KNOWN' ) {
         $node = 'IS NOT NULL';

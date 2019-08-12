@@ -9,5 +9,7 @@ $VAR1 = bless( {
                                ],
                  'operator' => 'LIKE'
                }, 'OPTiMaDe::FilterParser::Comparison' );
+== Filter ==
+(authors LIKE "%Darwin%")
 == SQL ==
 ('authors' LIKE "%Darwin%")

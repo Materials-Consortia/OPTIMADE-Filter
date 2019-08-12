@@ -9,5 +9,7 @@ $VAR1 = bless( {
                                ],
                  'operator' => 'CONTAINS'
                }, 'OPTiMaDe::FilterParser::Comparison' );
+== Filter ==
+(list CONTAINS "string\"with\"quotes")
 == SQL ==
 ('list' LIKE "%string""with""quotes%")
