@@ -2,6 +2,7 @@
 
 use strict;
 use warnings;
+use Data::Compare;
 use Data::Dumper;
 use OPTiMaDe::FilterParser;
 use Scalar::Util qw(blessed);
@@ -25,6 +26,11 @@ for (@ARGV) {
     print to_filter( $tree ) . "\n";
     print "== SQL ==\n";
     print to_SQL( $tree ) . "\n";
+
+    my $filter = to_filter( $tree );
+    $parser = new OPTiMaDe::FilterParser;
+    my $tree_now = $parser->parse_string( $filter );
+    Compare( $tree, $tree_now ) || print "Roundtrip NOT passed\n";
 }
 
 sub to_filter
