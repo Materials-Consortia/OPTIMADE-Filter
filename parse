@@ -35,8 +35,7 @@ sub to_filter
     } elsif( blessed $node ) {
         return '<no filter representation>';
     } elsif( ref $node && ref $node eq 'ARRAY' ) {
-        my @parts = map { to_filter( $_ ) } @{$node};
-        return '(' . join( ' ', @parts ) . ')';
+        return '(' . join( ' ', map { to_filter( $_ ) } @{$node} ) . ')';
     } else {
         return $node;
     }
@@ -50,8 +49,7 @@ sub to_SQL
     } elsif( blessed $node ) {
         return '<no SQL representation>';
     } elsif( ref $node && ref $node eq 'ARRAY' ) {
-        my @parts = map { to_SQL( $_ ) } @{$node};
-        return '(' . join( ' ', @parts ) . ')';
+        return '(' . join( ' ', map { to_SQL( $_ ) } @{$node} ) . ')';
     } elsif( $node eq 'IS KNOWN' ) {
         $node = 'IS NOT NULL';
     } elsif( $node eq 'IS UNKNOWN' ) {
