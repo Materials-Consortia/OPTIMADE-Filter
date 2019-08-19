@@ -4,8 +4,8 @@ use strict;
 use warnings;
 
 sub new {
-    my( $class ) = @_;
-    return bless { name => [] }, $class;
+    my $class = shift;
+    return bless { name => \@_ }, $class;
 }
 
 sub push_identifier {

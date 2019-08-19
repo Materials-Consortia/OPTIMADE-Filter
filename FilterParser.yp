@@ -301,9 +301,7 @@ property_zip_addon: colon property
 
 property: identifier
             {
-                my $id = OPTiMaDe::FilterParser::Property->new;
-                $id->push_identifier( $_[1] );
-                return $id;
+                return OPTiMaDe::FilterParser::Property->new( $_[1] );
             }
         | property dot identifier
             {
