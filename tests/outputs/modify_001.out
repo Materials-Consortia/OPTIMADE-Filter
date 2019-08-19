@@ -1,0 +1,39 @@
+$VAR1 = [
+          bless( {
+                   'operands' => [
+                                   bless( {
+                                            'name' => [
+                                                        'a'
+                                                      ]
+                                          }, 'OPTiMaDe::FilterParser::Property' ),
+                                   '5'
+                                 ],
+                   'operator' => '>'
+                 }, 'OPTiMaDe::FilterParser::Comparison' ),
+          'OR',
+          [
+            bless( {
+                     'operands' => [
+                                     bless( {
+                                              'name' => [
+                                                          'b'
+                                                        ]
+                                            }, 'OPTiMaDe::FilterParser::Property' ),
+                                     '2'
+                                   ],
+                     'operator' => '<'
+                   }, 'OPTiMaDe::FilterParser::Comparison' ),
+            'AND',
+            bless( {
+                     'operands' => [
+                                     bless( {
+                                              'name' => [
+                                                          'c'
+                                                        ]
+                                            }, 'OPTiMaDe::FilterParser::Property' ),
+                                     '10'
+                                   ],
+                     'operator' => '>'
+                   }, 'OPTiMaDe::FilterParser::Comparison' )
+          ]
+        ];
