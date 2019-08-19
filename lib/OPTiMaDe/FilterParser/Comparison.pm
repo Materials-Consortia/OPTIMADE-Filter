@@ -85,11 +85,12 @@ sub to_SQL
 
 sub modify
 {
-    my( $self, $code ) = @_;
+    my $self = shift;
+    my $code = shift;
 
-    $self->{operands} = [ map { OPTiMaDe::FilterParser::modify( $_, $code ) }
+    $self->{operands} = [ map { OPTiMaDe::FilterParser::modify( $_, $code, @_ ) }
                               @{$self->{operands}} ];
-    return $code->( $self );
+    return $code->( $self, @_ );
 }
 
 1;

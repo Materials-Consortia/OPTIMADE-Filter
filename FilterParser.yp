@@ -464,14 +464,15 @@ sub parse_string
 
 sub modify
 {
-    my( $node, $code ) = @_;
+    my $node = shift;
+    my $code = shift;
 
     if( blessed $node && $node->can( 'modify' ) ) {
-        return $node->modify( $code );
+        return $node->modify( $code, @_ );
     } elsif( ref $node eq 'ARRAY' ) {
-        return [ map { modify( $_, $code ) } @$node ];
+        return [ map { modify( $_, $code, @_ ) } @$node ];
     } else {
-        return $code->( $node );
+        return $code->( $node, @_ );
     }
 }
 

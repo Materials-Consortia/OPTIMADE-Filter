@@ -29,8 +29,10 @@ sub to_SQL
 
 sub modify
 {
-    my( $self, $code ) = @_;
-    return $code->( $self );
+    my $self = shift;
+    my $code = shift;
+
+    return $code->( $self, @_ );
 }
 
 1;
