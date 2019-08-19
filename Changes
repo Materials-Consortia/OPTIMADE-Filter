@@ -1,3 +1,9 @@
+0.3.0-dev 2019-08-19
+
+    - Introducing method modify(), which traverses and modifies the built
+      filter tree.
+    - Modifying the constructor for OPTiMaDe::FilterParser::Property.
+
 0.2.0 2019-08-12
  
     - Combining 'IS' and 'KNOWN'/'UNKNOWN' lexems together.
