@@ -1,0 +1,32 @@
+$VAR1 = [
+          [
+            bless( {
+                     'operands' => [
+                                     bless( {
+                                              'name' => [
+                                                          'value',
+                                                          'list'
+                                                        ]
+                                            }, 'OPTiMaDe::FilterParser::Property' ),
+                                     'a'
+                                   ],
+                     'operator' => 'CONTAINS'
+                   }, 'OPTiMaDe::FilterParser::Comparison' ),
+            'AND',
+            bless( {
+                     'operands' => [
+                                     $VAR1->[0][0]{'operands'}[0],
+                                     'b'
+                                   ],
+                     'operator' => 'CONTAINS'
+                   }, 'OPTiMaDe::FilterParser::Comparison' )
+          ],
+          'AND',
+          bless( {
+                   'operands' => [
+                                   $VAR1->[0][0]{'operands'}[0],
+                                   'c'
+                                 ],
+                   'operator' => 'CONTAINS'
+                 }, 'OPTiMaDe::FilterParser::Comparison' )
+        ];
