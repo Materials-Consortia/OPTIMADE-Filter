@@ -53,4 +53,14 @@ sub to_filter {
     }
 }
 
+sub modify {
+    my( $self, $code ) = @_;
+
+    $self->{property} = $code->( $self->{property} );
+    $self->{values} = [ map { [ OPTiMaDe::FilterParser::modify( $_->[0], $code ),
+                                OPTiMaDe::FilterParser::modify( $_->[1], $code ) ] }
+                            @{$self->{values}} ];
+    return $code->( $self );
+}
+
 1;

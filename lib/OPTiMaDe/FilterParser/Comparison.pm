@@ -6,7 +6,7 @@ use Scalar::Util qw(blessed);
 
 sub new {
     my( $class, $operator ) = @_;
-    return bless { operands  => [], operator  => $operator }, $class;
+    return bless { operands => [], operator => $operator }, $class;
 }
 
 sub set_operator {
@@ -81,6 +81,15 @@ sub to_SQL
     }
 
     return "($operands[0] $operator $operands[1])";
+}
+
+sub modify
+{
+    my( $self, $code ) = @_;
+
+    $self->{operands} = [ map { OPTiMaDe::FilterParser::modify( $_, $code ) }
+                              @{$self->{operands}} ];
+    return $code->( $self );
 }
 
 1;

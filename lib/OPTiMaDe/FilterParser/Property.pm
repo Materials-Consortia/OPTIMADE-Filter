@@ -27,4 +27,10 @@ sub to_SQL
     return join '.', map { "${delim}$_${delim}" } @{$self->{name}};
 }
 
+sub modify
+{
+    my( $self, $code ) = @_;
+    return $code->( $self );
+}
+
 1;

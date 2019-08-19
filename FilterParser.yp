@@ -4,6 +4,8 @@
 
 use warnings;
 
+use Scalar::Util qw(blessed);
+
 use OPTiMaDe::FilterParser::Comparison;
 use OPTiMaDe::FilterParser::ListComparison;
 use OPTiMaDe::FilterParser::Property;
@@ -458,6 +460,19 @@ sub parse_string
     $self->{USER}{LINENO} = 0;
     $self->{USER}{CHARNO} = 0;
     return $self->YYParse( yylex => \&_Lexer, yyerror => \&_Error );
+}
+
+sub modify
+{
+    my( $node, $code ) = @_;
+
+    if( blessed $node && $node->can( 'modify' ) ) {
+        return $node->modify( $code );
+    } elsif( ref $node eq 'ARRAY' ) {
+        return [ map { modify( $_, $code ) } @$node ];
+    } else {
+        return $code->( $node );
+    }
 }
 
 1;
