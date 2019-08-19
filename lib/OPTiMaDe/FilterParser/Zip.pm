@@ -56,4 +56,15 @@ sub to_filter {
                  join( ', ', @zip_list ) . ')';
 }
 
+sub modify
+{
+    my( $self, $code ) = @_;
+
+    $self->{properties} = [ map { $_->modify( $code ) } @{$self->{properties}} ];
+    $self->{values} = [ map { [ OPTiMaDe::FilterParser::modify( $_->[0], $code ),
+                                OPTiMaDe::FilterParser::modify( $_->[1], $code ) ] }
+                            @{$self->{values}} ];
+    return $code->( $self );
+}
+
 1;
