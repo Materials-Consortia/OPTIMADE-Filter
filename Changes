@@ -3,6 +3,7 @@
     - Introducing method modify(), which traverses and modifies the built
       filter tree.
     - Modifying the constructor for OPTiMaDe::FilterParser::Property.
+    - Adding 'Changes' (this file) to MANIFEST.
 
 0.2.0 2019-08-12
  
