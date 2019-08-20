@@ -1,4 +1,4 @@
-0.3.0-dev 2019-08-19
+0.3.0 2019-08-19
 
     - Introducing method modify(), which traverses and modifies the built
       filter tree.
