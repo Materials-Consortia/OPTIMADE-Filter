@@ -1,9 +1,13 @@
 0.4.0-dev
 
-    - Adding overrides for OPTiMaDe::FilterParser::Property. Replacing
+    - Adding overloads for OPTiMaDe::FilterParser::Property. Replacing
       push_identifier() via direct push to object.
     - Adding convenience methods left() and right() for
       OPTiMaDe::FilterParser::Comparison.
+    - Introducing classes OPTiMaDe::FilterParser::Negation,
+      OPTiMaDe::FilterParser::AndOr and OPTiMaDe::FilterParser::Known.
+    - Changing the way the delimiter is passed to to_SQL() methods.
+    - Implementing SQL output with placeholders instead of values.
 
 0.3.0 2019-08-19
 
