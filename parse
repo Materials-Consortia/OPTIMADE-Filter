@@ -23,28 +23,14 @@ for (@ARGV) {
     my $tree = $parser->Run( $_ );
     print Dumper $tree;
     print "== Filter ==\n";
-    print to_filter( $tree ) . "\n";
+    print $tree->to_filter . "\n";
     print "== SQL ==\n";
     print to_SQL( $tree ) . "\n";
 
-    my $filter = to_filter( $tree );
+    my $filter = $tree->to_filter;
     $parser = new OPTiMaDe::FilterParser;
     my $tree_now = $parser->parse_string( $filter );
     Compare( $tree, $tree_now ) || print "Roundtrip NOT passed\n";
-}
-
-sub to_filter
-{
-    my( $node ) = @_;
-    if( blessed $node && $node->can( 'to_filter' ) ) {
-        return $node->to_filter;
-    } elsif( blessed $node ) {
-        return '<no filter representation>';
-    } elsif( ref $node && ref $node eq 'ARRAY' ) {
-        return '(' . join( ' ', map { to_filter( $_ ) } @{$node} ) . ')';
-    } else {
-        return $node;
-    }
 }
 
 sub to_SQL
