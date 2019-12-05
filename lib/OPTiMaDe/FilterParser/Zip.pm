@@ -56,6 +56,11 @@ sub to_filter {
                  join( ', ', @zip_list ) . ')';
 }
 
+sub to_SQL
+{
+    die "no SQL representation\n";
+}
+
 sub modify
 {
     my $self = shift;

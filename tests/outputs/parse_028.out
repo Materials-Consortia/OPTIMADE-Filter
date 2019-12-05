@@ -1,181 +1,189 @@
-$VAR1 = [
-          bless( {
-                   'operator' => 'HAS',
-                   'properties' => [
-                                     bless( {
-                                              'name' => [
-                                                          'elements'
-                                                        ]
-                                            }, 'OPTiMaDe::FilterParser::Property' ),
-                                     bless( {
-                                              'name' => [
-                                                          '_exmpl_element_counts'
-                                                        ]
-                                            }, 'OPTiMaDe::FilterParser::Property' )
-                                   ],
-                   'values' => [
-                                 [
-                                   [
-                                     '=',
-                                     'H'
-                                   ],
-                                   [
-                                     '=',
-                                     '6'
-                                   ]
-                                 ]
-                               ]
-                 }, 'OPTiMaDe::FilterParser::Zip' ),
-          'AND',
-          [
-            bless( {
-                     'operator' => 'HAS ALL',
-                     'properties' => [
-                                       bless( {
-                                                'name' => [
-                                                            'elements'
+$VAR1 = bless( {
+                 'operands' => [
+                                 bless( {
+                                          'operator' => 'HAS',
+                                          'properties' => [
+                                                            bless( {
+                                                                     'name' => [
+                                                                                 'elements'
+                                                                               ]
+                                                                   }, 'OPTiMaDe::FilterParser::Property' ),
+                                                            bless( {
+                                                                     'name' => [
+                                                                                 '_exmpl_element_counts'
+                                                                               ]
+                                                                   }, 'OPTiMaDe::FilterParser::Property' )
+                                                          ],
+                                          'values' => [
+                                                        [
+                                                          [
+                                                            '=',
+                                                            'H'
+                                                          ],
+                                                          [
+                                                            '=',
+                                                            '6'
                                                           ]
-                                              }, 'OPTiMaDe::FilterParser::Property' ),
-                                       bless( {
-                                                'name' => [
-                                                            '_exmpl_element_counts'
-                                                          ]
-                                              }, 'OPTiMaDe::FilterParser::Property' )
-                                     ],
-                     'values' => [
-                                   [
-                                     [
-                                       '=',
-                                       'H'
-                                     ],
-                                     [
-                                       '=',
-                                       '6'
-                                     ]
-                                   ],
-                                   [
-                                     [
-                                       '=',
-                                       'He'
-                                     ],
-                                     [
-                                       '=',
-                                       '7'
-                                     ]
-                                   ]
-                                 ]
-                   }, 'OPTiMaDe::FilterParser::Zip' ),
-            'AND',
-            [
-              bless( {
-                       'operator' => 'HAS ONLY',
-                       'properties' => [
-                                         bless( {
-                                                  'name' => [
-                                                              'elements'
-                                                            ]
-                                                }, 'OPTiMaDe::FilterParser::Property' ),
-                                         bless( {
-                                                  'name' => [
-                                                              '_exmpl_element_counts'
-                                                            ]
-                                                }, 'OPTiMaDe::FilterParser::Property' )
-                                       ],
-                       'values' => [
-                                     [
-                                       [
-                                         '=',
-                                         'H'
-                                       ],
-                                       [
-                                         '=',
-                                         '6'
-                                       ]
-                                     ]
-                                   ]
-                     }, 'OPTiMaDe::FilterParser::Zip' ),
-              'AND',
-              [
-                bless( {
-                         'operator' => 'HAS ANY',
-                         'properties' => [
-                                           bless( {
-                                                    'name' => [
-                                                                'elements'
-                                                              ]
-                                                  }, 'OPTiMaDe::FilterParser::Property' ),
-                                           bless( {
-                                                    'name' => [
-                                                                '_exmpl_element_counts'
-                                                              ]
-                                                  }, 'OPTiMaDe::FilterParser::Property' )
-                                         ],
-                         'values' => [
-                                       [
-                                         [
-                                           '=',
-                                           'H'
-                                         ],
-                                         [
-                                           '=',
-                                           '6'
-                                         ]
-                                       ],
-                                       [
-                                         [
-                                           '=',
-                                           'He'
-                                         ],
-                                         [
-                                           '=',
-                                           '7'
-                                         ]
-                                       ]
-                                     ]
-                       }, 'OPTiMaDe::FilterParser::Zip' ),
-                'AND',
-                bless( {
-                         'operator' => 'HAS ONLY',
-                         'properties' => [
-                                           bless( {
-                                                    'name' => [
-                                                                'elements'
-                                                              ]
-                                                  }, 'OPTiMaDe::FilterParser::Property' ),
-                                           bless( {
-                                                    'name' => [
-                                                                '_exmpl_element_counts'
-                                                              ]
-                                                  }, 'OPTiMaDe::FilterParser::Property' )
-                                         ],
-                         'values' => [
-                                       [
-                                         [
-                                           '=',
-                                           'H'
-                                         ],
-                                         [
-                                           '=',
-                                           '6'
-                                         ]
-                                       ],
-                                       [
-                                         [
-                                           '=',
-                                           'He'
-                                         ],
-                                         [
-                                           '=',
-                                           '7'
-                                         ]
-                                       ]
-                                     ]
-                       }, 'OPTiMaDe::FilterParser::Zip' )
-              ]
-            ]
-          ]
-        ];
+                                                        ]
+                                                      ]
+                                        }, 'OPTiMaDe::FilterParser::Zip' ),
+                                 bless( {
+                                          'operands' => [
+                                                          bless( {
+                                                                   'operator' => 'HAS ALL',
+                                                                   'properties' => [
+                                                                                     bless( {
+                                                                                              'name' => [
+                                                                                                          'elements'
+                                                                                                        ]
+                                                                                            }, 'OPTiMaDe::FilterParser::Property' ),
+                                                                                     bless( {
+                                                                                              'name' => [
+                                                                                                          '_exmpl_element_counts'
+                                                                                                        ]
+                                                                                            }, 'OPTiMaDe::FilterParser::Property' )
+                                                                                   ],
+                                                                   'values' => [
+                                                                                 [
+                                                                                   [
+                                                                                     '=',
+                                                                                     'H'
+                                                                                   ],
+                                                                                   [
+                                                                                     '=',
+                                                                                     '6'
+                                                                                   ]
+                                                                                 ],
+                                                                                 [
+                                                                                   [
+                                                                                     '=',
+                                                                                     'He'
+                                                                                   ],
+                                                                                   [
+                                                                                     '=',
+                                                                                     '7'
+                                                                                   ]
+                                                                                 ]
+                                                                               ]
+                                                                 }, 'OPTiMaDe::FilterParser::Zip' ),
+                                                          bless( {
+                                                                   'operands' => [
+                                                                                   bless( {
+                                                                                            'operator' => 'HAS ONLY',
+                                                                                            'properties' => [
+                                                                                                              bless( {
+                                                                                                                       'name' => [
+                                                                                                                                   'elements'
+                                                                                                                                 ]
+                                                                                                                     }, 'OPTiMaDe::FilterParser::Property' ),
+                                                                                                              bless( {
+                                                                                                                       'name' => [
+                                                                                                                                   '_exmpl_element_counts'
+                                                                                                                                 ]
+                                                                                                                     }, 'OPTiMaDe::FilterParser::Property' )
+                                                                                                            ],
+                                                                                            'values' => [
+                                                                                                          [
+                                                                                                            [
+                                                                                                              '=',
+                                                                                                              'H'
+                                                                                                            ],
+                                                                                                            [
+                                                                                                              '=',
+                                                                                                              '6'
+                                                                                                            ]
+                                                                                                          ]
+                                                                                                        ]
+                                                                                          }, 'OPTiMaDe::FilterParser::Zip' ),
+                                                                                   bless( {
+                                                                                            'operands' => [
+                                                                                                            bless( {
+                                                                                                                     'operator' => 'HAS ANY',
+                                                                                                                     'properties' => [
+                                                                                                                                       bless( {
+                                                                                                                                                'name' => [
+                                                                                                                                                            'elements'
+                                                                                                                                                          ]
+                                                                                                                                              }, 'OPTiMaDe::FilterParser::Property' ),
+                                                                                                                                       bless( {
+                                                                                                                                                'name' => [
+                                                                                                                                                            '_exmpl_element_counts'
+                                                                                                                                                          ]
+                                                                                                                                              }, 'OPTiMaDe::FilterParser::Property' )
+                                                                                                                                     ],
+                                                                                                                     'values' => [
+                                                                                                                                   [
+                                                                                                                                     [
+                                                                                                                                       '=',
+                                                                                                                                       'H'
+                                                                                                                                     ],
+                                                                                                                                     [
+                                                                                                                                       '=',
+                                                                                                                                       '6'
+                                                                                                                                     ]
+                                                                                                                                   ],
+                                                                                                                                   [
+                                                                                                                                     [
+                                                                                                                                       '=',
+                                                                                                                                       'He'
+                                                                                                                                     ],
+                                                                                                                                     [
+                                                                                                                                       '=',
+                                                                                                                                       '7'
+                                                                                                                                     ]
+                                                                                                                                   ]
+                                                                                                                                 ]
+                                                                                                                   }, 'OPTiMaDe::FilterParser::Zip' ),
+                                                                                                            bless( {
+                                                                                                                     'operator' => 'HAS ONLY',
+                                                                                                                     'properties' => [
+                                                                                                                                       bless( {
+                                                                                                                                                'name' => [
+                                                                                                                                                            'elements'
+                                                                                                                                                          ]
+                                                                                                                                              }, 'OPTiMaDe::FilterParser::Property' ),
+                                                                                                                                       bless( {
+                                                                                                                                                'name' => [
+                                                                                                                                                            '_exmpl_element_counts'
+                                                                                                                                                          ]
+                                                                                                                                              }, 'OPTiMaDe::FilterParser::Property' )
+                                                                                                                                     ],
+                                                                                                                     'values' => [
+                                                                                                                                   [
+                                                                                                                                     [
+                                                                                                                                       '=',
+                                                                                                                                       'H'
+                                                                                                                                     ],
+                                                                                                                                     [
+                                                                                                                                       '=',
+                                                                                                                                       '6'
+                                                                                                                                     ]
+                                                                                                                                   ],
+                                                                                                                                   [
+                                                                                                                                     [
+                                                                                                                                       '=',
+                                                                                                                                       'He'
+                                                                                                                                     ],
+                                                                                                                                     [
+                                                                                                                                       '=',
+                                                                                                                                       '7'
+                                                                                                                                     ]
+                                                                                                                                   ]
+                                                                                                                                 ]
+                                                                                                                   }, 'OPTiMaDe::FilterParser::Zip' )
+                                                                                                          ],
+                                                                                            'operator' => 'AND'
+                                                                                          }, 'OPTiMaDe::FilterParser::AndOr' )
+                                                                                 ],
+                                                                   'operator' => 'AND'
+                                                                 }, 'OPTiMaDe::FilterParser::AndOr' )
+                                                        ],
+                                          'operator' => 'AND'
+                                        }, 'OPTiMaDe::FilterParser::AndOr' )
+                               ],
+                 'operator' => 'AND'
+               }, 'OPTiMaDe::FilterParser::AndOr' );
 == Filter ==
 ((elements:_exmpl_element_counts HAS = "H" : = "6") AND ((elements:_exmpl_element_counts HAS ALL = "H" : = "6", = "He" : = "7") AND ((elements:_exmpl_element_counts HAS ONLY = "H" : = "6") AND ((elements:_exmpl_element_counts HAS ANY = "H" : = "6", = "He" : = "7") AND (elements:_exmpl_element_counts HAS ONLY = "H" : = "6", = "He" : = "7")))))
 == SQL ==
-(<no SQL representation> AND (<no SQL representation> AND (<no SQL representation> AND (<no SQL representation> AND <no SQL representation>))))
+(<no SQL representation>) AND ((<no SQL representation>) AND ((<no SQL representation>) AND ((<no SQL representation>) AND (<no SQL representation>))))

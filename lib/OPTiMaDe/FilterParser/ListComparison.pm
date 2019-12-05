@@ -53,6 +53,11 @@ sub to_filter {
     }
 }
 
+sub to_SQL
+{
+    die "no SQL representation\n";
+}
+
 sub modify {
     my $self = shift;
     my $code = shift;

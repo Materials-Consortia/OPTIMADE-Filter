@@ -1,3 +1,4 @@
+no SQL representation
 $VAR1 = bless( {
                  'operator' => 'HAS ONLY',
                  'property' => bless( {
@@ -27,4 +28,3 @@ $VAR1 = bless( {
 == Filter ==
 (elements HAS ONLY = "H", = "He", = "Ga", = "Ta")
 == SQL ==
-<no SQL representation>

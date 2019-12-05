@@ -86,7 +86,11 @@ sub to_SQL
     for my $i (0..$#{$self->{operands}}) {
         my $arg = $self->{operands}[$i];
         if( blessed $arg && $arg->can( 'to_SQL' ) ) {
-            $arg = $arg->to_SQL( $delim );
+            eval { $arg = $arg->to_SQL( $delim ) };
+            if( $@ ) {
+                chomp $@;
+                $arg = "<$@>";
+            }
         } else {
             $arg =~ s/"/""/g;
             $arg = "\"$arg\"";
