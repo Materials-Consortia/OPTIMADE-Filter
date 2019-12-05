@@ -14,7 +14,7 @@ use OPTiMaDe::FilterParser::Negation;
 use OPTiMaDe::FilterParser::Property;
 use OPTiMaDe::FilterParser::Zip;
 
-our $VERSION = '0.4.1';
+our $VERSION = '0.5.0-dev';
 our $OPTiMaDe_VERSION = '0.10.0';
 
 our $allow_LIKE_operator = 0;
