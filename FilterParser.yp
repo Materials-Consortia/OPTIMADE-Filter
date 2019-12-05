@@ -183,37 +183,39 @@ known_op_rhs: IS KNOWN
                 }
             ;
 
-fuzzy_string_op_rhs: CONTAINS string
+string_property: string | property ;
+
+fuzzy_string_op_rhs: CONTAINS string_property
                         {
                             my $cmp = OPTiMaDe::FilterParser::Comparison->new( $_[1] );
                             $cmp->push_operand( $_[2] );
                             return $cmp;
                         }
-                   | STARTS string
+                   | STARTS string_property
                         {
                             my $cmp = OPTiMaDe::FilterParser::Comparison->new( $_[1] );
                             $cmp->push_operand( $_[2] );
                             return $cmp;
                         }
-                   | STARTS WITH string
+                   | STARTS WITH string_property
                         {
                             my $cmp = OPTiMaDe::FilterParser::Comparison->new( "$_[1] $_[2]" );
                             $cmp->push_operand( $_[3] );
                             return $cmp;
                         }
-                   | ENDS string
+                   | ENDS string_property
                         {
                             my $cmp = OPTiMaDe::FilterParser::Comparison->new( $_[1] );
                             $cmp->push_operand( $_[2] );
                             return $cmp;
                         }
-                   | ENDS WITH string
+                   | ENDS WITH string_property
                         {
                             my $cmp = OPTiMaDe::FilterParser::Comparison->new( "$_[1] $_[2]" );
                             $cmp->push_operand( $_[3] );
                             return $cmp;
                         }
-                   | LIKE string
+                   | LIKE string_property
                         {
                             my $cmp = OPTiMaDe::FilterParser::Comparison->new( $_[1] );
                             $cmp->push_operand( $_[2] );
