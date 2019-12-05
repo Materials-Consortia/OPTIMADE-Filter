@@ -28,6 +28,22 @@ sub unshift_operand
     unshift @{$self->{operands}}, $operand;
 }
 
+sub left
+{
+    my( $self, $operand ) = @_;
+    my $previous_operand = $self->{operands}[0];
+    $self->{operands}[0] = $operand if defined $operand;
+    return $previous_operand;
+}
+
+sub right
+{
+    my( $self, $operand ) = @_;
+    my $previous_operand = $self->{operands}[1];
+    $self->{operands}[1] = $operand if defined $operand;
+    return $previous_operand;
+}
+
 sub to_filter
 {
     my( $self ) = @_;
