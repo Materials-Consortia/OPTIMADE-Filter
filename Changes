@@ -1,4 +1,4 @@
-0.4.0-dev
+0.4.0 2019-12-05
 
     - Adding overloads for OPTiMaDe::FilterParser::Property. Replacing
       push_identifier() via direct push to object.
