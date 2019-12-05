@@ -6,6 +6,7 @@ use warnings;
 
 use Scalar::Util qw(blessed);
 
+use OPTiMaDe::FilterParser::AndOr;
 use OPTiMaDe::FilterParser::Comparison;
 use OPTiMaDe::FilterParser::ListComparison;
 use OPTiMaDe::FilterParser::Negation;
@@ -94,14 +95,14 @@ value_zip_list: value_zip
 expression: expression_clause
           | expression_clause OR expression
             {
-                return [ @_[1..$#_] ];
+                return OPTiMaDe::FilterParser::AndOr->new( @_[1..$#_] );
             }
           ;
 
 expression_clause: expression_phrase
                  | expression_phrase AND expression_clause
                     {
-                        return [ @_[1..$#_] ];
+                        return OPTiMaDe::FilterParser::AndOr->new( @_[1..$#_] );
                     }
                  ;
 

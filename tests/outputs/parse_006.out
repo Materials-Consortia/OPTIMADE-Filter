@@ -1,112 +1,126 @@
-$VAR1 = [
-          bless( {
-                   'operands' => [
-                                   bless( {
-                                            'name' => [
-                                                        'number'
-                                                      ]
-                                          }, 'OPTiMaDe::FilterParser::Property' ),
-                                   '0.'
-                                 ],
-                   'operator' => '='
-                 }, 'OPTiMaDe::FilterParser::Comparison' ),
-          'AND',
-          [
-            bless( {
-                     'operands' => [
-                                     bless( {
-                                              'name' => [
-                                                          'number'
-                                                        ]
-                                            }, 'OPTiMaDe::FilterParser::Property' ),
-                                     '.0'
-                                   ],
-                     'operator' => '='
-                   }, 'OPTiMaDe::FilterParser::Comparison' ),
-            'AND',
-            [
-              bless( {
-                       'operands' => [
-                                       bless( {
-                                                'name' => [
-                                                            'number'
-                                                          ]
-                                              }, 'OPTiMaDe::FilterParser::Property' ),
-                                       '0.0'
-                                     ],
-                       'operator' => '='
-                     }, 'OPTiMaDe::FilterParser::Comparison' ),
-              'AND',
-              [
-                bless( {
-                         'operands' => [
-                                         bless( {
-                                                  'name' => [
-                                                              'number'
-                                                            ]
-                                                }, 'OPTiMaDe::FilterParser::Property' ),
-                                         '+0'
-                                       ],
-                         'operator' => '='
-                       }, 'OPTiMaDe::FilterParser::Comparison' ),
-                'AND',
-                [
-                  bless( {
-                           'operands' => [
-                                           bless( {
-                                                    'name' => [
-                                                                'n_u_m_b_e_r'
-                                                              ]
-                                                  }, 'OPTiMaDe::FilterParser::Property' ),
-                                           '-0'
-                                         ],
-                           'operator' => '='
-                         }, 'OPTiMaDe::FilterParser::Comparison' ),
-                  'AND',
-                  [
-                    bless( {
-                             'operands' => [
-                                             bless( {
-                                                      'name' => [
-                                                                  'number'
-                                                                ]
-                                                    }, 'OPTiMaDe::FilterParser::Property' ),
-                                             '0e1'
-                                           ],
-                             'operator' => '='
-                           }, 'OPTiMaDe::FilterParser::Comparison' ),
-                    'AND',
-                    [
-                      bless( {
-                               'operands' => [
-                                               bless( {
-                                                        'name' => [
-                                                                    'number'
-                                                                  ]
-                                                      }, 'OPTiMaDe::FilterParser::Property' ),
-                                               '0e-1'
-                                             ],
-                               'operator' => '='
-                             }, 'OPTiMaDe::FilterParser::Comparison' ),
-                      'AND',
-                      bless( {
-                               'operands' => [
-                                               bless( {
-                                                        'name' => [
-                                                                    'number'
-                                                                  ]
-                                                      }, 'OPTiMaDe::FilterParser::Property' ),
-                                               '0e+1'
-                                             ],
-                               'operator' => '='
-                             }, 'OPTiMaDe::FilterParser::Comparison' )
-                    ]
-                  ]
-                ]
-              ]
-            ]
-          ]
-        ];
+$VAR1 = bless( {
+                 'operands' => [
+                                 bless( {
+                                          'operands' => [
+                                                          bless( {
+                                                                   'name' => [
+                                                                               'number'
+                                                                             ]
+                                                                 }, 'OPTiMaDe::FilterParser::Property' ),
+                                                          '0.'
+                                                        ],
+                                          'operator' => '='
+                                        }, 'OPTiMaDe::FilterParser::Comparison' ),
+                                 bless( {
+                                          'operands' => [
+                                                          bless( {
+                                                                   'operands' => [
+                                                                                   bless( {
+                                                                                            'name' => [
+                                                                                                        'number'
+                                                                                                      ]
+                                                                                          }, 'OPTiMaDe::FilterParser::Property' ),
+                                                                                   '.0'
+                                                                                 ],
+                                                                   'operator' => '='
+                                                                 }, 'OPTiMaDe::FilterParser::Comparison' ),
+                                                          bless( {
+                                                                   'operands' => [
+                                                                                   bless( {
+                                                                                            'operands' => [
+                                                                                                            bless( {
+                                                                                                                     'name' => [
+                                                                                                                                 'number'
+                                                                                                                               ]
+                                                                                                                   }, 'OPTiMaDe::FilterParser::Property' ),
+                                                                                                            '0.0'
+                                                                                                          ],
+                                                                                            'operator' => '='
+                                                                                          }, 'OPTiMaDe::FilterParser::Comparison' ),
+                                                                                   bless( {
+                                                                                            'operands' => [
+                                                                                                            bless( {
+                                                                                                                     'operands' => [
+                                                                                                                                     bless( {
+                                                                                                                                              'name' => [
+                                                                                                                                                          'number'
+                                                                                                                                                        ]
+                                                                                                                                            }, 'OPTiMaDe::FilterParser::Property' ),
+                                                                                                                                     '+0'
+                                                                                                                                   ],
+                                                                                                                     'operator' => '='
+                                                                                                                   }, 'OPTiMaDe::FilterParser::Comparison' ),
+                                                                                                            bless( {
+                                                                                                                     'operands' => [
+                                                                                                                                     bless( {
+                                                                                                                                              'operands' => [
+                                                                                                                                                              bless( {
+                                                                                                                                                                       'name' => [
+                                                                                                                                                                                   'n_u_m_b_e_r'
+                                                                                                                                                                                 ]
+                                                                                                                                                                     }, 'OPTiMaDe::FilterParser::Property' ),
+                                                                                                                                                              '-0'
+                                                                                                                                                            ],
+                                                                                                                                              'operator' => '='
+                                                                                                                                            }, 'OPTiMaDe::FilterParser::Comparison' ),
+                                                                                                                                     bless( {
+                                                                                                                                              'operands' => [
+                                                                                                                                                              bless( {
+                                                                                                                                                                       'operands' => [
+                                                                                                                                                                                       bless( {
+                                                                                                                                                                                                'name' => [
+                                                                                                                                                                                                            'number'
+                                                                                                                                                                                                          ]
+                                                                                                                                                                                              }, 'OPTiMaDe::FilterParser::Property' ),
+                                                                                                                                                                                       '0e1'
+                                                                                                                                                                                     ],
+                                                                                                                                                                       'operator' => '='
+                                                                                                                                                                     }, 'OPTiMaDe::FilterParser::Comparison' ),
+                                                                                                                                                              bless( {
+                                                                                                                                                                       'operands' => [
+                                                                                                                                                                                       bless( {
+                                                                                                                                                                                                'operands' => [
+                                                                                                                                                                                                                bless( {
+                                                                                                                                                                                                                         'name' => [
+                                                                                                                                                                                                                                     'number'
+                                                                                                                                                                                                                                   ]
+                                                                                                                                                                                                                       }, 'OPTiMaDe::FilterParser::Property' ),
+                                                                                                                                                                                                                '0e-1'
+                                                                                                                                                                                                              ],
+                                                                                                                                                                                                'operator' => '='
+                                                                                                                                                                                              }, 'OPTiMaDe::FilterParser::Comparison' ),
+                                                                                                                                                                                       bless( {
+                                                                                                                                                                                                'operands' => [
+                                                                                                                                                                                                                bless( {
+                                                                                                                                                                                                                         'name' => [
+                                                                                                                                                                                                                                     'number'
+                                                                                                                                                                                                                                   ]
+                                                                                                                                                                                                                       }, 'OPTiMaDe::FilterParser::Property' ),
+                                                                                                                                                                                                                '0e+1'
+                                                                                                                                                                                                              ],
+                                                                                                                                                                                                'operator' => '='
+                                                                                                                                                                                              }, 'OPTiMaDe::FilterParser::Comparison' )
+                                                                                                                                                                                     ],
+                                                                                                                                                                       'operator' => 'AND'
+                                                                                                                                                                     }, 'OPTiMaDe::FilterParser::AndOr' )
+                                                                                                                                                            ],
+                                                                                                                                              'operator' => 'AND'
+                                                                                                                                            }, 'OPTiMaDe::FilterParser::AndOr' )
+                                                                                                                                   ],
+                                                                                                                     'operator' => 'AND'
+                                                                                                                   }, 'OPTiMaDe::FilterParser::AndOr' )
+                                                                                                          ],
+                                                                                            'operator' => 'AND'
+                                                                                          }, 'OPTiMaDe::FilterParser::AndOr' )
+                                                                                 ],
+                                                                   'operator' => 'AND'
+                                                                 }, 'OPTiMaDe::FilterParser::AndOr' )
+                                                        ],
+                                          'operator' => 'AND'
+                                        }, 'OPTiMaDe::FilterParser::AndOr' )
+                               ],
+                 'operator' => 'AND'
+               }, 'OPTiMaDe::FilterParser::AndOr' );
 == Filter ==
 ((number = "0.") AND ((number = ".0") AND ((number = "0.0") AND ((number = "+0") AND ((n_u_m_b_e_r = "-0") AND ((number = "0e1") AND ((number = "0e-1") AND (number = "0e+1"))))))))
 == SQL ==

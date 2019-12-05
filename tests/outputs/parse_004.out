@@ -1,28 +1,30 @@
-$VAR1 = [
-          bless( {
-                   'operands' => [
-                                   bless( {
-                                            'name' => [
-                                                        '_mp_bandgap'
-                                                      ]
-                                          }, 'OPTiMaDe::FilterParser::Property' ),
-                                   '5.0'
-                                 ],
-                   'operator' => '>'
-                 }, 'OPTiMaDe::FilterParser::Comparison' ),
-          'AND',
-          bless( {
-                   'operands' => [
-                                   bless( {
-                                            'name' => [
-                                                        '_cod_molecular_weight'
-                                                      ]
-                                          }, 'OPTiMaDe::FilterParser::Property' ),
-                                   '350'
-                                 ],
-                   'operator' => '<'
-                 }, 'OPTiMaDe::FilterParser::Comparison' )
-        ];
+$VAR1 = bless( {
+                 'operands' => [
+                                 bless( {
+                                          'operands' => [
+                                                          bless( {
+                                                                   'name' => [
+                                                                               '_mp_bandgap'
+                                                                             ]
+                                                                 }, 'OPTiMaDe::FilterParser::Property' ),
+                                                          '5.0'
+                                                        ],
+                                          'operator' => '>'
+                                        }, 'OPTiMaDe::FilterParser::Comparison' ),
+                                 bless( {
+                                          'operands' => [
+                                                          bless( {
+                                                                   'name' => [
+                                                                               '_cod_molecular_weight'
+                                                                             ]
+                                                                 }, 'OPTiMaDe::FilterParser::Property' ),
+                                                          '350'
+                                                        ],
+                                          'operator' => '<'
+                                        }, 'OPTiMaDe::FilterParser::Comparison' )
+                               ],
+                 'operator' => 'AND'
+               }, 'OPTiMaDe::FilterParser::AndOr' );
 == Filter ==
 ((_mp_bandgap > "5.0") AND (_cod_molecular_weight < "350"))
 == SQL ==

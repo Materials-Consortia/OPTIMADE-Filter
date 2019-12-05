@@ -1,42 +1,46 @@
-$VAR1 = [
-          bless( {
-                   'operands' => [
-                                   bless( {
-                                            'name' => [
-                                                        '_cod_melting_point'
-                                                      ]
-                                          }, 'OPTiMaDe::FilterParser::Property' ),
-                                   '300'
-                                 ],
-                   'operator' => '<'
-                 }, 'OPTiMaDe::FilterParser::Comparison' ),
-          'AND',
-          [
-            bless( {
-                     'operands' => [
-                                     bless( {
-                                              'name' => [
-                                                          'nelements'
-                                                        ]
-                                            }, 'OPTiMaDe::FilterParser::Property' ),
-                                     '4'
-                                   ],
-                     'operator' => '='
-                   }, 'OPTiMaDe::FilterParser::Comparison' ),
-            'AND',
-            bless( {
-                     'operands' => [
-                                     bless( {
-                                              'name' => [
-                                                          'elements'
-                                                        ]
-                                            }, 'OPTiMaDe::FilterParser::Property' ),
-                                     'Si,O2'
-                                   ],
-                     'operator' => '='
-                   }, 'OPTiMaDe::FilterParser::Comparison' )
-          ]
-        ];
+$VAR1 = bless( {
+                 'operands' => [
+                                 bless( {
+                                          'operands' => [
+                                                          bless( {
+                                                                   'name' => [
+                                                                               '_cod_melting_point'
+                                                                             ]
+                                                                 }, 'OPTiMaDe::FilterParser::Property' ),
+                                                          '300'
+                                                        ],
+                                          'operator' => '<'
+                                        }, 'OPTiMaDe::FilterParser::Comparison' ),
+                                 bless( {
+                                          'operands' => [
+                                                          bless( {
+                                                                   'operands' => [
+                                                                                   bless( {
+                                                                                            'name' => [
+                                                                                                        'nelements'
+                                                                                                      ]
+                                                                                          }, 'OPTiMaDe::FilterParser::Property' ),
+                                                                                   '4'
+                                                                                 ],
+                                                                   'operator' => '='
+                                                                 }, 'OPTiMaDe::FilterParser::Comparison' ),
+                                                          bless( {
+                                                                   'operands' => [
+                                                                                   bless( {
+                                                                                            'name' => [
+                                                                                                        'elements'
+                                                                                                      ]
+                                                                                          }, 'OPTiMaDe::FilterParser::Property' ),
+                                                                                   'Si,O2'
+                                                                                 ],
+                                                                   'operator' => '='
+                                                                 }, 'OPTiMaDe::FilterParser::Comparison' )
+                                                        ],
+                                          'operator' => 'AND'
+                                        }, 'OPTiMaDe::FilterParser::AndOr' )
+                               ],
+                 'operator' => 'AND'
+               }, 'OPTiMaDe::FilterParser::AndOr' );
 == Filter ==
 ((_cod_melting_point < "300") AND ((nelements = "4") AND (elements = "Si,O2")))
 == SQL ==
