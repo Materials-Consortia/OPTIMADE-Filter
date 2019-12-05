@@ -3,20 +3,18 @@ package OPTiMaDe::FilterParser::Property;
 use strict;
 use warnings;
 
+use overload '@{}' => sub { return $_[0]->{name} },
+             '""'  => sub { return $_[0]->to_filter };
+
 sub new {
     my $class = shift;
     return bless { name => \@_ }, $class;
 }
 
-sub push_identifier {
-    my( $self, $identifier ) = @_;
-    push @{$self->{name}}, $identifier;
-}
-
 sub to_filter
 {
     my( $self ) = @_;
-    return join '.', @{$self->{name}};
+    return join '.', @$self;
 }
 
 sub to_SQL
@@ -24,7 +22,7 @@ sub to_SQL
     my( $self, $delim ) = @_;
     $delim = "'" unless $delim;
 
-    return join '.', map { "${delim}$_${delim}" } @{$self->{name}};
+    return join '.', map { "${delim}$_${delim}" } @$self;
 }
 
 sub modify

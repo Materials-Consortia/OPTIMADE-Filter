@@ -1,3 +1,8 @@
+0.4.0-dev
+
+    - Adding overrides for OPTiMaDe::FilterParser::Property. Replacing
+      push_identifier() via direct push to object.
+
 0.3.0 2019-08-19
 
     - Introducing method modify(), which traverses and modifies the built
