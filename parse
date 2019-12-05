@@ -16,6 +16,11 @@ if( $options{'--allow-LIKE-operator'} ) {
     $OPTiMaDe::FilterParser::allow_LIKE_operator = 1;
 }
 
+my $use_placeholders = 0;
+if( $options{'--use-placeholders'} ) {
+    $use_placeholders = 1;
+}
+
 @ARGV = ( '-' ) unless @ARGV;
 
 for (@ARGV) {
@@ -25,7 +30,14 @@ for (@ARGV) {
     print "== Filter ==\n";
     print $tree->to_filter . "\n";
     print "== SQL ==\n";
-    print $tree->to_SQL . "\n";
+    if( $use_placeholders ) {
+        my( $sql, $values ) = $tree->to_SQL( { placeholder => '?' } );
+        print "$sql\n";
+        print "=== Values ===\n";
+        print Dumper $values;
+    } else {
+        print $tree->to_SQL . "\n";
+    }
 
     my $filter = $tree->to_filter;
     $parser = new OPTiMaDe::FilterParser;
