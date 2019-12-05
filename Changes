@@ -1,3 +1,7 @@
+0.4.1-dev
+
+    - Fixing SQL placeholders for fuzzy search of strings.
+
 0.4.0 2019-12-05
 
     - Adding overloads for OPTiMaDe::FilterParser::Property. Replacing

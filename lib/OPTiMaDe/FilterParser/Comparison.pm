@@ -76,10 +76,24 @@ sub to_SQL
     $delim = "'" unless $delim;
 
     my $operator = $self->{operator};
-    my @operands;
+    my @operands = @{$self->{operands}};
+
+    # Handle STARTS/ENDS WITH. Currently, the 2nd operand is quaranteed
+    # to be string.
+    if(      $operator eq 'CONTAINS' ) {
+        $operator = 'LIKE';
+        $operands[1] = '%' . $operands[1] . '%';
+    } elsif( $operator =~ /^STARTS( WITH)?$/ ) {
+        $operator = 'LIKE';
+        $operands[1] = $operands[1] . '%';
+    } elsif( $operator =~ /^ENDS( WITH)?$/ ) {
+        $operator = 'LIKE';
+        $operands[1] = '%' . $operands[1];
+    }
+
     my @values;
-    for my $i (0..$#{$self->{operands}}) {
-        my $arg = $self->{operands}[$i];
+    my @operands_now;
+    for my $arg (@operands) {
         if( blessed $arg && $arg->can( 'to_SQL' ) ) {
             ( $arg, my $values ) = $arg->to_SQL( $options );
             push @values, @$values;
@@ -92,21 +106,9 @@ sub to_SQL
                 $arg = "\"$arg\"";
             }
         }
-        push @operands, $arg;
+        push @operands_now, $arg;
     }
-
-    # Currently the 2nd operator is quaranteed to be string
-    if(      $operator eq 'CONTAINS' ) {
-        $operator = 'LIKE';
-        $operands[1] =~ s/^"/"%/;
-        $operands[1] =~ s/"$/%"/;
-    } elsif( $operator =~ /^STARTS( WITH)?$/ ) {
-        $operator = 'LIKE';
-        $operands[1] =~ s/"$/%"/;
-    } elsif( $operator =~ /^ENDS( WITH)?$/ ) {
-        $operator = 'LIKE';
-        $operands[1] =~ s/^"/"%/;
-    }
+    @operands = @operands_now;
 
     if( wantarray ) {
         return ( "($operands[0] $operator $operands[1])", \@values );
