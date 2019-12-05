@@ -1,29 +1,31 @@
-$VAR1 = [
-          bless( {
-                   'operands' => [
-                                   bless( {
-                                            'name' => [
-                                                        'prototype_formula'
-                                                      ]
-                                          }, 'OPTiMaDe::FilterParser::Property' ),
-                                   'C2'
-                                 ],
-                   'operator' => 'CONTAINS'
-                 }, 'OPTiMaDe::FilterParser::Comparison' ),
-          'AND',
-          bless( {
-                   'operands' => [
-                                   bless( {
-                                            'name' => [
-                                                        'prototype_formula'
-                                                      ]
-                                          }, 'OPTiMaDe::FilterParser::Property' ),
-                                   'A2'
-                                 ],
-                   'operator' => 'STARTS WITH'
-                 }, 'OPTiMaDe::FilterParser::Comparison' )
-        ];
+$VAR1 = bless( {
+                 'operands' => [
+                                 bless( {
+                                          'operands' => [
+                                                          bless( {
+                                                                   'name' => [
+                                                                               'prototype_formula'
+                                                                             ]
+                                                                 }, 'OPTiMaDe::FilterParser::Property' ),
+                                                          'C2'
+                                                        ],
+                                          'operator' => 'CONTAINS'
+                                        }, 'OPTiMaDe::FilterParser::Comparison' ),
+                                 bless( {
+                                          'operands' => [
+                                                          bless( {
+                                                                   'name' => [
+                                                                               'prototype_formula'
+                                                                             ]
+                                                                 }, 'OPTiMaDe::FilterParser::Property' ),
+                                                          'A2'
+                                                        ],
+                                          'operator' => 'STARTS WITH'
+                                        }, 'OPTiMaDe::FilterParser::Comparison' )
+                               ],
+                 'operator' => 'AND'
+               }, 'OPTiMaDe::FilterParser::AndOr' );
 == Filter ==
 ((prototype_formula CONTAINS "C2") AND (prototype_formula STARTS WITH "A2"))
 == SQL ==
-(('prototype_formula' LIKE "%C2%") AND ('prototype_formula' LIKE "A2%"))
+(('prototype_formula' LIKE "%C2%")) AND (('prototype_formula' LIKE "A2%"))

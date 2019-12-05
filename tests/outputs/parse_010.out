@@ -1,22 +1,21 @@
-$VAR1 = [
-          'NOT',
-          bless( {
-                   'operands' => [
-                                   bless( {
-                                            'name' => [
-                                                        'ice'
-                                                      ]
-                                          }, 'OPTiMaDe::FilterParser::Property' ),
-                                   bless( {
-                                            'name' => [
-                                                        'val'
-                                                      ]
-                                          }, 'OPTiMaDe::FilterParser::Property' )
-                                 ],
-                   'operator' => '='
-                 }, 'OPTiMaDe::FilterParser::Comparison' )
-        ];
+$VAR1 = bless( {
+                 'inner' => bless( {
+                                     'operands' => [
+                                                     bless( {
+                                                              'name' => [
+                                                                          'ice'
+                                                                        ]
+                                                            }, 'OPTiMaDe::FilterParser::Property' ),
+                                                     bless( {
+                                                              'name' => [
+                                                                          'val'
+                                                                        ]
+                                                            }, 'OPTiMaDe::FilterParser::Property' )
+                                                   ],
+                                     'operator' => '='
+                                   }, 'OPTiMaDe::FilterParser::Comparison' )
+               }, 'OPTiMaDe::FilterParser::Negation' );
 == Filter ==
-(NOT (ice = val))
+NOT ((ice = val))
 == SQL ==
-(NOT ('ice' = 'val'))
+NOT (('ice' = 'val'))

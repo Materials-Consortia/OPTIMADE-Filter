@@ -1,39 +1,39 @@
-$VAR1 = [
-          [
-            'NOT',
-            bless( {
-                     'operands' => [
-                                     bless( {
-                                              'name' => [
-                                                          'a'
-                                                        ]
-                                            }, 'OPTiMaDe::FilterParser::Property' ),
-                                     bless( {
-                                              'name' => [
-                                                          'b'
-                                                        ]
-                                            }, 'OPTiMaDe::FilterParser::Property' )
-                                   ],
-                     'operator' => '>'
-                   }, 'OPTiMaDe::FilterParser::Comparison' )
-          ],
-          'AND',
-          [
-            'NOT',
-            bless( {
-                     'operands' => [
-                                     bless( {
-                                              'name' => [
-                                                          'x'
-                                                        ]
-                                            }, 'OPTiMaDe::FilterParser::Property' ),
-                                     '0'
-                                   ],
-                     'operator' => '>'
-                   }, 'OPTiMaDe::FilterParser::Comparison' )
-          ]
-        ];
+$VAR1 = bless( {
+                 'operands' => [
+                                 bless( {
+                                          'inner' => bless( {
+                                                              'operands' => [
+                                                                              bless( {
+                                                                                       'name' => [
+                                                                                                   'a'
+                                                                                                 ]
+                                                                                     }, 'OPTiMaDe::FilterParser::Property' ),
+                                                                              bless( {
+                                                                                       'name' => [
+                                                                                                   'b'
+                                                                                                 ]
+                                                                                     }, 'OPTiMaDe::FilterParser::Property' )
+                                                                            ],
+                                                              'operator' => '>'
+                                                            }, 'OPTiMaDe::FilterParser::Comparison' )
+                                        }, 'OPTiMaDe::FilterParser::Negation' ),
+                                 bless( {
+                                          'inner' => bless( {
+                                                              'operands' => [
+                                                                              bless( {
+                                                                                       'name' => [
+                                                                                                   'x'
+                                                                                                 ]
+                                                                                     }, 'OPTiMaDe::FilterParser::Property' ),
+                                                                              '0'
+                                                                            ],
+                                                              'operator' => '>'
+                                                            }, 'OPTiMaDe::FilterParser::Comparison' )
+                                        }, 'OPTiMaDe::FilterParser::Negation' )
+                               ],
+                 'operator' => 'AND'
+               }, 'OPTiMaDe::FilterParser::AndOr' );
 == Filter ==
-((NOT (a > b)) AND (NOT (x > "0")))
+(NOT ((a > b)) AND NOT ((x > "0")))
 == SQL ==
-((NOT ('a' > 'b')) AND (NOT ('x' > "0")))
+(NOT (('a' > 'b'))) AND (NOT (('x' > "0")))
