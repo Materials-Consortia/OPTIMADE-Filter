@@ -8,6 +8,7 @@ use Scalar::Util qw(blessed);
 
 use OPTiMaDe::FilterParser::Comparison;
 use OPTiMaDe::FilterParser::ListComparison;
+use OPTiMaDe::FilterParser::Negation;
 use OPTiMaDe::FilterParser::Property;
 use OPTiMaDe::FilterParser::Zip;
 
@@ -112,15 +113,15 @@ expression_phrase: comparison
                     }
                  | NOT comparison
                     {
-                        return [ @_[1..$#_] ];
+                        return OPTiMaDe::FilterParser::Negation->new( $_[2] );
                     }
                  | NOT predicate_comparison
                     {
-                        return [ @_[1..$#_] ];
+                        return OPTiMaDe::FilterParser::Negation->new( $_[2] );
                     }
                  | NOT openingbrace expression closingbrace
                     {
-                        return [ $_[1], $_[3] ];
+                        return OPTiMaDe::FilterParser::Negation->new( $_[3] );
                     }
                  ;
 
