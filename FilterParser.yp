@@ -8,6 +8,7 @@ use Scalar::Util qw(blessed);
 
 use OPTiMaDe::FilterParser::AndOr;
 use OPTiMaDe::FilterParser::Comparison;
+use OPTiMaDe::FilterParser::Known;
 use OPTiMaDe::FilterParser::ListComparison;
 use OPTiMaDe::FilterParser::Negation;
 use OPTiMaDe::FilterParser::Property;
@@ -135,7 +136,8 @@ property_first_comparison: property value_op_rhs
                                 }
                            | property known_op_rhs
                                 {
-                                    return [ $_[1], @{$_[2]} ];
+                                    $_[2]->property( $_[1] );
+                                    return $_[2];
                                 }
                            | property fuzzy_string_op_rhs
                                 {
@@ -173,11 +175,11 @@ value_op_rhs: operator value
 
 known_op_rhs: IS KNOWN
                 {
-                    return [ "$_[1] $_[2]" ];
+                    return OPTiMaDe::FilterParser::Known->new( 1 );
                 }
             | IS UNKNOWN
                 {
-                    return [ "$_[1] $_[2]" ];
+                    return OPTiMaDe::FilterParser::Known->new( 0 );
                 }
             ;
 

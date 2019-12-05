@@ -1,26 +1,27 @@
-$VAR1 = [
-          [
-            bless( {
-                     'name' => [
-                                 'chemical_formula_hill'
-                               ]
-                   }, 'OPTiMaDe::FilterParser::Property' ),
-            'IS KNOWN'
-          ],
-          'AND',
-          [
-            'NOT',
-            [
-              bless( {
-                       'name' => [
-                                   'chemical_formula_anonymous'
-                                 ]
-                     }, 'OPTiMaDe::FilterParser::Property' ),
-              'IS UNKNOWN'
-            ]
-          ]
-        ];
+$VAR1 = bless( {
+                 'operands' => [
+                                 bless( {
+                                          'is_known' => 1,
+                                          'property' => bless( {
+                                                                 'name' => [
+                                                                             'chemical_formula_hill'
+                                                                           ]
+                                                               }, 'OPTiMaDe::FilterParser::Property' )
+                                        }, 'OPTiMaDe::FilterParser::Known' ),
+                                 bless( {
+                                          'inner' => bless( {
+                                                              'is_known' => 0,
+                                                              'property' => bless( {
+                                                                                     'name' => [
+                                                                                                 'chemical_formula_anonymous'
+                                                                                               ]
+                                                                                   }, 'OPTiMaDe::FilterParser::Property' )
+                                                            }, 'OPTiMaDe::FilterParser::Known' )
+                                        }, 'OPTiMaDe::FilterParser::Negation' )
+                               ],
+                 'operator' => 'AND'
+               }, 'OPTiMaDe::FilterParser::AndOr' );
 == Filter ==
-((chemical_formula_hill IS KNOWN) AND (NOT (chemical_formula_anonymous IS UNKNOWN)))
+(chemical_formula_hill IS KNOWN AND NOT (chemical_formula_anonymous IS UNKNOWN))
 == SQL ==
-(('chemical_formula_hill' IS NOT NULL) AND (NOT ('chemical_formula_anonymous' IS NULL)))
+('chemical_formula_hill' IS NOT NULL) AND (NOT ('chemical_formula_anonymous' IS NULL))
