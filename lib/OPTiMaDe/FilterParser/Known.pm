@@ -33,9 +33,15 @@ sub to_filter
 
 sub to_SQL
 {
-    my( $self, $delim ) = @_;
-    return $self->property->to_SQL( $delim ) . ' IS ' .
-           ($self->is_known ? 'NOT NULL' : 'NULL');
+    my( $self, $options ) = @_;
+
+    my( $sql, $values ) = $self->property->to_SQL( $options );
+    $sql = "$sql IS " . ($self->is_known ? 'NOT NULL' : 'NULL');
+    if( wantarray ) {
+        return ( $sql, $values );
+    } else {
+        return $sql;
+    }
 }
 
 sub modify

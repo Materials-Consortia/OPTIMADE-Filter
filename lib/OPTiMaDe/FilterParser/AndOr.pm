@@ -78,27 +78,44 @@ sub to_filter
 
 sub to_SQL
 {
-    my( $self, $delim ) = @_;
+    my( $self, $options ) = @_;
+    $options = {} unless $options;
+    my( $delim, $placeholder ) = (
+        $options->{delim},
+        $options->{placeholder},
+    );
     $delim = "'" unless $delim;
 
     my $operator = $self->{operator};
     my @operands;
+    my @values;
     for my $i (0..$#{$self->{operands}}) {
         my $arg = $self->{operands}[$i];
         if( blessed $arg && $arg->can( 'to_SQL' ) ) {
-            eval { $arg = $arg->to_SQL( $delim ) };
+            my $values = [];
+            eval { ( $arg, $values ) = $arg->to_SQL( $options ) };
             if( $@ ) {
                 chomp $@;
                 $arg = "<$@>";
             }
+            push @values, @$values;
         } else {
-            $arg =~ s/"/""/g;
-            $arg = "\"$arg\"";
+            push @values, $arg;
+            if( $placeholder ) {
+                $arg = $placeholder;
+            } else {
+                $arg =~ s/"/""/g;
+                $arg = "\"$arg\"";
+            }
         }
         push @operands, $arg;
     }
 
-    return "($operands[0] $operator $operands[1])";
+    if( wantarray ) {
+        return ( "($operands[0] $operator $operands[1])", \@values );
+    } else {
+        return "($operands[0] $operator $operands[1])";
+    }
 }
 
 sub modify

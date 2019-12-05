@@ -24,9 +24,14 @@ sub to_filter
 
 sub to_SQL
 {
-    my( $self, $delim ) = @_;
+    my( $self, $options ) = @_;
 
-    return '(NOT ' . $self->inner->to_SQL( $delim ) . ')';
+    my( $sql, $values ) = $self->inner->to_SQL( $options );
+    if( wantarray ) {
+        return ( "(NOT $sql)", $values );
+    } else {
+        return "(NOT $sql)";
+    }
 }
 
 sub modify

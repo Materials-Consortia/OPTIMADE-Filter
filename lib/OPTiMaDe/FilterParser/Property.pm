@@ -19,10 +19,21 @@ sub to_filter
 
 sub to_SQL
 {
-    my( $self, $delim ) = @_;
+    my( $self, $options ) = @_;
+    $options = {} unless $options;
+    my( $delim, $placeholder ) = (
+        $options->{delim},
+        $options->{placeholder},
+    );
     $delim = "'" unless $delim;
 
-    return join '.', map { "${delim}$_${delim}" } @$self;
+    my $sql = join '.', map { "${delim}$_${delim}" } @$self;
+
+    if( wantarray ) {
+        return ( $sql, [] );
+    } else {
+        return $sql;
+    }
 }
 
 sub modify
