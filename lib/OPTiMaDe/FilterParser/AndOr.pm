@@ -98,7 +98,7 @@ sub to_SQL
         push @operands, $arg;
     }
 
-    return "($operands[0]) $operator ($operands[1])";
+    return "($operands[0] $operator $operands[1])";
 }
 
 sub modify

@@ -34,6 +34,6 @@ $VAR1 = bless( {
                  'operator' => 'AND'
                }, 'OPTiMaDe::FilterParser::AndOr' );
 == Filter ==
-(NOT ((a > b)) AND NOT ((x > "0")))
+((NOT (a > b)) AND (NOT (x > "0")))
 == SQL ==
-(NOT (('a' > 'b'))) AND (NOT (('x' > "0")))
+((NOT ('a' > 'b')) AND (NOT ('x' > "0")))

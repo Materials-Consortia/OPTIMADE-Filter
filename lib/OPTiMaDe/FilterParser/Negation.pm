@@ -19,14 +19,14 @@ sub inner
 sub to_filter
 {
     my( $self ) = @_;
-    return 'NOT (' . $self->inner->to_filter . ')';
+    return '(NOT ' . $self->inner->to_filter . ')';
 }
 
 sub to_SQL
 {
     my( $self, $delim ) = @_;
 
-    return 'NOT (' . $self->inner->to_SQL( $delim ) . ')';
+    return '(NOT ' . $self->inner->to_SQL( $delim ) . ')';
 }
 
 sub modify
