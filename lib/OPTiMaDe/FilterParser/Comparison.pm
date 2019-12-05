@@ -78,17 +78,16 @@ sub to_SQL
     my $operator = $self->{operator};
     my @operands = @{$self->{operands}};
 
-    # Handle STARTS/ENDS WITH. Currently, the 2nd operand is quaranteed
-    # to be string.
+    # Handle STARTS/ENDS WITH
     if(      $operator eq 'CONTAINS' ) {
         $operator = 'LIKE';
-        $operands[1] = '%' . $operands[1] . '%';
+        $operands[1] = '%' . $operands[1] . '%' if !blessed $operands[1];
     } elsif( $operator =~ /^STARTS( WITH)?$/ ) {
         $operator = 'LIKE';
-        $operands[1] = $operands[1] . '%';
+        $operands[1] = $operands[1] . '%' if !blessed $operands[1];
     } elsif( $operator =~ /^ENDS( WITH)?$/ ) {
         $operator = 'LIKE';
-        $operands[1] = '%' . $operands[1];
+        $operands[1] = '%' . $operands[1] if !blessed $operands[1];
     }
 
     my @values;
