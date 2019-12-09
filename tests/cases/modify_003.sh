@@ -4,6 +4,7 @@ use strict;
 use warnings;
 use Data::Compare;
 use Data::Dumper;
+use OPTiMaDe::Filter;
 use OPTiMaDe::Filter::Parser;
 use Scalar::Util qw(blessed);
 
