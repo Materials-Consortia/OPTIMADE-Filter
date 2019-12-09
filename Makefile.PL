@@ -1,7 +1,7 @@
 use ExtUtils::MakeMaker;
 WriteMakefile(
-	NAME => 'OPTiMaDe::FilterParser',
-	VERSION_FROM => 'lib/OPTiMaDe/FilterParser.pm',
+	NAME => 'OPTiMaDe::Filter',
+	VERSION_FROM => 'lib/OPTiMaDe/Filter/Parser.pm',
 	PREREQ_PM => {
 		Parse::Yapp => 0,
 		Scalar::Util => 0,
@@ -10,7 +10,7 @@ WriteMakefile(
 
 sub MY::postamble {
 <<'EOT'
-lib/OPTiMaDe/%.pm: %.yp
-	yapp -v -m OPTiMaDe::FilterParser -o $@ $<
+lib/OPTiMaDe/Filter/%.pm: %.yp
+	yapp -v -m OPTiMaDe::Filter::Parser -o $@ $<
 EOT
 }
