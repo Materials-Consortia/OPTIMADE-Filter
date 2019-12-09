@@ -1,7 +1,7 @@
 use ExtUtils::MakeMaker;
 WriteMakefile(
 	NAME => 'OPTiMaDe::Filter',
-	VERSION_FROM => 'lib/OPTiMaDe/Filter/Parser.pm',
+	VERSION_FROM => 'lib/OPTiMaDe/Filter.pm',
 	PREREQ_PM => {
 		Parse::Yapp => 0,
 		Scalar::Util => 0,
