@@ -1,14 +1,14 @@
 Changes
 COPYING
-FilterParser.yp
-lib/OPTiMaDe/FilterParser.pm
-lib/OPTiMaDe/FilterParser/AndOr.pm
-lib/OPTiMaDe/FilterParser/Comparison.pm
-lib/OPTiMaDe/FilterParser/Known.pm
-lib/OPTiMaDe/FilterParser/ListComparison.pm
-lib/OPTiMaDe/FilterParser/Negation.pm
-lib/OPTiMaDe/FilterParser/Property.pm
-lib/OPTiMaDe/FilterParser/Zip.pm
+Parser.yp
+lib/OPTiMaDe/Filter/Parser.pm
+lib/OPTiMaDe/Filter/Parser/AndOr.pm
+lib/OPTiMaDe/Filter/Parser/Comparison.pm
+lib/OPTiMaDe/Filter/Parser/Known.pm
+lib/OPTiMaDe/Filter/Parser/ListComparison.pm
+lib/OPTiMaDe/Filter/Parser/Negation.pm
+lib/OPTiMaDe/Filter/Parser/Property.pm
+lib/OPTiMaDe/Filter/Parser/Zip.pm
 Makefile.PL
 MANIFEST			This list of files
 parse

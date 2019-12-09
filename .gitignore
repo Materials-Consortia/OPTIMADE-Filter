@@ -1,7 +1,7 @@
 blib
 pm_to_blib
-FilterParser.output
+Parser.output
 Makefile
 MYMETA.json
 MYMETA.yml
-OPTiMaDe-FilterParser-*.tar.gz
+OPTiMaDe-Filter-*.tar.gz
