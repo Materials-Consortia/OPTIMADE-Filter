@@ -6,13 +6,13 @@ use warnings;
 
 use Scalar::Util qw(blessed);
 
-use OPTiMaDe::Filter::Parser::AndOr;
-use OPTiMaDe::Filter::Parser::Comparison;
-use OPTiMaDe::Filter::Parser::Known;
-use OPTiMaDe::Filter::Parser::ListComparison;
-use OPTiMaDe::Filter::Parser::Negation;
-use OPTiMaDe::Filter::Parser::Property;
-use OPTiMaDe::Filter::Parser::Zip;
+use OPTiMaDe::Filter::AndOr;
+use OPTiMaDe::Filter::Comparison;
+use OPTiMaDe::Filter::Known;
+use OPTiMaDe::Filter::ListComparison;
+use OPTiMaDe::Filter::Negation;
+use OPTiMaDe::Filter::Property;
+use OPTiMaDe::Filter::Zip;
 
 our $VERSION = '0.5.0-dev';
 our $OPTiMaDe_VERSION = '0.10.0-dev';
@@ -96,14 +96,14 @@ value_zip_list: value_zip
 expression: expression_clause
           | expression_clause OR expression
             {
-                return OPTiMaDe::Filter::Parser::AndOr->new( @_[1..$#_] );
+                return OPTiMaDe::Filter::AndOr->new( @_[1..$#_] );
             }
           ;
 
 expression_clause: expression_phrase
                  | expression_phrase AND expression_clause
                     {
-                        return OPTiMaDe::Filter::Parser::AndOr->new( @_[1..$#_] );
+                        return OPTiMaDe::Filter::AndOr->new( @_[1..$#_] );
                     }
                  ;
 
@@ -115,15 +115,15 @@ expression_phrase: comparison
                     }
                  | NOT comparison
                     {
-                        return OPTiMaDe::Filter::Parser::Negation->new( $_[2] );
+                        return OPTiMaDe::Filter::Negation->new( $_[2] );
                     }
                  | NOT predicate_comparison
                     {
-                        return OPTiMaDe::Filter::Parser::Negation->new( $_[2] );
+                        return OPTiMaDe::Filter::Negation->new( $_[2] );
                     }
                  | NOT openingbrace expression closingbrace
                     {
-                        return OPTiMaDe::Filter::Parser::Negation->new( $_[3] );
+                        return OPTiMaDe::Filter::Negation->new( $_[3] );
                     }
                  ;
 
@@ -167,7 +167,7 @@ predicate_comparison: length_comparison ;
 
 value_op_rhs: operator value
                 {
-                    my $cmp = OPTiMaDe::Filter::Parser::Comparison->new( $_[1] );
+                    my $cmp = OPTiMaDe::Filter::Comparison->new( $_[1] );
                     $cmp->push_operand( $_[2] );
                     return $cmp;
                 }
@@ -175,11 +175,11 @@ value_op_rhs: operator value
 
 known_op_rhs: IS KNOWN
                 {
-                    return OPTiMaDe::Filter::Parser::Known->new( 1 );
+                    return OPTiMaDe::Filter::Known->new( 1 );
                 }
             | IS UNKNOWN
                 {
-                    return OPTiMaDe::Filter::Parser::Known->new( 0 );
+                    return OPTiMaDe::Filter::Known->new( 0 );
                 }
             ;
 
@@ -187,37 +187,37 @@ string_property: string | property ;
 
 fuzzy_string_op_rhs: CONTAINS string_property
                         {
-                            my $cmp = OPTiMaDe::Filter::Parser::Comparison->new( $_[1] );
+                            my $cmp = OPTiMaDe::Filter::Comparison->new( $_[1] );
                             $cmp->push_operand( $_[2] );
                             return $cmp;
                         }
                    | STARTS string_property
                         {
-                            my $cmp = OPTiMaDe::Filter::Parser::Comparison->new( $_[1] );
+                            my $cmp = OPTiMaDe::Filter::Comparison->new( $_[1] );
                             $cmp->push_operand( $_[2] );
                             return $cmp;
                         }
                    | STARTS WITH string_property
                         {
-                            my $cmp = OPTiMaDe::Filter::Parser::Comparison->new( "$_[1] $_[2]" );
+                            my $cmp = OPTiMaDe::Filter::Comparison->new( "$_[1] $_[2]" );
                             $cmp->push_operand( $_[3] );
                             return $cmp;
                         }
                    | ENDS string_property
                         {
-                            my $cmp = OPTiMaDe::Filter::Parser::Comparison->new( $_[1] );
+                            my $cmp = OPTiMaDe::Filter::Comparison->new( $_[1] );
                             $cmp->push_operand( $_[2] );
                             return $cmp;
                         }
                    | ENDS WITH string_property
                         {
-                            my $cmp = OPTiMaDe::Filter::Parser::Comparison->new( "$_[1] $_[2]" );
+                            my $cmp = OPTiMaDe::Filter::Comparison->new( "$_[1] $_[2]" );
                             $cmp->push_operand( $_[3] );
                             return $cmp;
                         }
                    | LIKE string_property
                         {
-                            my $cmp = OPTiMaDe::Filter::Parser::Comparison->new( $_[1] );
+                            my $cmp = OPTiMaDe::Filter::Comparison->new( $_[1] );
                             $cmp->push_operand( $_[2] );
                             return $cmp;
                         }
@@ -225,31 +225,31 @@ fuzzy_string_op_rhs: CONTAINS string_property
 
 set_op_rhs: HAS value
             {
-                my $lc = OPTiMaDe::Filter::Parser::ListComparison->new( $_[1] );
+                my $lc = OPTiMaDe::Filter::ListComparison->new( $_[1] );
                 $lc->set_values( [ [ '=', $_[2] ] ] );
                 return $lc;
             }
           | HAS operator value
             {
-                my $lc = OPTiMaDe::Filter::Parser::ListComparison->new( $_[1] );
+                my $lc = OPTiMaDe::Filter::ListComparison->new( $_[1] );
                 $lc->set_values( [ [ $_[2], $_[3] ] ] );
                 return $lc;
             }
           | HAS ALL value_list
             {
-                my $lc = OPTiMaDe::Filter::Parser::ListComparison->new( "$_[1] $_[2]" );
+                my $lc = OPTiMaDe::Filter::ListComparison->new( "$_[1] $_[2]" );
                 $lc->set_values( $_[3] );
                 return $lc;
             }
           | HAS ANY value_list
             {
-                my $lc = OPTiMaDe::Filter::Parser::ListComparison->new( "$_[1] $_[2]" );
+                my $lc = OPTiMaDe::Filter::ListComparison->new( "$_[1] $_[2]" );
                 $lc->set_values( $_[3] );
                 return $lc;
             }
           | HAS ONLY value_list
             {
-                my $lc = OPTiMaDe::Filter::Parser::ListComparison->new( "$_[1] $_[2]" );
+                my $lc = OPTiMaDe::Filter::ListComparison->new( "$_[1] $_[2]" );
                 $lc->set_values( $_[3] );
                 return $lc;
             }
@@ -283,7 +283,7 @@ set_zip_op_rhs: property_zip_addon HAS value_zip
 
 length_comparison: LENGTH property operator value
                     {
-                        my $cmp = OPTiMaDe::Filter::Parser::ListComparison->new( $_[1] );
+                        my $cmp = OPTiMaDe::Filter::ListComparison->new( $_[1] );
                         $cmp->set_property( $_[2] );
                         $cmp->set_values( [ [ $_[3], $_[4] ] ] );
                         return $cmp;
@@ -292,7 +292,7 @@ length_comparison: LENGTH property operator value
 
 property_zip_addon: colon property
                         {
-                            my $zip = OPTiMaDe::Filter::Parser::Zip->new;
+                            my $zip = OPTiMaDe::Filter::Zip->new;
                             $zip->push_property( $_[2] );
                             return $zip;
                         }
@@ -307,7 +307,7 @@ property_zip_addon: colon property
 
 property: identifier
             {
-                return OPTiMaDe::Filter::Parser::Property->new( $_[1] );
+                return OPTiMaDe::Filter::Property->new( $_[1] );
             }
         | property dot identifier
             {
