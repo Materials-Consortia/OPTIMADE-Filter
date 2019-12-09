@@ -4,6 +4,8 @@
     - Implementing right-hand side properties as per
       Materials-Consortia/OPTiMaDe#178.
     - Properties of three or more identifiers have no SQL representation.
+    - Replacing OPTiMaDe::Filter::Comparison::set_operator() with
+      operator().
 
 0.4.1 2019-12-05
 

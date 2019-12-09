@@ -9,11 +9,6 @@ sub new {
     return bless { operands => [], operator => $operator }, $class;
 }
 
-sub set_operator {
-    my( $self, $operator ) = @_;
-    $self->{operator} = $operator;
-}
-
 sub push_operand
 {
     my( $self, $operand ) = @_;
@@ -26,6 +21,14 @@ sub unshift_operand
     my( $self, $operand ) = @_;
     die 'attempt to insert more than two operands' if @{$self->{operands}} >= 2;
     unshift @{$self->{operands}}, $operand;
+}
+
+sub operator
+{
+    my( $self, $operator ) = @_;
+    my $previous_operator = $self->{operator};
+    $self->{operator} = $operator if defined $operator;
+    return $previous_operator;
 }
 
 sub left
