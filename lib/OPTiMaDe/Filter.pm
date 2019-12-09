@@ -5,7 +5,7 @@ use warnings;
 
 use Scalar::Util qw(blessed);
 
-our $VERSION = '0.5.0-dev';
+our $VERSION = '0.5.0';
 our $OPTiMaDe_VERSION = '0.10.0-dev';
 
 sub modify
