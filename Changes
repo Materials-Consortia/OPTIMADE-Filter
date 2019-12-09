@@ -3,6 +3,7 @@
     - Renaming package from OPTiMaDe::FilterParser to OPTiMaDe::Filter.
     - Implementing right-hand side properties as per
       Materials-Consortia/OPTiMaDe#178.
+    - Properties of three or more identifiers have no SQL representation.
 
 0.4.1 2019-12-05
 

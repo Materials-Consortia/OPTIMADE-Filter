@@ -27,6 +27,11 @@ sub to_SQL
     );
     $delim = "'" unless $delim;
 
+    if( @$self > 2 ) {
+        die 'no SQL representation for properties of more than two ' .
+            "identifiers\n";
+    }
+
     my $sql = join '.', map { "${delim}$_${delim}" } @$self;
 
     if( wantarray ) {
