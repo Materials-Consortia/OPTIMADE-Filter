@@ -6,14 +6,14 @@ $VAR1 = bless( {
                                                                  'name' => [
                                                                              'elements'
                                                                            ]
-                                                               }, 'OPTiMaDe::FilterParser::Property' ),
+                                                               }, 'OPTiMaDe::Filter::Property' ),
                                           'values' => [
                                                         [
                                                           '=',
                                                           'H'
                                                         ]
                                                       ]
-                                        }, 'OPTiMaDe::FilterParser::ListComparison' ),
+                                        }, 'OPTiMaDe::Filter::ListComparison' ),
                                  bless( {
                                           'operands' => [
                                                           bless( {
@@ -22,7 +22,7 @@ $VAR1 = bless( {
                                                                                           'name' => [
                                                                                                       'elements'
                                                                                                     ]
-                                                                                        }, 'OPTiMaDe::FilterParser::Property' ),
+                                                                                        }, 'OPTiMaDe::Filter::Property' ),
                                                                    'values' => [
                                                                                  [
                                                                                    '=',
@@ -41,7 +41,7 @@ $VAR1 = bless( {
                                                                                    'Ta'
                                                                                  ]
                                                                                ]
-                                                                 }, 'OPTiMaDe::FilterParser::ListComparison' ),
+                                                                 }, 'OPTiMaDe::Filter::ListComparison' ),
                                                           bless( {
                                                                    'operands' => [
                                                                                    bless( {
@@ -50,7 +50,7 @@ $VAR1 = bless( {
                                                                                                                    'name' => [
                                                                                                                                'elements'
                                                                                                                              ]
-                                                                                                                 }, 'OPTiMaDe::FilterParser::Property' ),
+                                                                                                                 }, 'OPTiMaDe::Filter::Property' ),
                                                                                             'values' => [
                                                                                                           [
                                                                                                             '=',
@@ -69,14 +69,14 @@ $VAR1 = bless( {
                                                                                                             'Ta'
                                                                                                           ]
                                                                                                         ]
-                                                                                          }, 'OPTiMaDe::FilterParser::ListComparison' ),
+                                                                                          }, 'OPTiMaDe::Filter::ListComparison' ),
                                                                                    bless( {
                                                                                             'operator' => 'HAS ANY',
                                                                                             'property' => bless( {
                                                                                                                    'name' => [
                                                                                                                                'elements'
                                                                                                                              ]
-                                                                                                                 }, 'OPTiMaDe::FilterParser::Property' ),
+                                                                                                                 }, 'OPTiMaDe::Filter::Property' ),
                                                                                             'values' => [
                                                                                                           [
                                                                                                             '=',
@@ -95,16 +95,16 @@ $VAR1 = bless( {
                                                                                                             'Ta'
                                                                                                           ]
                                                                                                         ]
-                                                                                          }, 'OPTiMaDe::FilterParser::ListComparison' )
+                                                                                          }, 'OPTiMaDe::Filter::ListComparison' )
                                                                                  ],
                                                                    'operator' => 'AND'
-                                                                 }, 'OPTiMaDe::FilterParser::AndOr' )
+                                                                 }, 'OPTiMaDe::Filter::AndOr' )
                                                         ],
                                           'operator' => 'AND'
-                                        }, 'OPTiMaDe::FilterParser::AndOr' )
+                                        }, 'OPTiMaDe::Filter::AndOr' )
                                ],
                  'operator' => 'AND'
-               }, 'OPTiMaDe::FilterParser::AndOr' );
+               }, 'OPTiMaDe::Filter::AndOr' );
 == Filter ==
 ((elements HAS = "H") AND ((elements HAS ALL = "H", = "He", = "Ga", = "Ta") AND ((elements HAS ONLY = "H", = "He", = "Ga", = "Ta") AND (elements HAS ANY = "H", = "He", = "Ga", = "Ta"))))
 == SQL ==

@@ -6,25 +6,25 @@ $VAR1 = bless( {
                                                                    'name' => [
                                                                                '_mp_bandgap'
                                                                              ]
-                                                                 }, 'OPTiMaDe::FilterParser::Property' ),
+                                                                 }, 'OPTiMaDe::Filter::Property' ),
                                                           '5.0'
                                                         ],
                                           'operator' => '>'
-                                        }, 'OPTiMaDe::FilterParser::Comparison' ),
+                                        }, 'OPTiMaDe::Filter::Comparison' ),
                                  bless( {
                                           'operands' => [
                                                           bless( {
                                                                    'name' => [
                                                                                '_cod_molecular_weight'
                                                                              ]
-                                                                 }, 'OPTiMaDe::FilterParser::Property' ),
+                                                                 }, 'OPTiMaDe::Filter::Property' ),
                                                           '350'
                                                         ],
                                           'operator' => '<'
-                                        }, 'OPTiMaDe::FilterParser::Comparison' )
+                                        }, 'OPTiMaDe::Filter::Comparison' )
                                ],
                  'operator' => 'AND'
-               }, 'OPTiMaDe::FilterParser::AndOr' );
+               }, 'OPTiMaDe::Filter::AndOr' );
 == Filter ==
 ((_mp_bandgap > "5.0") AND (_cod_molecular_weight < "350"))
 == SQL ==

@@ -4,11 +4,11 @@ $VAR1 = bless( {
                                           'name' => [
                                                       'spacegroup'
                                                     ]
-                                        }, 'OPTiMaDe::FilterParser::Property' ),
+                                        }, 'OPTiMaDe::Filter::Property' ),
                                  'P2'
                                ],
                  'operator' => '='
-               }, 'OPTiMaDe::FilterParser::Comparison' );
+               }, 'OPTiMaDe::Filter::Comparison' );
 == Filter ==
 (spacegroup = "P2")
 == SQL ==

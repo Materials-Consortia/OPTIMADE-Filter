@@ -6,11 +6,11 @@ $VAR1 = bless( {
                                                                    'name' => [
                                                                                'a'
                                                                              ]
-                                                                 }, 'OPTiMaDe::FilterParser::Property' ),
+                                                                 }, 'OPTiMaDe::Filter::Property' ),
                                                           '5'
                                                         ],
                                           'operator' => '>'
-                                        }, 'OPTiMaDe::FilterParser::Comparison' ),
+                                        }, 'OPTiMaDe::Filter::Comparison' ),
                                  bless( {
                                           'operands' => [
                                                           bless( {
@@ -19,25 +19,25 @@ $VAR1 = bless( {
                                                                                             'name' => [
                                                                                                         'b'
                                                                                                       ]
-                                                                                          }, 'OPTiMaDe::FilterParser::Property' ),
+                                                                                          }, 'OPTiMaDe::Filter::Property' ),
                                                                                    '2'
                                                                                  ],
                                                                    'operator' => '<'
-                                                                 }, 'OPTiMaDe::FilterParser::Comparison' ),
+                                                                 }, 'OPTiMaDe::Filter::Comparison' ),
                                                           bless( {
                                                                    'operands' => [
                                                                                    bless( {
                                                                                             'name' => [
                                                                                                         'c'
                                                                                                       ]
-                                                                                          }, 'OPTiMaDe::FilterParser::Property' ),
+                                                                                          }, 'OPTiMaDe::Filter::Property' ),
                                                                                    '10'
                                                                                  ],
                                                                    'operator' => '>'
-                                                                 }, 'OPTiMaDe::FilterParser::Comparison' )
+                                                                 }, 'OPTiMaDe::Filter::Comparison' )
                                                         ],
                                           'operator' => 'AND'
-                                        }, 'OPTiMaDe::FilterParser::AndOr' )
+                                        }, 'OPTiMaDe::Filter::AndOr' )
                                ],
                  'operator' => 'OR'
-               }, 'OPTiMaDe::FilterParser::AndOr' );
+               }, 'OPTiMaDe::Filter::AndOr' );

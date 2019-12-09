@@ -13,7 +13,7 @@ my $parser = new OPTiMaDe::FilterParser;
 my $tree = $parser->parse_string( 'value.list HAS ALL "a", "b", "c"' );
 
 my @traverse_order;
-OPTiMaDe::FilterParser::modify( $tree,
+OPTiMaDe::Filter::modify( $tree,
     sub {
         my( $node, $traverse_order ) = @_;
 

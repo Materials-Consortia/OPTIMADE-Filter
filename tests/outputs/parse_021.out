@@ -5,10 +5,10 @@ $VAR1 = bless( {
                                           'name' => [
                                                       '_exmpl_a'
                                                     ]
-                                        }, 'OPTiMaDe::FilterParser::Property' )
+                                        }, 'OPTiMaDe::Filter::Property' )
                                ],
                  'operator' => '<'
-               }, 'OPTiMaDe::FilterParser::Comparison' );
+               }, 'OPTiMaDe::Filter::Comparison' );
 == Filter ==
 ("5" < _exmpl_a)
 == SQL ==

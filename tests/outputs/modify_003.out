@@ -4,7 +4,7 @@ $VAR1 = [
                                'value',
                                'list'
                              ]
-                 }, 'OPTiMaDe::FilterParser::Property' ),
+                 }, 'OPTiMaDe::Filter::Property' ),
           '=',
           'a',
           '=',
@@ -28,5 +28,5 @@ $VAR1 = [
                                    'c'
                                  ]
                                ]
-                 }, 'OPTiMaDe::FilterParser::ListComparison' )
+                 }, 'OPTiMaDe::Filter::ListComparison' )
         ];

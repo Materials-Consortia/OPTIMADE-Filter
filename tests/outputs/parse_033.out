@@ -6,14 +6,14 @@ $VAR1 = bless( {
                                                                  'name' => [
                                                                              'list'
                                                                            ]
-                                                               }, 'OPTiMaDe::FilterParser::Property' ),
+                                                               }, 'OPTiMaDe::Filter::Property' ),
                                           'values' => [
                                                         [
                                                           '<',
                                                           '5'
                                                         ]
                                                       ]
-                                        }, 'OPTiMaDe::FilterParser::ListComparison' ),
+                                        }, 'OPTiMaDe::Filter::ListComparison' ),
                                  bless( {
                                           'operands' => [
                                                           bless( {
@@ -22,21 +22,21 @@ $VAR1 = bless( {
                                                                                           'name' => [
                                                                                                       'list'
                                                                                                     ]
-                                                                                        }, 'OPTiMaDe::FilterParser::Property' ),
+                                                                                        }, 'OPTiMaDe::Filter::Property' ),
                                                                    'values' => [
                                                                                  [
                                                                                    '=',
                                                                                    'four'
                                                                                  ]
                                                                                ]
-                                                                 }, 'OPTiMaDe::FilterParser::ListComparison' ),
+                                                                 }, 'OPTiMaDe::Filter::ListComparison' ),
                                                           bless( {
                                                                    'operator' => 'LENGTH',
                                                                    'property' => bless( {
                                                                                           'name' => [
                                                                                                       'list'
                                                                                                     ]
-                                                                                        }, 'OPTiMaDe::FilterParser::Property' ),
+                                                                                        }, 'OPTiMaDe::Filter::Property' ),
                                                                    'values' => [
                                                                                  [
                                                                                    '>=',
@@ -44,16 +44,16 @@ $VAR1 = bless( {
                                                                                             'name' => [
                                                                                                         'max_length_of_the_list'
                                                                                                       ]
-                                                                                          }, 'OPTiMaDe::FilterParser::Property' )
+                                                                                          }, 'OPTiMaDe::Filter::Property' )
                                                                                  ]
                                                                                ]
-                                                                 }, 'OPTiMaDe::FilterParser::ListComparison' )
+                                                                 }, 'OPTiMaDe::Filter::ListComparison' )
                                                         ],
                                           'operator' => 'AND'
-                                        }, 'OPTiMaDe::FilterParser::AndOr' )
+                                        }, 'OPTiMaDe::Filter::AndOr' )
                                ],
                  'operator' => 'AND'
-               }, 'OPTiMaDe::FilterParser::AndOr' );
+               }, 'OPTiMaDe::Filter::AndOr' );
 == Filter ==
 ((LENGTH list < "5") AND ((LENGTH list = "four") AND (LENGTH list >= max_length_of_the_list)))
 == SQL ==

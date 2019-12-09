@@ -4,7 +4,7 @@ $VAR1 = bless( {
                                  '7'
                                ],
                  'operator' => '<'
-               }, 'OPTiMaDe::FilterParser::Comparison' );
+               }, 'OPTiMaDe::Filter::Comparison' );
 == Filter ==
 ("5" < "7")
 == SQL ==

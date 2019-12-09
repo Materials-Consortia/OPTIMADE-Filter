@@ -4,15 +4,15 @@ $VAR1 = bless( {
                                           'name' => [
                                                       'property'
                                                     ]
-                                        }, 'OPTiMaDe::FilterParser::Property' ),
+                                        }, 'OPTiMaDe::Filter::Property' ),
                                  bless( {
                                           'name' => [
                                                       'another_property'
                                                     ]
-                                        }, 'OPTiMaDe::FilterParser::Property' )
+                                        }, 'OPTiMaDe::Filter::Property' )
                                ],
                  'operator' => 'STARTS WITH'
-               }, 'OPTiMaDe::FilterParser::Comparison' );
+               }, 'OPTiMaDe::Filter::Comparison' );
 == Filter ==
 (property STARTS WITH another_property)
 == SQL ==

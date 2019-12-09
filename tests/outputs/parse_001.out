@@ -4,15 +4,15 @@ $VAR1 = bless( {
                                           'name' => [
                                                       'te'
                                                     ]
-                                        }, 'OPTiMaDe::FilterParser::Property' ),
+                                        }, 'OPTiMaDe::Filter::Property' ),
                                  bless( {
                                           'name' => [
                                                       'st'
                                                     ]
-                                        }, 'OPTiMaDe::FilterParser::Property' )
+                                        }, 'OPTiMaDe::Filter::Property' )
                                ],
                  'operator' => '<'
-               }, 'OPTiMaDe::FilterParser::Comparison' );
+               }, 'OPTiMaDe::Filter::Comparison' );
 == Filter ==
 (te < st)
 == SQL ==

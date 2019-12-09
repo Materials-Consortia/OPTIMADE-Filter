@@ -6,25 +6,25 @@ $VAR1 = bless( {
                                                                    'name' => [
                                                                                'prototype_formula'
                                                                              ]
-                                                                 }, 'OPTiMaDe::FilterParser::Property' ),
+                                                                 }, 'OPTiMaDe::Filter::Property' ),
                                                           'B2'
                                                         ],
                                           'operator' => 'STARTS'
-                                        }, 'OPTiMaDe::FilterParser::Comparison' ),
+                                        }, 'OPTiMaDe::Filter::Comparison' ),
                                  bless( {
                                           'operands' => [
                                                           bless( {
                                                                    'name' => [
                                                                                'prototype_formula'
                                                                              ]
-                                                                 }, 'OPTiMaDe::FilterParser::Property' ),
+                                                                 }, 'OPTiMaDe::Filter::Property' ),
                                                           'D2'
                                                         ],
                                           'operator' => 'ENDS WITH'
-                                        }, 'OPTiMaDe::FilterParser::Comparison' )
+                                        }, 'OPTiMaDe::Filter::Comparison' )
                                ],
                  'operator' => 'AND'
-               }, 'OPTiMaDe::FilterParser::AndOr' );
+               }, 'OPTiMaDe::Filter::AndOr' );
 == Filter ==
 ((prototype_formula STARTS "B2") AND (prototype_formula ENDS WITH "D2"))
 == SQL ==

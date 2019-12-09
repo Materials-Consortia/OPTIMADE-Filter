@@ -6,25 +6,25 @@ $VAR1 = bless( {
                                                                    'name' => [
                                                                                'prototype_formula'
                                                                              ]
-                                                                 }, 'OPTiMaDe::FilterParser::Property' ),
+                                                                 }, 'OPTiMaDe::Filter::Property' ),
                                                           'C2'
                                                         ],
                                           'operator' => 'CONTAINS'
-                                        }, 'OPTiMaDe::FilterParser::Comparison' ),
+                                        }, 'OPTiMaDe::Filter::Comparison' ),
                                  bless( {
                                           'operands' => [
                                                           bless( {
                                                                    'name' => [
                                                                                'prototype_formula'
                                                                              ]
-                                                                 }, 'OPTiMaDe::FilterParser::Property' ),
+                                                                 }, 'OPTiMaDe::Filter::Property' ),
                                                           'A2'
                                                         ],
                                           'operator' => 'STARTS WITH'
-                                        }, 'OPTiMaDe::FilterParser::Comparison' )
+                                        }, 'OPTiMaDe::Filter::Comparison' )
                                ],
                  'operator' => 'AND'
-               }, 'OPTiMaDe::FilterParser::AndOr' );
+               }, 'OPTiMaDe::Filter::AndOr' );
 == Filter ==
 ((prototype_formula CONTAINS "C2") AND (prototype_formula STARTS WITH "A2"))
 == SQL ==

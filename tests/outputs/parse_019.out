@@ -6,11 +6,11 @@ $VAR1 = bless( {
                                                                    'name' => [
                                                                                '_exmpl_aax'
                                                                              ]
-                                                                 }, 'OPTiMaDe::FilterParser::Property' ),
+                                                                 }, 'OPTiMaDe::Filter::Property' ),
                                                           '+.1e8'
                                                         ],
                                           'operator' => '<='
-                                        }, 'OPTiMaDe::FilterParser::Comparison' ),
+                                        }, 'OPTiMaDe::Filter::Comparison' ),
                                  bless( {
                                           'operands' => [
                                                           bless( {
@@ -19,11 +19,11 @@ $VAR1 = bless( {
                                                                                             'name' => [
                                                                                                         'nelements'
                                                                                                       ]
-                                                                                          }, 'OPTiMaDe::FilterParser::Property' ),
+                                                                                          }, 'OPTiMaDe::Filter::Property' ),
                                                                                    '10'
                                                                                  ],
                                                                    'operator' => '>='
-                                                                 }, 'OPTiMaDe::FilterParser::Comparison' ),
+                                                                 }, 'OPTiMaDe::Filter::Comparison' ),
                                                           bless( {
                                                                    'inner' => bless( {
                                                                                        'operands' => [
@@ -33,11 +33,11 @@ $VAR1 = bless( {
                                                                                                                                          'name' => [
                                                                                                                                                      '_exmpl_x'
                                                                                                                                                    ]
-                                                                                                                                       }, 'OPTiMaDe::FilterParser::Property' ),
+                                                                                                                                       }, 'OPTiMaDe::Filter::Property' ),
                                                                                                                                 'Some string'
                                                                                                                               ],
                                                                                                                 'operator' => '!='
-                                                                                                              }, 'OPTiMaDe::FilterParser::Comparison' ),
+                                                                                                              }, 'OPTiMaDe::Filter::Comparison' ),
                                                                                                        bless( {
                                                                                                                 'inner' => bless( {
                                                                                                                                     'operands' => [
@@ -45,22 +45,22 @@ $VAR1 = bless( {
                                                                                                                                                              'name' => [
                                                                                                                                                                          '_exmpl_a'
                                                                                                                                                                        ]
-                                                                                                                                                           }, 'OPTiMaDe::FilterParser::Property' ),
+                                                                                                                                                           }, 'OPTiMaDe::Filter::Property' ),
                                                                                                                                                     '7'
                                                                                                                                                   ],
                                                                                                                                     'operator' => '='
-                                                                                                                                  }, 'OPTiMaDe::FilterParser::Comparison' )
-                                                                                                              }, 'OPTiMaDe::FilterParser::Negation' )
+                                                                                                                                  }, 'OPTiMaDe::Filter::Comparison' )
+                                                                                                              }, 'OPTiMaDe::Filter::Negation' )
                                                                                                      ],
                                                                                        'operator' => 'OR'
-                                                                                     }, 'OPTiMaDe::FilterParser::AndOr' )
-                                                                 }, 'OPTiMaDe::FilterParser::Negation' )
+                                                                                     }, 'OPTiMaDe::Filter::AndOr' )
+                                                                 }, 'OPTiMaDe::Filter::Negation' )
                                                         ],
                                           'operator' => 'AND'
-                                        }, 'OPTiMaDe::FilterParser::AndOr' )
+                                        }, 'OPTiMaDe::Filter::AndOr' )
                                ],
                  'operator' => 'OR'
-               }, 'OPTiMaDe::FilterParser::AndOr' );
+               }, 'OPTiMaDe::Filter::AndOr' );
 == Filter ==
 ((_exmpl_aax <= "+.1e8") OR ((nelements >= "10") AND (NOT ((_exmpl_x != "Some string") OR (NOT (_exmpl_a = "7"))))))
 == SQL ==

@@ -7,30 +7,30 @@ $VAR1 = bless( {
                                                                                        'name' => [
                                                                                                    '_exmpl_a'
                                                                                                  ]
-                                                                                     }, 'OPTiMaDe::FilterParser::Property' ),
+                                                                                     }, 'OPTiMaDe::Filter::Property' ),
                                                                               bless( {
                                                                                        'name' => [
                                                                                                    '_exmpl_b'
                                                                                                  ]
-                                                                                     }, 'OPTiMaDe::FilterParser::Property' )
+                                                                                     }, 'OPTiMaDe::Filter::Property' )
                                                                             ],
                                                               'operator' => '>'
-                                                            }, 'OPTiMaDe::FilterParser::Comparison' )
-                                        }, 'OPTiMaDe::FilterParser::Negation' ),
+                                                            }, 'OPTiMaDe::Filter::Comparison' )
+                                        }, 'OPTiMaDe::Filter::Negation' ),
                                  bless( {
                                           'operands' => [
                                                           bless( {
                                                                    'name' => [
                                                                                '_exmpl_x'
                                                                              ]
-                                                                 }, 'OPTiMaDe::FilterParser::Property' ),
+                                                                 }, 'OPTiMaDe::Filter::Property' ),
                                                           '0'
                                                         ],
                                           'operator' => '>'
-                                        }, 'OPTiMaDe::FilterParser::Comparison' )
+                                        }, 'OPTiMaDe::Filter::Comparison' )
                                ],
                  'operator' => 'AND'
-               }, 'OPTiMaDe::FilterParser::AndOr' );
+               }, 'OPTiMaDe::Filter::AndOr' );
 == Filter ==
 ((NOT (_exmpl_a > _exmpl_b)) AND (_exmpl_x > "0"))
 == SQL ==

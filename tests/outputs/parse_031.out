@@ -6,8 +6,8 @@ $VAR1 = bless( {
                                                                  'name' => [
                                                                              'chemical_formula_hill'
                                                                            ]
-                                                               }, 'OPTiMaDe::FilterParser::Property' )
-                                        }, 'OPTiMaDe::FilterParser::Known' ),
+                                                               }, 'OPTiMaDe::Filter::Property' )
+                                        }, 'OPTiMaDe::Filter::Known' ),
                                  bless( {
                                           'inner' => bless( {
                                                               'is_known' => 0,
@@ -15,12 +15,12 @@ $VAR1 = bless( {
                                                                                      'name' => [
                                                                                                  'chemical_formula_anonymous'
                                                                                                ]
-                                                                                   }, 'OPTiMaDe::FilterParser::Property' )
-                                                            }, 'OPTiMaDe::FilterParser::Known' )
-                                        }, 'OPTiMaDe::FilterParser::Negation' )
+                                                                                   }, 'OPTiMaDe::Filter::Property' )
+                                                            }, 'OPTiMaDe::Filter::Known' )
+                                        }, 'OPTiMaDe::Filter::Negation' )
                                ],
                  'operator' => 'AND'
-               }, 'OPTiMaDe::FilterParser::AndOr' );
+               }, 'OPTiMaDe::Filter::AndOr' );
 == Filter ==
 (chemical_formula_hill IS KNOWN AND (NOT chemical_formula_anonymous IS UNKNOWN))
 == SQL ==

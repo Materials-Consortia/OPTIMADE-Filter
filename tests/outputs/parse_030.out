@@ -6,17 +6,17 @@ $VAR1 = bless( {
                                             'name' => [
                                                         'elements'
                                                       ]
-                                          }, 'OPTiMaDe::FilterParser::Property' ),
+                                          }, 'OPTiMaDe::Filter::Property' ),
                                    bless( {
                                             'name' => [
                                                         '_exmpl_element_counts'
                                                       ]
-                                          }, 'OPTiMaDe::FilterParser::Property' ),
+                                          }, 'OPTiMaDe::Filter::Property' ),
                                    bless( {
                                             'name' => [
                                                         '_exmpl_element_weights'
                                                       ]
-                                          }, 'OPTiMaDe::FilterParser::Property' )
+                                          }, 'OPTiMaDe::Filter::Property' )
                                  ],
                  'values' => [
                                [
@@ -62,7 +62,7 @@ $VAR1 = bless( {
                                  ]
                                ]
                              ]
-               }, 'OPTiMaDe::FilterParser::Zip' );
+               }, 'OPTiMaDe::Filter::Zip' );
 == Filter ==
 (elements:_exmpl_element_counts:_exmpl_element_weights HAS ANY > "3" : = "He" : > "55.3", = "6" : > "Ti" : < "37.6", = "8" : < "Ga" : = "0")
 == SQL ==
