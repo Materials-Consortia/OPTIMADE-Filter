@@ -14,9 +14,6 @@ use OPTiMaDe::Filter::Negation;
 use OPTiMaDe::Filter::Property;
 use OPTiMaDe::Filter::Zip;
 
-our $VERSION = '0.5.0-dev';
-our $OPTiMaDe_VERSION = '0.10.0-dev';
-
 our $allow_LIKE_operator = 0;
 
 %}
