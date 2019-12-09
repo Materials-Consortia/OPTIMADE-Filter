@@ -8,6 +8,7 @@
       operator().
     - Replacing OPTiMaDe::Filter::ListComparison::set_<attribute>() with
       <attribute>().
+    - Replacing OPTiMaDe::Filter::Zip::set_<attribute>() with <attribute>().
 
 0.4.1 2019-12-05
 

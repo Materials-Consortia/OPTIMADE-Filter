@@ -21,14 +21,18 @@ sub unshift_property {
     unshift @{$self->{properties}}, $property;
 }
 
-sub set_operator {
+sub operator {
     my( $self, $operator ) = @_;
-    $self->{operator} = $operator;
+    my $previous_operator = $self->{operator};
+    $self->{operator} = $operator if defined $operator;
+    return $previous_operator;
 }
 
-sub set_values {
+sub values {
     my( $self, $values ) = @_;
-    $self->{values} = $values;
+    my $previous_values = $self->{values};
+    $self->{values} = $values if defined $values;
+    return $previous_values;
 }
 
 sub to_filter {

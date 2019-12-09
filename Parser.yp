@@ -254,26 +254,26 @@ set_op_rhs: HAS value
 
 set_zip_op_rhs: property_zip_addon HAS value_zip
                 {
-                    $_[1]->set_operator( $_[2] );
-                    $_[1]->set_values( [ $_[3] ] );
+                    $_[1]->operator( $_[2] );
+                    $_[1]->values( [ $_[3] ] );
                     return $_[1];
                 }
               | property_zip_addon HAS ONLY value_zip_list
                 {
-                    $_[1]->set_operator( "$_[2] $_[3]" );
-                    $_[1]->set_values( $_[4] );
+                    $_[1]->operator( "$_[2] $_[3]" );
+                    $_[1]->values( $_[4] );
                     return $_[1];
                 }
               | property_zip_addon HAS ALL value_zip_list
                 {
-                    $_[1]->set_operator( "$_[2] $_[3]" );
-                    $_[1]->set_values( $_[4] );
+                    $_[1]->operator( "$_[2] $_[3]" );
+                    $_[1]->values( $_[4] );
                     return $_[1];
                 }
               | property_zip_addon HAS ANY value_zip_list
                 {
-                    $_[1]->set_operator( "$_[2] $_[3]" );
-                    $_[1]->set_values( $_[4] );
+                    $_[1]->operator( "$_[2] $_[3]" );
+                    $_[1]->values( $_[4] );
                     return $_[1];
                 }
               ;
