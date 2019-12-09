@@ -143,7 +143,7 @@ property_first_comparison: property value_op_rhs
                                 }
                            | property set_op_rhs
                                 {
-                                    $_[2]->set_property( $_[1] );
+                                    $_[2]->property( $_[1] );
                                     return $_[2];
                                 }
                            | property set_zip_op_rhs
@@ -223,31 +223,31 @@ fuzzy_string_op_rhs: CONTAINS string_property
 set_op_rhs: HAS value
             {
                 my $lc = OPTiMaDe::Filter::ListComparison->new( $_[1] );
-                $lc->set_values( [ [ '=', $_[2] ] ] );
+                $lc->values( [ [ '=', $_[2] ] ] );
                 return $lc;
             }
           | HAS operator value
             {
                 my $lc = OPTiMaDe::Filter::ListComparison->new( $_[1] );
-                $lc->set_values( [ [ $_[2], $_[3] ] ] );
+                $lc->values( [ [ $_[2], $_[3] ] ] );
                 return $lc;
             }
           | HAS ALL value_list
             {
                 my $lc = OPTiMaDe::Filter::ListComparison->new( "$_[1] $_[2]" );
-                $lc->set_values( $_[3] );
+                $lc->values( $_[3] );
                 return $lc;
             }
           | HAS ANY value_list
             {
                 my $lc = OPTiMaDe::Filter::ListComparison->new( "$_[1] $_[2]" );
-                $lc->set_values( $_[3] );
+                $lc->values( $_[3] );
                 return $lc;
             }
           | HAS ONLY value_list
             {
                 my $lc = OPTiMaDe::Filter::ListComparison->new( "$_[1] $_[2]" );
-                $lc->set_values( $_[3] );
+                $lc->values( $_[3] );
                 return $lc;
             }
           ;
@@ -281,8 +281,8 @@ set_zip_op_rhs: property_zip_addon HAS value_zip
 length_comparison: LENGTH property operator value
                     {
                         my $cmp = OPTiMaDe::Filter::ListComparison->new( $_[1] );
-                        $cmp->set_property( $_[2] );
-                        $cmp->set_values( [ [ $_[3], $_[4] ] ] );
+                        $cmp->property( $_[2] );
+                        $cmp->values( [ [ $_[3], $_[4] ] ] );
                         return $cmp;
                     }
                  ;
