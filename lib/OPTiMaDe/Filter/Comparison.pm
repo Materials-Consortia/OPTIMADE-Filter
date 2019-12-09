@@ -1,4 +1,4 @@
-package OPTiMaDe::FilterParser::Comparison;
+package OPTiMaDe::Filter::Comparison;
 
 use strict;
 use warnings;
@@ -121,7 +121,7 @@ sub modify
     my $self = shift;
     my $code = shift;
 
-    $self->{operands} = [ map { OPTiMaDe::FilterParser::modify( $_, $code, @_ ) }
+    $self->{operands} = [ map { OPTiMaDe::Filter::modify( $_, $code, @_ ) }
                               @{$self->{operands}} ];
     return $code->( $self, @_ );
 }

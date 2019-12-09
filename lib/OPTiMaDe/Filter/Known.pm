@@ -1,4 +1,4 @@
-package OPTiMaDe::FilterParser::Known;
+package OPTiMaDe::Filter::Known;
 
 use strict;
 use warnings;
@@ -49,7 +49,7 @@ sub modify
     my $self = shift;
     my $code = shift;
 
-    $self->property( OPTiMaDe::FilterParser::modify( $self->property, $code, @_ ) );
+    $self->property( OPTiMaDe::Filter::modify( $self->property, $code, @_ ) );
     return $code->( $self, @_ );
 }
 

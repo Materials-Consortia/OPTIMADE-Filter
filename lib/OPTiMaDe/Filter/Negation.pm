@@ -1,4 +1,4 @@
-package OPTiMaDe::FilterParser::Negation;
+package OPTiMaDe::Filter::Negation;
 
 use strict;
 use warnings;
@@ -39,7 +39,7 @@ sub modify
     my $self = shift;
     my $code = shift;
 
-    $self->inner( OPTiMaDe::FilterParser::modify( $self->inner, $code, @_ ) );
+    $self->inner( OPTiMaDe::Filter::modify( $self->inner, $code, @_ ) );
     return $code->( $self, @_ );
 }
 

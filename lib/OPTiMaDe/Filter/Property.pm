@@ -1,4 +1,4 @@
-package OPTiMaDe::FilterParser::Property;
+package OPTiMaDe::Filter::Property;
 
 use strict;
 use warnings;
