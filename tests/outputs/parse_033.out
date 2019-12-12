@@ -55,6 +55,6 @@ $VAR1 = bless( {
                  'operator' => 'AND'
                }, 'OPTiMaDe::Filter::AndOr' );
 == Filter ==
-((LENGTH list < "5") AND ((LENGTH list = "four") AND (LENGTH list >= max_length_of_the_list)))
+((list LENGTH < "5") AND ((list LENGTH = "four") AND (list LENGTH >= max_length_of_the_list)))
 == SQL ==
 (<no SQL representation> AND (<no SQL representation> AND <no SQL representation>))
