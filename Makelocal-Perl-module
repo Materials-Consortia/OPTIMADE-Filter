@@ -1,6 +1,13 @@
-.PHONY: distclean-Perl-module
+.PHONY: dist distclean-Perl-module
+
+dist: ${DIST}
+
+${DIST}: ${PM_FILE}
+	perl Makefile.PL
+	make -f Makefile dist
 
 DISTCLEAN_TARGETS += distclean-Perl-module
 
 distclean-Perl-module:
 	-test -e Makefile && $(MAKE) -f Makefile distclean
+	rm -f ${DIST}

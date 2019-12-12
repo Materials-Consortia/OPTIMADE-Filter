@@ -1,2 +1,7 @@
 PERL5LIB := lib:${PERL5LIB}
 export PERL5LIB
+
+PACKAGE  = OPTiMaDe-Filter
+VERSION := $(shell PERL5LIB=${PERL5LIB} perl -mOPTiMaDe::Filter -we 'print $$OPTiMaDe::Filter::VERSION')
+
+DIST = ${PACKAGE}-${VERSION}.tar.gz
