@@ -212,3 +212,4 @@ clean:
 	rm -f ${DIFF_FILES}
 
 distclean cleanAll: clean ${DISTCLEAN_TARGETS}
+	rm -f ${DEPEND}
