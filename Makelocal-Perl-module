@@ -1,0 +1,6 @@
+.PHONY: distclean-Perl-module
+
+DISTCLEAN_TARGETS += distclean-Perl-module
+
+distclean-Perl-module:
+	-test -e Makefile && $(MAKE) -f Makefile distclean
