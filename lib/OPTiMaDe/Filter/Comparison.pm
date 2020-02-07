@@ -50,6 +50,7 @@ sub right
 sub to_filter
 {
     my( $self ) = @_;
+    $self->validate;
 
     my $operator = $self->{operator};
     my @operands;
@@ -71,6 +72,8 @@ sub to_filter
 sub to_SQL
 {
     my( $self, $options ) = @_;
+    $self->validate;
+
     $options = {} unless $options;
     my( $delim, $placeholder ) = (
         $options->{delim},
@@ -138,7 +141,7 @@ sub validate
             'got ' . @{$self->{operands}};
     }
     die 'operator undefined for OPTiMaDe::Filter::Comparison'
-        if !$self->{operator};
+        if !$self->operator;
 }
 
 1;
