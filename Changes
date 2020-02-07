@@ -1,3 +1,9 @@
+0.7.0 unreleased
+
+    - Validating objects prior to generating their representations in
+      order not to produce erroneous representations.
+    - Adding repository metadata (thanks Mohammad S Anwar).
+
 0.6.1 2020-01-30
 
     - Fixing the build system to create source-only tarballs, and to
