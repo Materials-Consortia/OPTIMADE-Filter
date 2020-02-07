@@ -139,7 +139,7 @@ sub validate
         die 'number of operands for OPTiMaDe::Filter::AndOr must be 2, ' .
             'got ' . @{$self->{operands}};
     }
-    die 'operator undefined for OPTiMaDe::Filter::AndOr' if !$self->{operator};
+    die 'operator undefined for OPTiMaDe::Filter::AndOr' if !$self->operator;
 }
 
 1;
