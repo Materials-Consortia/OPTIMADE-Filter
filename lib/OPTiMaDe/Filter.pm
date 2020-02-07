@@ -6,7 +6,7 @@ use warnings;
 use Scalar::Util qw(blessed);
 
 our $VERSION = '0.7.0';
-our $OPTiMaDe_VERSION = '0.10.0-dev';
+our $OPTiMaDe_VERSION = '1.0.0-rc.1';
 
 sub modify
 {

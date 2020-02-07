@@ -1,5 +1,6 @@
 0.7.0 unreleased
 
+    - Acknowledging conformance to OPTiMaDe specification v1.0.0-rc.1.
     - Validating objects prior to generating their representations in
       order not to produce erroneous representations.
     - Adding repository metadata (thanks Mohammad S Anwar).
