@@ -129,4 +129,16 @@ sub modify
     return $code->( $self, @_ );
 }
 
+sub validate
+{
+    my $self = shift;
+
+    if( @{$self->{operands}} != 2 ) {
+        die 'number of operands for OPTiMaDe::Filter::Comparison must be 2, ' .
+            'got ' . @{$self->{operands}};
+    }
+    die 'operator undefined for OPTiMaDe::Filter::Comparison'
+        if !$self->{operator};
+}
+
 1;
