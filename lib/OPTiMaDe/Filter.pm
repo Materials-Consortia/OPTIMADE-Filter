@@ -5,7 +5,7 @@ use warnings;
 
 use Scalar::Util qw(blessed);
 
-our $VERSION = '0.7.0';
+# VERSION
 our $OPTiMaDe_VERSION = '1.0.0-rc.1';
 
 # ABSTRACT: OPTiMaDe filter language parser/composer
