@@ -8,6 +8,8 @@ use Scalar::Util qw(blessed);
 our $VERSION = '0.7.0';
 our $OPTiMaDe_VERSION = '1.0.0-rc.1';
 
+# ABSTRACT: OPTiMaDe filter language parser/composer
+
 sub modify
 {
     my $node = shift;
