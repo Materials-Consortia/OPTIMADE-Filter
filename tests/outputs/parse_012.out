@@ -1,1 +1,1 @@
-./parse: syntax error at line 0, position 25: ''.
+t/02parse.t: syntax error at line 0, position 52: ''.
