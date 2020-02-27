@@ -6,7 +6,7 @@ OUT_FILE = ${YP_FILE:%.yp=%.output}
 
 all tests: ${PM_FILE}
 
-lib/OPTiMaDe/Filter/%.pm: %.yp
+%.pm: %.yp
 	yapp -v -m OPTiMaDe::Filter::Parser -o $@ $<
 
 clean: clean-YAPP
