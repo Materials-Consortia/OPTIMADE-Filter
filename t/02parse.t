@@ -22,7 +22,7 @@ plan tests => $ntests;
 for my $case (@inputs) {
     $case =~ /([^\/]+)\.inp$/;
     my $input_file   = "$input_dir/$case";
-    my $options_file = "$input_dir/$case.opt";
+    my $options_file = "$input_dir/$1.opt";
     my $output_file  = "$output_dir/$1.out";
 
     my $options = {};
