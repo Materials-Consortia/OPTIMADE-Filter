@@ -8,8 +8,6 @@ use OPTiMaDe::Filter::Parser;
 use Test::More;
 
 $Data::Dumper::Sortkeys = 1;
-$Data::Dumper::Indent   = 1;
-$Data::Dumper::Deepcopy = 1;
 
 my $input_dir  = 'tests/cases';
 my $output_dir = 'tests/outputs';
@@ -45,9 +43,9 @@ for my $case (@inputs) {
     eval {
         $tree = $parser->Run( $input_file );
         $output = Dumper( $tree ) .
-                     "== Filter ==\n" .
-                     $tree->to_filter . "\n" .
-                     "== SQL ==\n";
+                  "== Filter ==\n" .
+                  $tree->to_filter . "\n" .
+                  "== SQL ==\n";
         if( $options->{use_placeholders} ) {
             my( $sql, $values ) = $tree->to_SQL( { placeholder => '?' } );
             $output .= "$sql\n" .
