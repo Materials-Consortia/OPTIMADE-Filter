@@ -62,7 +62,7 @@ for my $case (@inputs) {
     open( my $out, $output_file );
     my $expected = join '', <$out>;
     close $out;
-    ok( $output, $expected );
+    is( $output, $expected, $case );
 
     next unless $tree;
 
