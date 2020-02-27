@@ -1,4 +1,3 @@
 GNUmakefile
 Makeconf
 Makelocal-*
-tests
