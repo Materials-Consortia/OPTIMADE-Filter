@@ -42,20 +42,29 @@ for my $case (@inputs) {
     my $parser = new OPTiMaDe::Filter::Parser;
     eval {
         $tree = $parser->Run( $input_file );
-        $output = Dumper( $tree ) .
-                  "== Filter ==\n" .
-                  $tree->to_filter . "\n" .
-                  "== SQL ==\n";
-        if( $options->{use_placeholders} ) {
-            my( $sql, $values ) = $tree->to_SQL( { placeholder => '?' } );
-            $output .= "$sql\n" .
-                       "=== Values ===\n" .
-                       Dumper $values;
-        } else {
-            $output .= $tree->to_SQL . "\n";
-        }
     };
     $output = $@ if $@;
+
+    if( $tree ) {
+        $output .= Dumper( $tree ) .
+                   "== Filter ==\n" .
+                   $tree->to_filter . "\n" .
+                   "== SQL ==\n";
+    }
+
+    if( $tree ) {
+        eval {
+            if( $options->{use_placeholders} ) {
+                my( $sql, $values ) = $tree->to_SQL( { placeholder => '?' } );
+                $output .= "$sql\n" .
+                           "=== Values ===\n" .
+                           Dumper $values;
+            } else {
+                $output .= $tree->to_SQL . "\n";
+            }
+        };
+        $output = $@ . $output if $@;
+    }
 
     open( my $out, $output_file );
     my $expected = join '', <$out>;
