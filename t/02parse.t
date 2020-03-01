@@ -4,13 +4,14 @@ use strict;
 use warnings;
 use Data::Compare;
 use Data::Dumper;
+use File::Spec::Functions;
 use OPTiMaDe::Filter::Parser;
 use Test::More;
 
 $Data::Dumper::Sortkeys = 1;
 
-my $input_dir  = 'tests/cases';
-my $output_dir = 'tests/outputs';
+my $input_dir  = catdir( 'tests', 'cases' );
+my $output_dir = catdir( 'tests', 'outputs' );
 
 opendir my $dir, $input_dir || die "Cannot open directory: $!";
 my @inputs = sort grep { /\.inp$/ } readdir $dir;
@@ -20,10 +21,10 @@ my $ntests = @inputs;
 plan tests => $ntests;
 
 for my $case (@inputs) {
-    $case =~ /([^\/]+)\.inp$/;
-    my $input_file   = "$input_dir/$case";
-    my $options_file = "$input_dir/$1.opt";
-    my $output_file  = "$output_dir/$1.out";
+    $case =~ /([^\/\\]+)\.inp$/;
+    my $input_file   = catdir( $input_dir,  $case );
+    my $options_file = catdir( $input_dir,  "$1.opt" );
+    my $output_file  = catdir( $output_dir, "$1.out" );
 
     my $options = {};
     if( -e $options_file ) {
