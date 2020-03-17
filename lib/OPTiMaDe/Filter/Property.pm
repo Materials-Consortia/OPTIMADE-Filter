@@ -10,20 +10,27 @@ our $identifier_re = q/([a-z_][a-z0-9_]*)/;
 
 sub new {
     my $class = shift;
-    return bless { name => [ map { lc } @_ ] }, $class;
+    return bless { name => \@_ }, $class;
 }
 
 sub to_filter
 {
     my( $self ) = @_;
+
+    # Validate
     $self->validate;
-    return join '.', @$self;
+    for my $name (@$self) {
+        my $lc_name = lc $name;
+        next if $lc_name =~ /^$identifier_re$/;
+        die "name '$lc_name' does not match identifier syntax: $identifier_re";
+    }
+
+    return join '.', map { lc } @$self;
 }
 
 sub to_SQL
 {
     my( $self, $options ) = @_;
-    $self->validate;
 
     $options = {} unless $options;
     my( $delim, $placeholder ) = (
@@ -32,11 +39,14 @@ sub to_SQL
     );
     $delim = "'" unless $delim;
 
+    # Validate
+    $self->validate;
     if( @$self > 2 ) {
         die 'no SQL representation for properties of more than two ' .
             "identifiers\n";
     }
 
+    # Construct the SQL
     my $sql = join '.', map { "${delim}$_${delim}" } @$self;
 
     if( wantarray ) {
@@ -58,11 +68,6 @@ sub validate
 {
     my $self = shift;
     die 'name undefined for OPTiMaDe::Filter::Property' if !@$self;
-
-    for my $name (@$self) {
-        next if $name =~ /^$identifier_re$/;
-        die "name '$name' does not match identifier syntax: $identifier_re";
-    }
 }
 
 1;

@@ -1,3 +1,8 @@
+0.8.0 unreleased
+
+    - Allowing uppercase characters in properties, however, they are
+      lowercased prior to filter string generation.
+
 0.7.3 2020-03-09
 
     - Implementing the validation of property's syntax.

@@ -10,9 +10,9 @@ is( $property->to_filter, 'some.property' );
 
 my $error = '';
 eval {
-    push @$property, 'ALL CAPS';
+    push @$property, 'HAS SPACES';
     my $filter = $property->to_filter;
     print STDERR $filter;
 };
 $error = $@ if $@;
-ok( $error =~ /^name 'ALL CAPS' does not match/ );
+ok( $error =~ /^name 'has spaces' does not match/ );
