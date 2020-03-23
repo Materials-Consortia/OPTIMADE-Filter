@@ -4,25 +4,25 @@ use strict;
 use warnings;
 use Data::Compare;
 use Data::Dumper;
-use OPTiMaDe::Filter;
-use OPTiMaDe::Filter::Parser;
+use OPTIMADE::Filter;
+use OPTIMADE::Filter::Parser;
 use Scalar::Util qw(blessed);
 use Test::More tests => 1;
 
 $Data::Dumper::Sortkeys = 1;
 
-my $parser = new OPTiMaDe::Filter::Parser;
+my $parser = new OPTIMADE::Filter::Parser;
 my $tree = $parser->parse_string( 'value.list HAS ALL "a", "b", "c"' );
 
-my $tree_now = OPTiMaDe::Filter::modify( $tree,
+my $tree_now = OPTIMADE::Filter::modify( $tree,
     sub {
         my( $node ) = @_;
-        if( blessed $node && $node->isa( OPTiMaDe::Filter::ListComparison:: ) ) {
+        if( blessed $node && $node->isa( OPTIMADE::Filter::ListComparison:: ) ) {
             my @values = @{$node->{values}};
             my $node_now;
             while( @values ) {
                 my( undef, $value ) = @{shift @values};
-                my $comparison = OPTiMaDe::Filter::Comparison->new( 'CONTAINS' );
+                my $comparison = OPTIMADE::Filter::Comparison->new( 'CONTAINS' );
                 $comparison->push_operand( $node->{property} );
                 $comparison->push_operand( $value );
                 if( $node_now ) {
@@ -46,11 +46,11 @@ $VAR1 = [
                                                           'value',
                                                           'list'
                                                         ]
-                                            }, 'OPTiMaDe::Filter::Property' ),
+                                            }, 'OPTIMADE::Filter::Property' ),
                                      'a'
                                    ],
                      'operator' => 'CONTAINS'
-                   }, 'OPTiMaDe::Filter::Comparison' ),
+                   }, 'OPTIMADE::Filter::Comparison' ),
             'AND',
             bless( {
                      'operands' => [
@@ -58,7 +58,7 @@ $VAR1 = [
                                      'b'
                                    ],
                      'operator' => 'CONTAINS'
-                   }, 'OPTiMaDe::Filter::Comparison' )
+                   }, 'OPTIMADE::Filter::Comparison' )
           ],
           'AND',
           bless( {
@@ -67,7 +67,7 @@ $VAR1 = [
                                    'c'
                                  ],
                    'operator' => 'CONTAINS'
-                 }, 'OPTiMaDe::Filter::Comparison' )
+                 }, 'OPTIMADE::Filter::Comparison' )
         ];
 END
 

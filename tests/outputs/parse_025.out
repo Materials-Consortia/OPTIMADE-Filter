@@ -6,25 +6,25 @@ $VAR1 = bless( {
                                                                    'name' => [
                                                                                'prototype_formula'
                                                                              ]
-                                                                 }, 'OPTiMaDe::Filter::Property' ),
+                                                                 }, 'OPTIMADE::Filter::Property' ),
                                                           'B2'
                                                         ],
                                           'operator' => 'STARTS'
-                                        }, 'OPTiMaDe::Filter::Comparison' ),
+                                        }, 'OPTIMADE::Filter::Comparison' ),
                                  bless( {
                                           'operands' => [
                                                           bless( {
                                                                    'name' => [
                                                                                'prototype_formula'
                                                                              ]
-                                                                 }, 'OPTiMaDe::Filter::Property' ),
+                                                                 }, 'OPTIMADE::Filter::Property' ),
                                                           'D2'
                                                         ],
                                           'operator' => 'ENDS WITH'
-                                        }, 'OPTiMaDe::Filter::Comparison' )
+                                        }, 'OPTIMADE::Filter::Comparison' )
                                ],
                  'operator' => 'AND'
-               }, 'OPTiMaDe::Filter::AndOr' );
+               }, 'OPTIMADE::Filter::AndOr' );
 == Filter ==
 ((prototype_formula STARTS "B2") AND (prototype_formula ENDS WITH "D2"))
 == SQL ==

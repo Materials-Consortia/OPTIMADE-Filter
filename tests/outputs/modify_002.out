@@ -7,11 +7,11 @@ $VAR1 = [
                                                           'value',
                                                           'list'
                                                         ]
-                                            }, 'OPTiMaDe::Filter::Property' ),
+                                            }, 'OPTIMADE::Filter::Property' ),
                                      'a'
                                    ],
                      'operator' => 'CONTAINS'
-                   }, 'OPTiMaDe::Filter::Comparison' ),
+                   }, 'OPTIMADE::Filter::Comparison' ),
             'AND',
             bless( {
                      'operands' => [
@@ -19,7 +19,7 @@ $VAR1 = [
                                      'b'
                                    ],
                      'operator' => 'CONTAINS'
-                   }, 'OPTiMaDe::Filter::Comparison' )
+                   }, 'OPTIMADE::Filter::Comparison' )
           ],
           'AND',
           bless( {
@@ -28,5 +28,5 @@ $VAR1 = [
                                    'c'
                                  ],
                    'operator' => 'CONTAINS'
-                 }, 'OPTiMaDe::Filter::Comparison' )
+                 }, 'OPTIMADE::Filter::Comparison' )
         ];

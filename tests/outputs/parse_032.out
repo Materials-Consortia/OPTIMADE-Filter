@@ -4,11 +4,11 @@ $VAR1 = bless( {
                                           'name' => [
                                                       'list'
                                                     ]
-                                        }, 'OPTiMaDe::Filter::Property' ),
+                                        }, 'OPTIMADE::Filter::Property' ),
                                  'string"with"quotes'
                                ],
                  'operator' => 'CONTAINS'
-               }, 'OPTiMaDe::Filter::Comparison' );
+               }, 'OPTIMADE::Filter::Comparison' );
 == Filter ==
 (list CONTAINS "string\"with\"quotes")
 == SQL ==

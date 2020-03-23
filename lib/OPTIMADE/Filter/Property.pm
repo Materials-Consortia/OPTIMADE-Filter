@@ -1,4 +1,4 @@
-package OPTiMaDe::Filter::Property;
+package OPTIMADE::Filter::Property;
 
 use strict;
 use warnings;
@@ -67,7 +67,7 @@ sub modify
 sub validate
 {
     my $self = shift;
-    die 'name undefined for OPTiMaDe::Filter::Property' if !@$self;
+    die 'name undefined for OPTIMADE::Filter::Property' if !@$self;
 }
 
 1;

@@ -4,15 +4,15 @@ $VAR1 = bless( {
                                           'name' => [
                                                       'key'
                                                     ]
-                                        }, 'OPTiMaDe::Filter::Property' ),
+                                        }, 'OPTIMADE::Filter::Property' ),
                                  bless( {
                                           'name' => [
                                                       'value'
                                                     ]
-                                        }, 'OPTiMaDe::Filter::Property' )
+                                        }, 'OPTIMADE::Filter::Property' )
                                ],
                  'operator' => '='
-               }, 'OPTiMaDe::Filter::Comparison' );
+               }, 'OPTIMADE::Filter::Comparison' );
 == Filter ==
 (key = value)
 == SQL ==

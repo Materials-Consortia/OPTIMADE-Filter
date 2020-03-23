@@ -5,7 +5,7 @@ use warnings;
 use Data::Compare;
 use Data::Dumper;
 use File::Spec::Functions;
-use OPTiMaDe::Filter::Parser;
+use OPTIMADE::Filter::Parser;
 use Test::More;
 
 $Data::Dumper::Sortkeys = 1;
@@ -36,11 +36,11 @@ for my $case (@inputs) {
         close $inp;
     }
 
-    $OPTiMaDe::Filter::Parser::allow_LIKE_operator =
+    $OPTIMADE::Filter::Parser::allow_LIKE_operator =
         defined $options->{allow_LIKE_operator};    
 
     my( $tree, $output );
-    my $parser = new OPTiMaDe::Filter::Parser;
+    my $parser = new OPTIMADE::Filter::Parser;
     eval {
         $tree = $parser->Run( $input_file );
     };
@@ -75,7 +75,7 @@ for my $case (@inputs) {
     next unless $tree;
 
     my $filter = $tree->to_filter;
-    $parser = new OPTiMaDe::Filter::Parser;
+    $parser = new OPTIMADE::Filter::Parser;
     my $tree_now = $parser->parse_string( $filter );
     Compare( $tree, $tree_now ) || print "Roundtrip NOT passed\n";
 }

@@ -4,18 +4,18 @@ use strict;
 use warnings;
 use Data::Compare;
 use Data::Dumper;
-use OPTiMaDe::Filter;
-use OPTiMaDe::Filter::Parser;
+use OPTIMADE::Filter;
+use OPTIMADE::Filter::Parser;
 use Scalar::Util qw(blessed);
 use Test::More tests => 1;
 
 $Data::Dumper::Sortkeys = 1;
 
-my $parser = new OPTiMaDe::Filter::Parser;
+my $parser = new OPTIMADE::Filter::Parser;
 my $tree = $parser->parse_string( 'value.list HAS ALL "a", "b", "c"' );
 
 my @traverse_order;
-OPTiMaDe::Filter::modify( $tree,
+OPTIMADE::Filter::modify( $tree,
     sub {
         my( $node, $traverse_order ) = @_;
 
@@ -31,7 +31,7 @@ $VAR1 = [
                                'value',
                                'list'
                              ]
-                 }, 'OPTiMaDe::Filter::Property' ),
+                 }, 'OPTIMADE::Filter::Property' ),
           '=',
           'a',
           '=',
@@ -55,7 +55,7 @@ $VAR1 = [
                                    'c'
                                  ]
                                ]
-                 }, 'OPTiMaDe::Filter::ListComparison' )
+                 }, 'OPTIMADE::Filter::ListComparison' )
         ];
 END
 

@@ -7,12 +7,12 @@ $VAR1 = bless( {
                                                                      'name' => [
                                                                                  'elements'
                                                                                ]
-                                                                   }, 'OPTiMaDe::Filter::Property' ),
+                                                                   }, 'OPTIMADE::Filter::Property' ),
                                                             bless( {
                                                                      'name' => [
                                                                                  '_exmpl_element_counts'
                                                                                ]
-                                                                   }, 'OPTiMaDe::Filter::Property' )
+                                                                   }, 'OPTIMADE::Filter::Property' )
                                                           ],
                                           'values' => [
                                                         [
@@ -26,7 +26,7 @@ $VAR1 = bless( {
                                                           ]
                                                         ]
                                                       ]
-                                        }, 'OPTiMaDe::Filter::Zip' ),
+                                        }, 'OPTIMADE::Filter::Zip' ),
                                  bless( {
                                           'operands' => [
                                                           bless( {
@@ -36,12 +36,12 @@ $VAR1 = bless( {
                                                                                               'name' => [
                                                                                                           'elements'
                                                                                                         ]
-                                                                                            }, 'OPTiMaDe::Filter::Property' ),
+                                                                                            }, 'OPTIMADE::Filter::Property' ),
                                                                                      bless( {
                                                                                               'name' => [
                                                                                                           '_exmpl_element_counts'
                                                                                                         ]
-                                                                                            }, 'OPTiMaDe::Filter::Property' )
+                                                                                            }, 'OPTIMADE::Filter::Property' )
                                                                                    ],
                                                                    'values' => [
                                                                                  [
@@ -65,7 +65,7 @@ $VAR1 = bless( {
                                                                                    ]
                                                                                  ]
                                                                                ]
-                                                                 }, 'OPTiMaDe::Filter::Zip' ),
+                                                                 }, 'OPTIMADE::Filter::Zip' ),
                                                           bless( {
                                                                    'operands' => [
                                                                                    bless( {
@@ -75,12 +75,12 @@ $VAR1 = bless( {
                                                                                                                        'name' => [
                                                                                                                                    'elements'
                                                                                                                                  ]
-                                                                                                                     }, 'OPTiMaDe::Filter::Property' ),
+                                                                                                                     }, 'OPTIMADE::Filter::Property' ),
                                                                                                               bless( {
                                                                                                                        'name' => [
                                                                                                                                    '_exmpl_element_counts'
                                                                                                                                  ]
-                                                                                                                     }, 'OPTiMaDe::Filter::Property' )
+                                                                                                                     }, 'OPTIMADE::Filter::Property' )
                                                                                                             ],
                                                                                             'values' => [
                                                                                                           [
@@ -94,7 +94,7 @@ $VAR1 = bless( {
                                                                                                             ]
                                                                                                           ]
                                                                                                         ]
-                                                                                          }, 'OPTiMaDe::Filter::Zip' ),
+                                                                                          }, 'OPTIMADE::Filter::Zip' ),
                                                                                    bless( {
                                                                                             'operands' => [
                                                                                                             bless( {
@@ -104,12 +104,12 @@ $VAR1 = bless( {
                                                                                                                                                 'name' => [
                                                                                                                                                             'elements'
                                                                                                                                                           ]
-                                                                                                                                              }, 'OPTiMaDe::Filter::Property' ),
+                                                                                                                                              }, 'OPTIMADE::Filter::Property' ),
                                                                                                                                        bless( {
                                                                                                                                                 'name' => [
                                                                                                                                                             '_exmpl_element_counts'
                                                                                                                                                           ]
-                                                                                                                                              }, 'OPTiMaDe::Filter::Property' )
+                                                                                                                                              }, 'OPTIMADE::Filter::Property' )
                                                                                                                                      ],
                                                                                                                      'values' => [
                                                                                                                                    [
@@ -133,7 +133,7 @@ $VAR1 = bless( {
                                                                                                                                      ]
                                                                                                                                    ]
                                                                                                                                  ]
-                                                                                                                   }, 'OPTiMaDe::Filter::Zip' ),
+                                                                                                                   }, 'OPTIMADE::Filter::Zip' ),
                                                                                                             bless( {
                                                                                                                      'operator' => 'HAS ONLY',
                                                                                                                      'properties' => [
@@ -141,12 +141,12 @@ $VAR1 = bless( {
                                                                                                                                                 'name' => [
                                                                                                                                                             'elements'
                                                                                                                                                           ]
-                                                                                                                                              }, 'OPTiMaDe::Filter::Property' ),
+                                                                                                                                              }, 'OPTIMADE::Filter::Property' ),
                                                                                                                                        bless( {
                                                                                                                                                 'name' => [
                                                                                                                                                             '_exmpl_element_counts'
                                                                                                                                                           ]
-                                                                                                                                              }, 'OPTiMaDe::Filter::Property' )
+                                                                                                                                              }, 'OPTIMADE::Filter::Property' )
                                                                                                                                      ],
                                                                                                                      'values' => [
                                                                                                                                    [
@@ -170,19 +170,19 @@ $VAR1 = bless( {
                                                                                                                                      ]
                                                                                                                                    ]
                                                                                                                                  ]
-                                                                                                                   }, 'OPTiMaDe::Filter::Zip' )
+                                                                                                                   }, 'OPTIMADE::Filter::Zip' )
                                                                                                           ],
                                                                                             'operator' => 'AND'
-                                                                                          }, 'OPTiMaDe::Filter::AndOr' )
+                                                                                          }, 'OPTIMADE::Filter::AndOr' )
                                                                                  ],
                                                                    'operator' => 'AND'
-                                                                 }, 'OPTiMaDe::Filter::AndOr' )
+                                                                 }, 'OPTIMADE::Filter::AndOr' )
                                                         ],
                                           'operator' => 'AND'
-                                        }, 'OPTiMaDe::Filter::AndOr' )
+                                        }, 'OPTIMADE::Filter::AndOr' )
                                ],
                  'operator' => 'AND'
-               }, 'OPTiMaDe::Filter::AndOr' );
+               }, 'OPTIMADE::Filter::AndOr' );
 == Filter ==
 ((elements:_exmpl_element_counts HAS = "H" : = "6") AND ((elements:_exmpl_element_counts HAS ALL = "H" : = "6", = "He" : = "7") AND ((elements:_exmpl_element_counts HAS ONLY = "H" : = "6") AND ((elements:_exmpl_element_counts HAS ANY = "H" : = "6", = "He" : = "7") AND (elements:_exmpl_element_counts HAS ONLY = "H" : = "6", = "He" : = "7")))))
 == SQL ==

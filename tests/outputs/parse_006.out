@@ -6,11 +6,11 @@ $VAR1 = bless( {
                                                                    'name' => [
                                                                                'number'
                                                                              ]
-                                                                 }, 'OPTiMaDe::Filter::Property' ),
+                                                                 }, 'OPTIMADE::Filter::Property' ),
                                                           '0.'
                                                         ],
                                           'operator' => '='
-                                        }, 'OPTiMaDe::Filter::Comparison' ),
+                                        }, 'OPTIMADE::Filter::Comparison' ),
                                  bless( {
                                           'operands' => [
                                                           bless( {
@@ -19,11 +19,11 @@ $VAR1 = bless( {
                                                                                             'name' => [
                                                                                                         'number'
                                                                                                       ]
-                                                                                          }, 'OPTiMaDe::Filter::Property' ),
+                                                                                          }, 'OPTIMADE::Filter::Property' ),
                                                                                    '.0'
                                                                                  ],
                                                                    'operator' => '='
-                                                                 }, 'OPTiMaDe::Filter::Comparison' ),
+                                                                 }, 'OPTIMADE::Filter::Comparison' ),
                                                           bless( {
                                                                    'operands' => [
                                                                                    bless( {
@@ -32,11 +32,11 @@ $VAR1 = bless( {
                                                                                                                      'name' => [
                                                                                                                                  'number'
                                                                                                                                ]
-                                                                                                                   }, 'OPTiMaDe::Filter::Property' ),
+                                                                                                                   }, 'OPTIMADE::Filter::Property' ),
                                                                                                             '0.0'
                                                                                                           ],
                                                                                             'operator' => '='
-                                                                                          }, 'OPTiMaDe::Filter::Comparison' ),
+                                                                                          }, 'OPTIMADE::Filter::Comparison' ),
                                                                                    bless( {
                                                                                             'operands' => [
                                                                                                             bless( {
@@ -45,11 +45,11 @@ $VAR1 = bless( {
                                                                                                                                               'name' => [
                                                                                                                                                           'number'
                                                                                                                                                         ]
-                                                                                                                                            }, 'OPTiMaDe::Filter::Property' ),
+                                                                                                                                            }, 'OPTIMADE::Filter::Property' ),
                                                                                                                                      '+0'
                                                                                                                                    ],
                                                                                                                      'operator' => '='
-                                                                                                                   }, 'OPTiMaDe::Filter::Comparison' ),
+                                                                                                                   }, 'OPTIMADE::Filter::Comparison' ),
                                                                                                             bless( {
                                                                                                                      'operands' => [
                                                                                                                                      bless( {
@@ -58,11 +58,11 @@ $VAR1 = bless( {
                                                                                                                                                                        'name' => [
                                                                                                                                                                                    'n_u_m_b_e_r'
                                                                                                                                                                                  ]
-                                                                                                                                                                     }, 'OPTiMaDe::Filter::Property' ),
+                                                                                                                                                                     }, 'OPTIMADE::Filter::Property' ),
                                                                                                                                                               '-0'
                                                                                                                                                             ],
                                                                                                                                               'operator' => '='
-                                                                                                                                            }, 'OPTiMaDe::Filter::Comparison' ),
+                                                                                                                                            }, 'OPTIMADE::Filter::Comparison' ),
                                                                                                                                      bless( {
                                                                                                                                               'operands' => [
                                                                                                                                                               bless( {
@@ -71,11 +71,11 @@ $VAR1 = bless( {
                                                                                                                                                                                                 'name' => [
                                                                                                                                                                                                             'number'
                                                                                                                                                                                                           ]
-                                                                                                                                                                                              }, 'OPTiMaDe::Filter::Property' ),
+                                                                                                                                                                                              }, 'OPTIMADE::Filter::Property' ),
                                                                                                                                                                                        '0e1'
                                                                                                                                                                                      ],
                                                                                                                                                                        'operator' => '='
-                                                                                                                                                                     }, 'OPTiMaDe::Filter::Comparison' ),
+                                                                                                                                                                     }, 'OPTIMADE::Filter::Comparison' ),
                                                                                                                                                               bless( {
                                                                                                                                                                        'operands' => [
                                                                                                                                                                                        bless( {
@@ -84,43 +84,43 @@ $VAR1 = bless( {
                                                                                                                                                                                                                          'name' => [
                                                                                                                                                                                                                                      'number'
                                                                                                                                                                                                                                    ]
-                                                                                                                                                                                                                       }, 'OPTiMaDe::Filter::Property' ),
+                                                                                                                                                                                                                       }, 'OPTIMADE::Filter::Property' ),
                                                                                                                                                                                                                 '0e-1'
                                                                                                                                                                                                               ],
                                                                                                                                                                                                 'operator' => '='
-                                                                                                                                                                                              }, 'OPTiMaDe::Filter::Comparison' ),
+                                                                                                                                                                                              }, 'OPTIMADE::Filter::Comparison' ),
                                                                                                                                                                                        bless( {
                                                                                                                                                                                                 'operands' => [
                                                                                                                                                                                                                 bless( {
                                                                                                                                                                                                                          'name' => [
                                                                                                                                                                                                                                      'number'
                                                                                                                                                                                                                                    ]
-                                                                                                                                                                                                                       }, 'OPTiMaDe::Filter::Property' ),
+                                                                                                                                                                                                                       }, 'OPTIMADE::Filter::Property' ),
                                                                                                                                                                                                                 '0e+1'
                                                                                                                                                                                                               ],
                                                                                                                                                                                                 'operator' => '='
-                                                                                                                                                                                              }, 'OPTiMaDe::Filter::Comparison' )
+                                                                                                                                                                                              }, 'OPTIMADE::Filter::Comparison' )
                                                                                                                                                                                      ],
                                                                                                                                                                        'operator' => 'AND'
-                                                                                                                                                                     }, 'OPTiMaDe::Filter::AndOr' )
+                                                                                                                                                                     }, 'OPTIMADE::Filter::AndOr' )
                                                                                                                                                             ],
                                                                                                                                               'operator' => 'AND'
-                                                                                                                                            }, 'OPTiMaDe::Filter::AndOr' )
+                                                                                                                                            }, 'OPTIMADE::Filter::AndOr' )
                                                                                                                                    ],
                                                                                                                      'operator' => 'AND'
-                                                                                                                   }, 'OPTiMaDe::Filter::AndOr' )
+                                                                                                                   }, 'OPTIMADE::Filter::AndOr' )
                                                                                                           ],
                                                                                             'operator' => 'AND'
-                                                                                          }, 'OPTiMaDe::Filter::AndOr' )
+                                                                                          }, 'OPTIMADE::Filter::AndOr' )
                                                                                  ],
                                                                    'operator' => 'AND'
-                                                                 }, 'OPTiMaDe::Filter::AndOr' )
+                                                                 }, 'OPTIMADE::Filter::AndOr' )
                                                         ],
                                           'operator' => 'AND'
-                                        }, 'OPTiMaDe::Filter::AndOr' )
+                                        }, 'OPTIMADE::Filter::AndOr' )
                                ],
                  'operator' => 'AND'
-               }, 'OPTiMaDe::Filter::AndOr' );
+               }, 'OPTIMADE::Filter::AndOr' );
 == Filter ==
 ((number = "0.") AND ((number = ".0") AND ((number = "0.0") AND ((number = "+0") AND ((n_u_m_b_e_r = "-0") AND ((number = "0e1") AND ((number = "0e-1") AND (number = "0e+1"))))))))
 == SQL ==

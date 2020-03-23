@@ -6,21 +6,21 @@ $VAR1 = bless( {
                                                                  'name' => [
                                                                              '_exmpl_element_counts'
                                                                            ]
-                                                               }, 'OPTiMaDe::Filter::Property' ),
+                                                               }, 'OPTIMADE::Filter::Property' ),
                                           'values' => [
                                                         [
                                                           '<',
                                                           '3'
                                                         ]
                                                       ]
-                                        }, 'OPTiMaDe::Filter::ListComparison' ),
+                                        }, 'OPTIMADE::Filter::ListComparison' ),
                                  bless( {
                                           'operator' => 'HAS ANY',
                                           'property' => bless( {
                                                                  'name' => [
                                                                              '_exmpl_element_counts'
                                                                            ]
-                                                               }, 'OPTiMaDe::Filter::Property' ),
+                                                               }, 'OPTIMADE::Filter::Property' ),
                                           'values' => [
                                                         [
                                                           '>',
@@ -39,10 +39,10 @@ $VAR1 = bless( {
                                                           '8'
                                                         ]
                                                       ]
-                                        }, 'OPTiMaDe::Filter::ListComparison' )
+                                        }, 'OPTIMADE::Filter::ListComparison' )
                                ],
                  'operator' => 'AND'
-               }, 'OPTiMaDe::Filter::AndOr' );
+               }, 'OPTIMADE::Filter::AndOr' );
 == Filter ==
 ((_exmpl_element_counts HAS < "3") AND (_exmpl_element_counts HAS ANY > "3", = "6", = "4", != "8"))
 == SQL ==

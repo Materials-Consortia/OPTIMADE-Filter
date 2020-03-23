@@ -4,11 +4,11 @@ $VAR1 = bless( {
                                           'name' => [
                                                       '_cod_cell_volume'
                                                     ]
-                                        }, 'OPTiMaDe::Filter::Property' ),
+                                        }, 'OPTIMADE::Filter::Property' ),
                                  '100.0'
                                ],
                  'operator' => '<'
-               }, 'OPTiMaDe::Filter::Comparison' );
+               }, 'OPTIMADE::Filter::Comparison' );
 == Filter ==
 (_cod_cell_volume < "100.0")
 == SQL ==

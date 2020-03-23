@@ -9,25 +9,25 @@ $VAR1 = bless( {
                                                                                                                 'name' => [
                                                                                                                             'chemical_formula'
                                                                                                                           ]
-                                                                                                              }, 'OPTiMaDe::Filter::Property' ),
+                                                                                                              }, 'OPTIMADE::Filter::Property' ),
                                                                                                        'Al'
                                                                                                      ],
                                                                                        'operator' => '='
-                                                                                     }, 'OPTiMaDe::Filter::Comparison' ),
+                                                                                     }, 'OPTIMADE::Filter::Comparison' ),
                                                                               bless( {
                                                                                        'operands' => [
                                                                                                        bless( {
                                                                                                                 'name' => [
                                                                                                                             'prototype_formula'
                                                                                                                           ]
-                                                                                                              }, 'OPTiMaDe::Filter::Property' ),
+                                                                                                              }, 'OPTIMADE::Filter::Property' ),
                                                                                                        'A'
                                                                                                      ],
                                                                                        'operator' => '='
-                                                                                     }, 'OPTiMaDe::Filter::Comparison' )
+                                                                                     }, 'OPTIMADE::Filter::Comparison' )
                                                                             ],
                                                               'operator' => 'AND'
-                                                            }, 'OPTiMaDe::Filter::AndOr' ),
+                                                            }, 'OPTIMADE::Filter::AndOr' ),
                                                      bless( {
                                                               'operands' => [
                                                                               bless( {
@@ -36,11 +36,11 @@ $VAR1 = bless( {
                                                                                                                 'name' => [
                                                                                                                             'prototype_formula'
                                                                                                                           ]
-                                                                                                              }, 'OPTiMaDe::Filter::Property' ),
+                                                                                                              }, 'OPTIMADE::Filter::Property' ),
                                                                                                        'H2O'
                                                                                                      ],
                                                                                        'operator' => '='
-                                                                                     }, 'OPTiMaDe::Filter::Comparison' ),
+                                                                                     }, 'OPTIMADE::Filter::Comparison' ),
                                                                               bless( {
                                                                                        'inner' => bless( {
                                                                                                            'operands' => [
@@ -48,19 +48,19 @@ $VAR1 = bless( {
                                                                                                                                     'name' => [
                                                                                                                                                 'chemical_formula'
                                                                                                                                               ]
-                                                                                                                                  }, 'OPTiMaDe::Filter::Property' ),
+                                                                                                                                  }, 'OPTIMADE::Filter::Property' ),
                                                                                                                            'Ti'
                                                                                                                          ],
                                                                                                            'operator' => '='
-                                                                                                         }, 'OPTiMaDe::Filter::Comparison' )
-                                                                                     }, 'OPTiMaDe::Filter::Negation' )
+                                                                                                         }, 'OPTIMADE::Filter::Comparison' )
+                                                                                     }, 'OPTIMADE::Filter::Negation' )
                                                                             ],
                                                               'operator' => 'AND'
-                                                            }, 'OPTiMaDe::Filter::AndOr' )
+                                                            }, 'OPTIMADE::Filter::AndOr' )
                                                    ],
                                      'operator' => 'OR'
-                                   }, 'OPTiMaDe::Filter::AndOr' )
-               }, 'OPTiMaDe::Filter::Negation' );
+                                   }, 'OPTIMADE::Filter::AndOr' )
+               }, 'OPTIMADE::Filter::Negation' );
 == Filter ==
 (NOT (((chemical_formula = "Al") AND (prototype_formula = "A")) OR ((prototype_formula = "H2O") AND (NOT (chemical_formula = "Ti")))))
 == SQL ==

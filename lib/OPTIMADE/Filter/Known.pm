@@ -1,4 +1,4 @@
-package OPTiMaDe::Filter::Known;
+package OPTIMADE::Filter::Known;
 
 use strict;
 use warnings;
@@ -51,14 +51,14 @@ sub modify
     my $self = shift;
     my $code = shift;
 
-    $self->property( OPTiMaDe::Filter::modify( $self->property, $code, @_ ) );
+    $self->property( OPTIMADE::Filter::modify( $self->property, $code, @_ ) );
     return $code->( $self, @_ );
 }
 
 sub validate
 {
     my $self = shift;
-    die 'property undefined for OPTiMaDe::Filter::Known' if !$self->property;
+    die 'property undefined for OPTIMADE::Filter::Known' if !$self->property;
 }
 
 1;

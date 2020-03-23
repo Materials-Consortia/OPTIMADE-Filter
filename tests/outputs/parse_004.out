@@ -6,25 +6,25 @@ $VAR1 = bless( {
                                                                    'name' => [
                                                                                '_mp_bandgap'
                                                                              ]
-                                                                 }, 'OPTiMaDe::Filter::Property' ),
+                                                                 }, 'OPTIMADE::Filter::Property' ),
                                                           '5.0'
                                                         ],
                                           'operator' => '>'
-                                        }, 'OPTiMaDe::Filter::Comparison' ),
+                                        }, 'OPTIMADE::Filter::Comparison' ),
                                  bless( {
                                           'operands' => [
                                                           bless( {
                                                                    'name' => [
                                                                                '_cod_molecular_weight'
                                                                              ]
-                                                                 }, 'OPTiMaDe::Filter::Property' ),
+                                                                 }, 'OPTIMADE::Filter::Property' ),
                                                           '350'
                                                         ],
                                           'operator' => '<'
-                                        }, 'OPTiMaDe::Filter::Comparison' )
+                                        }, 'OPTIMADE::Filter::Comparison' )
                                ],
                  'operator' => 'AND'
-               }, 'OPTiMaDe::Filter::AndOr' );
+               }, 'OPTIMADE::Filter::AndOr' );
 == Filter ==
 ((_mp_bandgap > "5.0") AND (_cod_molecular_weight < "350"))
 == SQL ==

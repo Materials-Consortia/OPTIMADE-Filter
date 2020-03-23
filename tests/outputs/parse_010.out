@@ -5,16 +5,16 @@ $VAR1 = bless( {
                                                               'name' => [
                                                                           'ice'
                                                                         ]
-                                                            }, 'OPTiMaDe::Filter::Property' ),
+                                                            }, 'OPTIMADE::Filter::Property' ),
                                                      bless( {
                                                               'name' => [
                                                                           'val'
                                                                         ]
-                                                            }, 'OPTiMaDe::Filter::Property' )
+                                                            }, 'OPTIMADE::Filter::Property' )
                                                    ],
                                      'operator' => '='
-                                   }, 'OPTiMaDe::Filter::Comparison' )
-               }, 'OPTiMaDe::Filter::Negation' );
+                                   }, 'OPTIMADE::Filter::Comparison' )
+               }, 'OPTIMADE::Filter::Negation' );
 == Filter ==
 (NOT (ice = val))
 == SQL ==

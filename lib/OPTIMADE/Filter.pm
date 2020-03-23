@@ -1,4 +1,4 @@
-package OPTiMaDe::Filter;
+package OPTIMADE::Filter;
 
 use strict;
 use warnings;
@@ -6,9 +6,9 @@ use warnings;
 use Scalar::Util qw(blessed);
 
 # VERSION
-our $OPTiMaDe_VERSION = '1.0.0-rc.1';
+our $OPTIMADE_VERSION = '1.0.0-rc.1';
 
-# ABSTRACT: OPTiMaDe filter language parser/composer
+# ABSTRACT: OPTIMADE filter language parser/composer
 
 sub modify
 {

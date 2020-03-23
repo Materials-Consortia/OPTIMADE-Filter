@@ -1,4 +1,4 @@
-package OPTiMaDe::Filter::Negation;
+package OPTIMADE::Filter::Negation;
 
 use strict;
 use warnings;
@@ -41,14 +41,14 @@ sub modify
     my $self = shift;
     my $code = shift;
 
-    $self->inner( OPTiMaDe::Filter::modify( $self->inner, $code, @_ ) );
+    $self->inner( OPTIMADE::Filter::modify( $self->inner, $code, @_ ) );
     return $code->( $self, @_ );
 }
 
 sub validate
 {
     my $self = shift;
-    die 'inner undefined for OPTiMaDe::Filter::Negation' if !$self->inner;
+    die 'inner undefined for OPTIMADE::Filter::Negation' if !$self->inner;
 }
 
 1;

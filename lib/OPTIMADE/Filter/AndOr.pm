@@ -1,12 +1,28 @@
-package OPTiMaDe::Filter::Comparison;
+package OPTIMADE::Filter::AndOr;
 
 use strict;
 use warnings;
 use Scalar::Util qw(blessed);
 
 sub new {
-    my( $class, $operator ) = @_;
-    return bless { operands => [], operator => $operator }, $class;
+    my $class = shift;
+    my $operator;
+    my @operands;
+
+    if(      @_ == 2 ) {
+        @operands = @_;
+    } elsif( @_ == 3 ) {
+        ( $operands[0], $operator, $operands[1] ) = @_;
+    }
+    return bless { operands => \@operands,
+                   operator => $operator }, $class;
+}
+
+sub operator {
+    my( $self, $operator ) = @_;
+    my $previous_operator = $self->{operator};
+    $self->{operator} = $operator if defined $operator;
+    return $previous_operator;
 }
 
 sub push_operand
@@ -21,14 +37,6 @@ sub unshift_operand
     my( $self, $operand ) = @_;
     die 'attempt to insert more than two operands' if @{$self->{operands}} >= 2;
     unshift @{$self->{operands}}, $operand;
-}
-
-sub operator
-{
-    my( $self, $operator ) = @_;
-    my $previous_operator = $self->{operator};
-    $self->{operator} = $operator if defined $operator;
-    return $previous_operator;
 }
 
 sub left
@@ -82,25 +90,17 @@ sub to_SQL
     $delim = "'" unless $delim;
 
     my $operator = $self->{operator};
-    my @operands = @{$self->{operands}};
-
-    # Handle STARTS/ENDS WITH
-    if(      $operator eq 'CONTAINS' ) {
-        $operator = 'LIKE';
-        $operands[1] = '%' . $operands[1] . '%' if !blessed $operands[1];
-    } elsif( $operator =~ /^STARTS( WITH)?$/ ) {
-        $operator = 'LIKE';
-        $operands[1] = $operands[1] . '%' if !blessed $operands[1];
-    } elsif( $operator =~ /^ENDS( WITH)?$/ ) {
-        $operator = 'LIKE';
-        $operands[1] = '%' . $operands[1] if !blessed $operands[1];
-    }
-
+    my @operands;
     my @values;
-    my @operands_now;
-    for my $arg (@operands) {
+    for my $i (0..$#{$self->{operands}}) {
+        my $arg = $self->{operands}[$i];
         if( blessed $arg && $arg->can( 'to_SQL' ) ) {
-            ( $arg, my $values ) = $arg->to_SQL( $options );
+            my $values = [];
+            eval { ( $arg, $values ) = $arg->to_SQL( $options ) };
+            if( $@ ) {
+                chomp $@;
+                $arg = "<$@>";
+            }
             push @values, @$values;
         } else {
             push @values, $arg;
@@ -111,9 +111,8 @@ sub to_SQL
                 $arg = "\"$arg\"";
             }
         }
-        push @operands_now, $arg;
+        push @operands, $arg;
     }
-    @operands = @operands_now;
 
     if( wantarray ) {
         return ( "($operands[0] $operator $operands[1])", \@values );
@@ -127,7 +126,7 @@ sub modify
     my $self = shift;
     my $code = shift;
 
-    $self->{operands} = [ map { OPTiMaDe::Filter::modify( $_, $code, @_ ) }
+    $self->{operands} = [ map { OPTIMADE::Filter::modify( $_, $code, @_ ) }
                               @{$self->{operands}} ];
     return $code->( $self, @_ );
 }
@@ -137,11 +136,10 @@ sub validate
     my $self = shift;
 
     if( @{$self->{operands}} != 2 ) {
-        die 'number of operands for OPTiMaDe::Filter::Comparison must be 2, ' .
+        die 'number of operands for OPTIMADE::Filter::AndOr must be 2, ' .
             'got ' . @{$self->{operands}};
     }
-    die 'operator undefined for OPTiMaDe::Filter::Comparison'
-        if !$self->operator;
+    die 'operator undefined for OPTIMADE::Filter::AndOr' if !$self->operator;
 }
 
 1;

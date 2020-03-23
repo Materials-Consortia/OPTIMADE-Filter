@@ -1,4 +1,4 @@
-package OPTiMaDe::Filter::ListComparison;
+package OPTIMADE::Filter::ListComparison;
 
 use strict;
 use warnings;
@@ -64,8 +64,8 @@ sub modify {
     my $code = shift;
 
     $self->{property} = $code->( $self->{property}, @_ );
-    $self->{values} = [ map { [ OPTiMaDe::Filter::modify( $_->[0], $code, @_ ),
-                                OPTiMaDe::Filter::modify( $_->[1], $code, @_ ) ] }
+    $self->{values} = [ map { [ OPTIMADE::Filter::modify( $_->[0], $code, @_ ),
+                                OPTIMADE::Filter::modify( $_->[1], $code, @_ ) ] }
                             @{$self->{values}} ];
     return $code->( $self, @_ );
 }
@@ -75,13 +75,13 @@ sub validate
     my $self = shift;
 
     if( !$self->property ) {
-        die 'property undefined for OPTiMaDe::Filter::ListComparison';
+        die 'property undefined for OPTIMADE::Filter::ListComparison';
     }
     if( !$self->operator ) {
-        die 'operator undefined for OPTiMaDe::Filter::ListComparison';
+        die 'operator undefined for OPTIMADE::Filter::ListComparison';
     }
     if( !$self->values ) {
-        die 'values undefined for OPTiMaDe::Filter::ListComparison';
+        die 'values undefined for OPTIMADE::Filter::ListComparison';
     }
 }
 

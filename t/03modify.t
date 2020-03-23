@@ -4,20 +4,20 @@ use strict;
 use warnings;
 use Data::Compare;
 use Data::Dumper;
-use OPTiMaDe::Filter;
-use OPTiMaDe::Filter::Parser;
+use OPTIMADE::Filter;
+use OPTIMADE::Filter::Parser;
 use Scalar::Util qw(blessed);
 use Test::More tests => 1;
 
 $Data::Dumper::Sortkeys = 1;
 
-my $parser = new OPTiMaDe::Filter::Parser;
+my $parser = new OPTIMADE::Filter::Parser;
 my $tree = $parser->parse_string( 'a >= 5 OR b <= 2 AND c > 10' );
 
-my $tree_now = OPTiMaDe::Filter::modify( $tree,
+my $tree_now = OPTIMADE::Filter::modify( $tree,
     sub {
         my( $node ) = @_;
-        if( blessed $node && $node->isa( OPTiMaDe::Filter::Comparison:: ) ) {
+        if( blessed $node && $node->isa( OPTIMADE::Filter::Comparison:: ) ) {
             $node->{operator} =~ s/([<>])=/$1/;
         }
         return $node;
@@ -32,11 +32,11 @@ $VAR1 = bless( {
                                                                    'name' => [
                                                                                'a'
                                                                              ]
-                                                                 }, 'OPTiMaDe::Filter::Property' ),
+                                                                 }, 'OPTIMADE::Filter::Property' ),
                                                           '5'
                                                         ],
                                           'operator' => '>'
-                                        }, 'OPTiMaDe::Filter::Comparison' ),
+                                        }, 'OPTIMADE::Filter::Comparison' ),
                                  bless( {
                                           'operands' => [
                                                           bless( {
@@ -45,28 +45,28 @@ $VAR1 = bless( {
                                                                                             'name' => [
                                                                                                         'b'
                                                                                                       ]
-                                                                                          }, 'OPTiMaDe::Filter::Property' ),
+                                                                                          }, 'OPTIMADE::Filter::Property' ),
                                                                                    '2'
                                                                                  ],
                                                                    'operator' => '<'
-                                                                 }, 'OPTiMaDe::Filter::Comparison' ),
+                                                                 }, 'OPTIMADE::Filter::Comparison' ),
                                                           bless( {
                                                                    'operands' => [
                                                                                    bless( {
                                                                                             'name' => [
                                                                                                         'c'
                                                                                                       ]
-                                                                                          }, 'OPTiMaDe::Filter::Property' ),
+                                                                                          }, 'OPTIMADE::Filter::Property' ),
                                                                                    '10'
                                                                                  ],
                                                                    'operator' => '>'
-                                                                 }, 'OPTiMaDe::Filter::Comparison' )
+                                                                 }, 'OPTIMADE::Filter::Comparison' )
                                                         ],
                                           'operator' => 'AND'
-                                        }, 'OPTiMaDe::Filter::AndOr' )
+                                        }, 'OPTIMADE::Filter::AndOr' )
                                ],
                  'operator' => 'OR'
-               }, 'OPTiMaDe::Filter::AndOr' );
+               }, 'OPTIMADE::Filter::AndOr' );
 END
 
 is( Dumper( $tree_now ), $expected );

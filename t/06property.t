@@ -2,10 +2,10 @@
 
 use strict;
 use warnings;
-use OPTiMaDe::Filter::Property;
+use OPTIMADE::Filter::Property;
 use Test::More tests => 3;
 
-my $property = OPTiMaDe::Filter::Property->new( "Some", "Property" );
+my $property = OPTIMADE::Filter::Property->new( "Some", "Property" );
 is( $property->to_filter, 'some.property' );
 is( $property->to_SQL, "'Some'.'Property'" );
 

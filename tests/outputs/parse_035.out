@@ -4,11 +4,11 @@ $VAR1 = bless( {
                                           'name' => [
                                                       'authors'
                                                     ]
-                                        }, 'OPTiMaDe::Filter::Property' ),
+                                        }, 'OPTIMADE::Filter::Property' ),
                                  '%Darwin%'
                                ],
                  'operator' => 'LIKE'
-               }, 'OPTiMaDe::Filter::Comparison' );
+               }, 'OPTIMADE::Filter::Comparison' );
 == Filter ==
 (authors LIKE "%Darwin%")
 == SQL ==

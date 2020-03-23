@@ -1,4 +1,4 @@
-package OPTiMaDe::Filter::Zip;
+package OPTIMADE::Filter::Zip;
 
 use strict;
 use warnings;
@@ -72,8 +72,8 @@ sub modify
     my $code = shift;
 
     $self->{properties} = [ map { $_->modify( $code, @_ ) } @{$self->{properties}} ];
-    $self->{values} = [ map { [ OPTiMaDe::Filter::modify( $_->[0], $code, @_ ),
-                                OPTiMaDe::Filter::modify( $_->[1], $code, @_ ) ] }
+    $self->{values} = [ map { [ OPTIMADE::Filter::modify( $_->[0], $code, @_ ),
+                                OPTIMADE::Filter::modify( $_->[1], $code, @_ ) ] }
                             @{$self->{values}} ];
     return $code->( $self, @_ );
 }
@@ -83,13 +83,13 @@ sub validate
     my $self = shift;
 
     if( !$self->{properties} ) {
-        die 'properties undefined for OPTiMaDe::Filter::Zip';
+        die 'properties undefined for OPTIMADE::Filter::Zip';
     }
     if( !$self->operator ) {
-        die 'operator undefined for OPTiMaDe::Filter::Zip';
+        die 'operator undefined for OPTIMADE::Filter::Zip';
     }
     if( !$self->values ) {
-        die 'values undefined for OPTiMaDe::Filter::Zip';
+        die 'values undefined for OPTIMADE::Filter::Zip';
     }
 }
 

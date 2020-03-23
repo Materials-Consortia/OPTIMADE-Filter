@@ -6,8 +6,8 @@ $VAR1 = bless( {
                                                                  'name' => [
                                                                              'chemical_formula_hill'
                                                                            ]
-                                                               }, 'OPTiMaDe::Filter::Property' )
-                                        }, 'OPTiMaDe::Filter::Known' ),
+                                                               }, 'OPTIMADE::Filter::Property' )
+                                        }, 'OPTIMADE::Filter::Known' ),
                                  bless( {
                                           'inner' => bless( {
                                                               'is_known' => 0,
@@ -15,12 +15,12 @@ $VAR1 = bless( {
                                                                                      'name' => [
                                                                                                  'chemical_formula_anonymous'
                                                                                                ]
-                                                                                   }, 'OPTiMaDe::Filter::Property' )
-                                                            }, 'OPTiMaDe::Filter::Known' )
-                                        }, 'OPTiMaDe::Filter::Negation' )
+                                                                                   }, 'OPTIMADE::Filter::Property' )
+                                                            }, 'OPTIMADE::Filter::Known' )
+                                        }, 'OPTIMADE::Filter::Negation' )
                                ],
                  'operator' => 'AND'
-               }, 'OPTiMaDe::Filter::AndOr' );
+               }, 'OPTIMADE::Filter::AndOr' );
 == Filter ==
 (chemical_formula_hill IS KNOWN AND (NOT chemical_formula_anonymous IS UNKNOWN))
 == SQL ==

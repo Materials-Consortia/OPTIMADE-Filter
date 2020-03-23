@@ -4,11 +4,11 @@ $VAR1 = bless( {
                                           'name' => [
                                                       'author'
                                                     ]
-                                        }, 'OPTiMaDe::Filter::Property' ),
+                                        }, 'OPTIMADE::Filter::Property' ),
                                  'Sąžininga Žąsis'
                                ],
                  'operator' => '='
-               }, 'OPTiMaDe::Filter::Comparison' );
+               }, 'OPTIMADE::Filter::Comparison' );
 == Filter ==
 (author = "Sąžininga Žąsis")
 == SQL ==

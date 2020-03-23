@@ -1,2 +1,2 @@
 use Test::More tests => 1;
-BEGIN { use_ok('OPTiMaDe::Filter::Parser') };
+BEGIN { use_ok('OPTIMADE::Filter::Parser') };

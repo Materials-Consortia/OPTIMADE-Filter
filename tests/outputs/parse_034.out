@@ -5,11 +5,11 @@ $VAR1 = bless( {
                                                       'species',
                                                       'chemical_symbols'
                                                     ]
-                                        }, 'OPTiMaDe::Filter::Property' ),
+                                        }, 'OPTIMADE::Filter::Property' ),
                                  'Ti'
                                ],
                  'operator' => '='
-               }, 'OPTiMaDe::Filter::Comparison' );
+               }, 'OPTIMADE::Filter::Comparison' );
 == Filter ==
 (species.chemical_symbols = "Ti")
 == SQL ==
