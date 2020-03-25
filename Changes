@@ -1,4 +1,4 @@
-0.8.0 unreleased
+0.8.0 2020-03-25
 
     - Renaming package from OPTiMaDe::Filter to OPTIMADE::Filter.
     - Allowing uppercase characters in properties, however, they are
