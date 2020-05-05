@@ -3,6 +3,8 @@ package OPTIMADE::Filter::Property;
 use strict;
 use warnings;
 
+use parent 'OPTIMADE::Filter::Modifiable';
+
 use Scalar::Util qw(blessed);
 
 use overload '@{}' => sub { return $_[0]->{name} },
