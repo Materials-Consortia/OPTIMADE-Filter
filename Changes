@@ -1,3 +1,7 @@
+0.10.1 unreleased
+
+    - Implementing the validation of zip value lists.
+
 0.10.0 2020-06-09
 
     - Reducing the number of parentheses in produced SQL statements.
