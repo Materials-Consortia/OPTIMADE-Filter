@@ -326,23 +326,27 @@ comma: ',' ;
 
 colon: ':' ;
 
-# OperatorComparison operator tokens
+# Comparison operator tokens
 
-operator: '<'
-        | '<' '='
-            {
-                return join( '', @_[1..$#_] );
-            }
-        | '>'
-        | '>' '='
-            {
-                return join( '', @_[1..$#_] );
-            }
-        | '='
-        | '!' '='
-            {
-                return join( '', @_[1..$#_] );
-            }
+operator: equality_operator | relative_comparison_operator ;
+
+equality_operator: '='
+                 | '!' '='
+                    {
+                        return join( '', @_[1..$#_] );
+                    }
+    ;
+
+relative_comparison_operator: '<'
+                            | '<' '='
+                                {
+                                    return join( '', @_[1..$#_] );
+                                }
+                            | '>'
+                            | '>' '='
+                                {
+                                    return join( '', @_[1..$#_] );
+                                }
     ;
 
 %%
