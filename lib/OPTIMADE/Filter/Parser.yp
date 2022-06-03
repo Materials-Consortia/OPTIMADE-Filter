@@ -28,7 +28,9 @@ filter: expression ;
 
 # Values
 
-constant: string | number ;
+ordered_constant: string | number ;
+
+unordered_constant: TRUE | FALSE ;
 
 value: string | number | property ;
 
@@ -121,7 +123,7 @@ expression_phrase: comparison
 
 comparison: constant_first_comparison | property_first_comparison ;
 
-constant_first_comparison: constant value_op_rhs
+constant_first_comparison: ordered_constant value_op_rhs
                             {
                                 $_[2]->unshift_operand( $_[1] );
                                 return $_[2];
