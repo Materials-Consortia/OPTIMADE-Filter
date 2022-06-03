@@ -128,37 +128,44 @@ constant_first_comparison: constant value_op_rhs
                             }
                          ;
 
-property_first_comparison: property value_op_rhs
+property_first_comparison: property
+                                {
+                                    my $cmp = OPTIMADE::Filter::Comparison->new( '=' );
+                                    $cmp->property( $_[1] );
+                                    $cmp->push_operand( 'TRUE' );
+                                    return $cmp;
+                                }
+                         | property value_op_rhs
                                 {
                                     $_[2]->unshift_operand( $_[1] );
                                     return $_[2];
                                 }
-                           | property known_op_rhs
+                         | property known_op_rhs
                                 {
                                     $_[2]->property( $_[1] );
                                     return $_[2];
                                 }
-                           | property fuzzy_string_op_rhs
+                         | property fuzzy_string_op_rhs
                                 {
                                     $_[2]->unshift_operand( $_[1] );
                                     return $_[2];
                                 }
-                           | property set_op_rhs
+                         | property set_op_rhs
                                 {
                                     $_[2]->property( $_[1] );
                                     return $_[2];
                                 }
-                           | property set_zip_op_rhs
+                         | property set_zip_op_rhs
                                 {
                                     $_[2]->unshift_property( $_[1] );
                                     return $_[2];
                                 }
-                           | property length_op_rhs
+                         | property length_op_rhs
                                 {
                                     $_[2]->property( $_[1] );
                                     return $_[2];
                                 }
-                           ;
+                         ;
 
 value_op_rhs: operator value
                 {
