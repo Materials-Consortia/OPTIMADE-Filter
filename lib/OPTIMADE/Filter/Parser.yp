@@ -415,11 +415,12 @@ sub _Lexer
         return( 'identifier', $1 );
     }
 
-    # Handling boolean relations
+    # Handling textual operators and other literals
     if( $self->YYData->{INPUT} =~ s/^(AND|NOT|OR|
                                       IS|UNKNOWN|KNOWN|
                                       CONTAINS|STARTS|ENDS|WITH|
-                                      LENGTH|HAS|ALL|ONLY|ANY)//x ) {
+                                      LENGTH|HAS|ALL|ONLY|ANY|
+                                      TRUE|FALSE)//x ) {
         $self->{USER}{CHARNO} += length( $1 );
         return( $1, $1 );
     }
