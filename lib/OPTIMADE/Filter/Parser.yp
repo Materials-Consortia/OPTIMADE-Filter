@@ -36,22 +36,27 @@ value: unordered_constant | ordered_value ;
 
 ordered_value: ordered_constant | property ;
 
-value_list: value
+value_list_entry: value
+                    {
+                        return [ '=', $_[1] ];
+                    }
+                | value_eq_rhs
+                    {
+                        return [ $_[1]->operator, $_[1]->left ];
+                    }
+                | value_rel_comp_rhs
+                    {
+                        return [ $_[1]->operator, $_[1]->left ];
+                    }
+                ;
+
+value_list: value_list_entry
             {
-                return [ [ '=', $_[1] ] ];
+                return [ $_[1] ];
             }
-          | operator value
+          | value_list comma value_list_entry
             {
-                return [ [ @_[1..$#_] ] ];
-            }
-          | value_list comma value
-            {
-                push @{$_[1]}, [ '=', $_[3] ];
-                return $_[1];
-            }
-          | value_list comma operator value
-            {
-                push @{$_[1]}, [ $_[3], $_[4] ];
+                push @{$_[1]}, $_[3];
                 return $_[1];
             }
           ;
