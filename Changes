@@ -1,6 +1,13 @@
-0.10.1 unreleased
+0.10.2 2021-01-23
 
-    - Implementing the validation of zip value lists.
+    - Fixing repository and issue tracker URLs.
+
+0.10.1 2021-01-22
+
+    - Acknowledging conformance to OPTiMaDe specification v1.0.0.
+    - Adding version numbers to all modules.
+    - Correcting copyright years.
+    - Adding homepage and pointers to GitHub.
 
 0.10.0 2020-06-09
 

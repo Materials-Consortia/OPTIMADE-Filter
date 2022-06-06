@@ -4,9 +4,9 @@ use strict;
 use warnings;
 
 use parent 'OPTIMADE::Filter::Modifiable';
-
-use List::Util qw(any);
 use Scalar::Util qw(blessed);
+
+# VERSION
 
 sub new {
     my( $class ) = @_;
