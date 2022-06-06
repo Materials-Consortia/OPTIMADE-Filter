@@ -171,13 +171,23 @@ property_first_comparison: property
                                 }
                          ;
 
-value_op_rhs: operator value
+value_op_rhs: value_eq_rhs | value_rel_comp_rhs ;
+
+value_eq_rhs: equality_operator value
                 {
                     my $cmp = OPTIMADE::Filter::Comparison->new( $_[1] );
                     $cmp->push_operand( $_[2] );
                     return $cmp;
                 }
             ;
+
+value_rel_comp_rhs: relative_comparison_operator ordered_value
+                    {
+                        my $cmp = OPTIMADE::Filter::Comparison->new( $_[1] );
+                        $cmp->push_operand( $_[2] );
+                        return $cmp;
+                    }
+                  ;
 
 known_op_rhs: IS KNOWN
                 {
