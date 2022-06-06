@@ -12,6 +12,7 @@ use OPTIMADE::Filter::Known;
 use OPTIMADE::Filter::ListComparison;
 use OPTIMADE::Filter::Negation;
 use OPTIMADE::Filter::Property;
+use OPTIMADE::Filter::True;
 use OPTIMADE::Filter::Zip;
 
 our $allow_LIKE_operator = 0;
@@ -130,10 +131,9 @@ constant_first_comparison: ordered_constant value_op_rhs
 
 property_first_comparison: property
                                 {
-                                    # FIXME: Not sure how to handle boolean values in Perl here
                                     my $cmp = OPTIMADE::Filter::Comparison->new( '=' );
                                     $cmp->left( $_[1] );
-                                    $cmp->right( 'TRUE' );
+                                    $cmp->right( OPTIMADE::Filter::True->new );
                                     return $cmp;
                                 }
                          | property value_op_rhs
