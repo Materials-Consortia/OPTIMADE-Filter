@@ -1,0 +1,63 @@
+$VAR1 = bless( {
+                 'operands' => [
+                                 bless( {
+                                          'operands' => [
+                                                          bless( {
+                                                                   'operands' => [
+                                                                                   bless( {
+                                                                                            'name' => [
+                                                                                                        'true'
+                                                                                                      ]
+                                                                                          }, 'OPTIMADE::Filter::Property' ),
+                                                                                   'TRUE'
+                                                                                 ],
+                                                                   'operator' => '='
+                                                                 }, 'OPTIMADE::Filter::Comparison' ),
+                                                          bless( {
+                                                                   'operands' => [
+                                                                                   bless( {
+                                                                                            'name' => [
+                                                                                                        'false'
+                                                                                                      ]
+                                                                                          }, 'OPTIMADE::Filter::Property' ),
+                                                                                   'FALSE'
+                                                                                 ],
+                                                                   'operator' => '='
+                                                                 }, 'OPTIMADE::Filter::Comparison' )
+                                                        ],
+                                          'operator' => 'AND'
+                                        }, 'OPTIMADE::Filter::AndOr' ),
+                                 bless( {
+                                          'operands' => [
+                                                          bless( {
+                                                                   'operands' => [
+                                                                                   bless( {
+                                                                                            'name' => [
+                                                                                                        'true'
+                                                                                                      ]
+                                                                                          }, 'OPTIMADE::Filter::Property' ),
+                                                                                   'TRUE'
+                                                                                 ],
+                                                                   'operator' => '!='
+                                                                 }, 'OPTIMADE::Filter::Comparison' ),
+                                                          bless( {
+                                                                   'operands' => [
+                                                                                   bless( {
+                                                                                            'name' => [
+                                                                                                        'false'
+                                                                                                      ]
+                                                                                          }, 'OPTIMADE::Filter::Property' ),
+                                                                                   'FALSE'
+                                                                                 ],
+                                                                   'operator' => '!='
+                                                                 }, 'OPTIMADE::Filter::Comparison' )
+                                                        ],
+                                          'operator' => 'AND'
+                                        }, 'OPTIMADE::Filter::AndOr' )
+                               ],
+                 'operator' => 'OR'
+               }, 'OPTIMADE::Filter::AndOr' );
+== Filter ==
+(((true = "TRUE") AND (false = "FALSE")) OR ((true != "TRUE") AND (false != "FALSE")))
+== SQL ==
+('true' = "TRUE" AND 'false' = "FALSE") OR ('true' != "TRUE" AND 'false' != "FALSE")
