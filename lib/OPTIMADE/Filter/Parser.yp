@@ -130,6 +130,11 @@ constant_first_comparison: ordered_constant value_op_rhs
                                 $_[2]->unshift_operand( $_[1] );
                                 return $_[2];
                             }
+                         | unordered_constant value_eq_rhs
+                            {
+                                $_[2]->unshift_operand( $_[1] );
+                                return $_[2];
+                            }
                          ;
 
 property_first_comparison: property
