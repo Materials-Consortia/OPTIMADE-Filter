@@ -243,7 +243,13 @@ set_op_rhs: HAS value
                 $lc->values( [ [ '=', $_[2] ] ] );
                 return $lc;
             }
-          | HAS operator value
+          | HAS equality_operator value
+            {
+                my $lc = OPTIMADE::Filter::ListComparison->new( $_[1] );
+                $lc->values( [ [ $_[2], $_[3] ] ] );
+                return $lc;
+            }
+          | HAS relative_comparison_operator ordered_value
             {
                 my $lc = OPTIMADE::Filter::ListComparison->new( $_[1] );
                 $lc->values( [ [ $_[2], $_[3] ] ] );
