@@ -130,9 +130,10 @@ constant_first_comparison: ordered_constant value_op_rhs
 
 property_first_comparison: property
                                 {
+                                    # FIXME: Not sure how to handle boolean values in Perl here
                                     my $cmp = OPTIMADE::Filter::Comparison->new( '=' );
-                                    $cmp->property( $_[1] );
-                                    $cmp->push_operand( 'TRUE' );
+                                    $cmp->left( $_[1] );
+                                    $cmp->right( 'TRUE' );
                                     return $cmp;
                                 }
                          | property value_op_rhs
