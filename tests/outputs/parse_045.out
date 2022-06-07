@@ -1,3 +1,4 @@
+no SQL representation
 $VAR1 = bless( {
                  'inner' => bless( {
                                      'operands' => [
@@ -6,12 +7,13 @@ $VAR1 = bless( {
                                                                           'boolean_valued_property'
                                                                         ]
                                                             }, 'OPTIMADE::Filter::Property' ),
-                                                     'TRUE'
+                                                     bless( {
+                                                              'value' => 1
+                                                            }, 'OPTIMADE::Filter::Boolean' )
                                                    ],
                                      'operator' => '='
                                    }, 'OPTIMADE::Filter::Comparison' )
                }, 'OPTIMADE::Filter::Negation' );
 == Filter ==
-(NOT (boolean_valued_property = "TRUE"))
+(NOT (boolean_valued_property = TRUE))
 == SQL ==
-NOT ('boolean_valued_property' = "TRUE")

@@ -7,7 +7,9 @@ $VAR1 = bless( {
                                                                                'a'
                                                                              ]
                                                                  }, 'OPTIMADE::Filter::Property' ),
-                                                          'TRUE'
+                                                          bless( {
+                                                                   'value' => 1
+                                                                 }, 'OPTIMADE::Filter::Boolean' )
                                                         ],
                                           'operator' => '='
                                         }, 'OPTIMADE::Filter::Comparison' ),
@@ -18,7 +20,9 @@ $VAR1 = bless( {
                                                                                'b'
                                                                              ]
                                                                  }, 'OPTIMADE::Filter::Property' ),
-                                                          'TRUE'
+                                                          bless( {
+                                                                   'value' => 1
+                                                                 }, 'OPTIMADE::Filter::Boolean' )
                                                         ],
                                           'operator' => '='
                                         }, 'OPTIMADE::Filter::Comparison' )
@@ -26,6 +30,6 @@ $VAR1 = bless( {
                  'operator' => 'AND'
                }, 'OPTIMADE::Filter::AndOr' );
 == Filter ==
-((a = "TRUE") AND (b = "TRUE"))
+((a = TRUE) AND (b = TRUE))
 == SQL ==
-'a' = "TRUE" AND 'b' = "TRUE"
+<no SQL representation> AND <no SQL representation>

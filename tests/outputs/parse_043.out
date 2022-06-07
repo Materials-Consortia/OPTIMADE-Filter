@@ -2,7 +2,9 @@ $VAR1 = bless( {
                  'operands' => [
                                  bless( {
                                           'operands' => [
-                                                          'TRUE',
+                                                          bless( {
+                                                                   'value' => 1
+                                                                 }, 'OPTIMADE::Filter::Boolean' ),
                                                           bless( {
                                                                    'name' => [
                                                                                'property'
@@ -13,8 +15,12 @@ $VAR1 = bless( {
                                         }, 'OPTIMADE::Filter::Comparison' ),
                                  bless( {
                                           'operands' => [
-                                                          'TRUE',
-                                                          'FALSE'
+                                                          bless( {
+                                                                   'value' => 1
+                                                                 }, 'OPTIMADE::Filter::Boolean' ),
+                                                          bless( {
+                                                                   'value' => ''
+                                                                 }, 'OPTIMADE::Filter::Boolean' )
                                                         ],
                                           'operator' => '='
                                         }, 'OPTIMADE::Filter::Comparison' )
@@ -22,6 +28,6 @@ $VAR1 = bless( {
                  'operator' => 'AND'
                }, 'OPTIMADE::Filter::AndOr' );
 == Filter ==
-(("TRUE" = property) AND ("TRUE" = "FALSE"))
+((TRUE = property) AND (TRUE = FALSE))
 == SQL ==
-"TRUE" = 'property' AND "TRUE" = "FALSE"
+<no SQL representation> AND <no SQL representation>
