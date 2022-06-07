@@ -1,4 +1,4 @@
-package OPTIMADE::Filter::True;
+package OPTIMADE::Filter::Boolean;
 
 use strict;
 use warnings;
@@ -8,13 +8,14 @@ use parent 'OPTIMADE::Filter::Modifiable';
 # VERSION
 
 sub new {
-    my( $class ) = @_;
-    return bless {}, $class;
+    my( $class, $value ) = @_;
+    return bless { value => $value }, $class;
 }
 
 sub to_filter
 {
-    return 'TRUE';
+    my $self = shift;
+    return $self->{value} ? 'TRUE' : 'FALSE';
 }
 
 sub to_SQL

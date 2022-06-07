@@ -7,12 +7,12 @@ use warnings;
 use Scalar::Util qw(blessed);
 
 use OPTIMADE::Filter::AndOr;
+use OPTIMADE::Filter::Boolean;
 use OPTIMADE::Filter::Comparison;
 use OPTIMADE::Filter::Known;
 use OPTIMADE::Filter::ListComparison;
 use OPTIMADE::Filter::Negation;
 use OPTIMADE::Filter::Property;
-use OPTIMADE::Filter::True;
 use OPTIMADE::Filter::Zip;
 
 our $allow_LIKE_operator = 0;
@@ -31,7 +31,15 @@ filter: expression ;
 
 ordered_constant: string | number ;
 
-unordered_constant: TRUE | FALSE ;
+unordered_constant: TRUE
+                    {
+                        return OPTIMADE::Filter::Boolean->new( 1 );
+                    }
+                  | FALSE
+                    {
+                        return OPTIMADE::Filter::Boolean->new( '' );
+                    }
+                  ;
 
 value: unordered_constant | ordered_value ;
 
@@ -133,7 +141,7 @@ property_first_comparison: property
                                 {
                                     my $cmp = OPTIMADE::Filter::Comparison->new( '=' );
                                     $cmp->left( $_[1] );
-                                    $cmp->right( OPTIMADE::Filter::True->new );
+                                    $cmp->right( OPTIMADE::Filter::Boolean->new( 1 ) );
                                     return $cmp;
                                 }
                          | property value_op_rhs
