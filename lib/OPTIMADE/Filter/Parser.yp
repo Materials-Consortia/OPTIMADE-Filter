@@ -57,6 +57,10 @@ value_list_entry: value
                     {
                         return [ $_[1]->operator, $_[1]->left ];
                     }
+                | fuzzy_string_op_rhs
+                    {
+                        return [ $_[1]->operator, $_[1]->left ];
+                    }
                 ;
 
 value_list: value_list_entry
