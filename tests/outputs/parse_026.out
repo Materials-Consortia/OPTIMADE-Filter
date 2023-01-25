@@ -8,10 +8,12 @@ $VAR1 = bless( {
                                                                            ]
                                                                }, 'OPTIMADE::Filter::Property' ),
                                           'values' => [
-                                                        [
-                                                          '=',
-                                                          'H'
-                                                        ]
+                                                        bless( {
+                                                                 'operands' => [
+                                                                                 'H'
+                                                                               ],
+                                                                 'operator' => '='
+                                                               }, 'OPTIMADE::Filter::Comparison' )
                                                       ]
                                         }, 'OPTIMADE::Filter::ListComparison' ),
                                  bless( {
@@ -24,22 +26,30 @@ $VAR1 = bless( {
                                                                                                     ]
                                                                                         }, 'OPTIMADE::Filter::Property' ),
                                                                    'values' => [
-                                                                                 [
-                                                                                   '=',
-                                                                                   'H'
-                                                                                 ],
-                                                                                 [
-                                                                                   '=',
-                                                                                   'He'
-                                                                                 ],
-                                                                                 [
-                                                                                   '=',
-                                                                                   'Ga'
-                                                                                 ],
-                                                                                 [
-                                                                                   '=',
-                                                                                   'Ta'
-                                                                                 ]
+                                                                                 bless( {
+                                                                                          'operands' => [
+                                                                                                          'H'
+                                                                                                        ],
+                                                                                          'operator' => '='
+                                                                                        }, 'OPTIMADE::Filter::Comparison' ),
+                                                                                 bless( {
+                                                                                          'operands' => [
+                                                                                                          'He'
+                                                                                                        ],
+                                                                                          'operator' => '='
+                                                                                        }, 'OPTIMADE::Filter::Comparison' ),
+                                                                                 bless( {
+                                                                                          'operands' => [
+                                                                                                          'Ga'
+                                                                                                        ],
+                                                                                          'operator' => '='
+                                                                                        }, 'OPTIMADE::Filter::Comparison' ),
+                                                                                 bless( {
+                                                                                          'operands' => [
+                                                                                                          'Ta'
+                                                                                                        ],
+                                                                                          'operator' => '='
+                                                                                        }, 'OPTIMADE::Filter::Comparison' )
                                                                                ]
                                                                  }, 'OPTIMADE::Filter::ListComparison' ),
                                                           bless( {
@@ -52,22 +62,30 @@ $VAR1 = bless( {
                                                                                                                              ]
                                                                                                                  }, 'OPTIMADE::Filter::Property' ),
                                                                                             'values' => [
-                                                                                                          [
-                                                                                                            '=',
-                                                                                                            'H'
-                                                                                                          ],
-                                                                                                          [
-                                                                                                            '=',
-                                                                                                            'He'
-                                                                                                          ],
-                                                                                                          [
-                                                                                                            '=',
-                                                                                                            'Ga'
-                                                                                                          ],
-                                                                                                          [
-                                                                                                            '=',
-                                                                                                            'Ta'
-                                                                                                          ]
+                                                                                                          bless( {
+                                                                                                                   'operands' => [
+                                                                                                                                   'H'
+                                                                                                                                 ],
+                                                                                                                   'operator' => '='
+                                                                                                                 }, 'OPTIMADE::Filter::Comparison' ),
+                                                                                                          bless( {
+                                                                                                                   'operands' => [
+                                                                                                                                   'He'
+                                                                                                                                 ],
+                                                                                                                   'operator' => '='
+                                                                                                                 }, 'OPTIMADE::Filter::Comparison' ),
+                                                                                                          bless( {
+                                                                                                                   'operands' => [
+                                                                                                                                   'Ga'
+                                                                                                                                 ],
+                                                                                                                   'operator' => '='
+                                                                                                                 }, 'OPTIMADE::Filter::Comparison' ),
+                                                                                                          bless( {
+                                                                                                                   'operands' => [
+                                                                                                                                   'Ta'
+                                                                                                                                 ],
+                                                                                                                   'operator' => '='
+                                                                                                                 }, 'OPTIMADE::Filter::Comparison' )
                                                                                                         ]
                                                                                           }, 'OPTIMADE::Filter::ListComparison' ),
                                                                                    bless( {
@@ -78,22 +96,30 @@ $VAR1 = bless( {
                                                                                                                              ]
                                                                                                                  }, 'OPTIMADE::Filter::Property' ),
                                                                                             'values' => [
-                                                                                                          [
-                                                                                                            '=',
-                                                                                                            'H'
-                                                                                                          ],
-                                                                                                          [
-                                                                                                            '=',
-                                                                                                            'He'
-                                                                                                          ],
-                                                                                                          [
-                                                                                                            '=',
-                                                                                                            'Ga'
-                                                                                                          ],
-                                                                                                          [
-                                                                                                            '=',
-                                                                                                            'Ta'
-                                                                                                          ]
+                                                                                                          bless( {
+                                                                                                                   'operands' => [
+                                                                                                                                   'H'
+                                                                                                                                 ],
+                                                                                                                   'operator' => '='
+                                                                                                                 }, 'OPTIMADE::Filter::Comparison' ),
+                                                                                                          bless( {
+                                                                                                                   'operands' => [
+                                                                                                                                   'He'
+                                                                                                                                 ],
+                                                                                                                   'operator' => '='
+                                                                                                                 }, 'OPTIMADE::Filter::Comparison' ),
+                                                                                                          bless( {
+                                                                                                                   'operands' => [
+                                                                                                                                   'Ga'
+                                                                                                                                 ],
+                                                                                                                   'operator' => '='
+                                                                                                                 }, 'OPTIMADE::Filter::Comparison' ),
+                                                                                                          bless( {
+                                                                                                                   'operands' => [
+                                                                                                                                   'Ta'
+                                                                                                                                 ],
+                                                                                                                   'operator' => '='
+                                                                                                                 }, 'OPTIMADE::Filter::Comparison' )
                                                                                                         ]
                                                                                           }, 'OPTIMADE::Filter::ListComparison' )
                                                                                  ],
