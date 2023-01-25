@@ -10,11 +10,15 @@ $VAR1 = bless( {
                                           'values' => [
                                                         [
                                                           '=',
-                                                          'TRUE'
+                                                          bless( {
+                                                                   'value' => 1
+                                                                 }, 'OPTIMADE::Filter::Boolean' )
                                                         ],
                                                         [
                                                           '=',
-                                                          'TRUE'
+                                                          bless( {
+                                                                   'value' => 1
+                                                                 }, 'OPTIMADE::Filter::Boolean' )
                                                         ]
                                                       ]
                                         }, 'OPTIMADE::Filter::ListComparison' ),
@@ -40,7 +44,9 @@ $VAR1 = bless( {
                                                           ],
                                                           [
                                                             '=',
-                                                            'TRUE'
+                                                            bless( {
+                                                                     'value' => 1
+                                                                   }, 'OPTIMADE::Filter::Boolean' )
                                                           ]
                                                         ]
                                                       ]
@@ -49,6 +55,6 @@ $VAR1 = bless( {
                  'operator' => 'AND'
                }, 'OPTIMADE::Filter::AndOr' );
 == Filter ==
-((statements HAS ALL = "TRUE", = "TRUE") AND (number:is_prime HAS ALL < "100" : = "TRUE"))
+((statements HAS ALL = TRUE, = TRUE) AND (number:is_prime HAS ALL < "100" : = TRUE))
 == SQL ==
 <no SQL representation> AND <no SQL representation>
