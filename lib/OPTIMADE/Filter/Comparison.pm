@@ -70,7 +70,11 @@ sub to_filter
         push @operands, $arg;
     }
 
-    return "($operands[0] $operator $operands[1])";
+    if( @operands == 2 ) {
+        return "($operands[0] $operator $operands[1])";
+    } else {
+        return "$operator $operands[0]";
+    }
 }
 
 sub to_SQL
@@ -144,10 +148,8 @@ sub validate
 {
     my $self = shift;
 
-    if( @{$self->{operands}} != 2 ) {
-        die 'number of operands for OPTIMADE::Filter::Comparison must be 2, ' .
-            'got ' . @{$self->{operands}};
-    }
+    die 'no operands given for OPTIMADE::Filter::Comparison'
+        unless @{$self->{operands}};
     die 'operator undefined for OPTIMADE::Filter::Comparison'
         if !$self->operator;
 }

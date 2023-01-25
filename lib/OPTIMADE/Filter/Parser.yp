@@ -34,31 +34,39 @@ value: string | number | property ;
 
 value_list: value
             {
-                return [ [ '=', $_[1] ] ];
+                my $cmp = OPTIMADE::Filter::Comparison->new( '=' );
+                $cmp->push_operand( $_[1] );
+                return [ $cmp ];
             }
-          | operator value
+          | value_op_rhs
             {
-                return [ [ @_[1..$#_] ] ];
+                return [ $_[1] ];
             }
           | value_list comma value
             {
-                push @{$_[1]}, [ '=', $_[3] ];
+                my $cmp = OPTIMADE::Filter::Comparison->new( '=' );
+                $cmp->push_operand( $_[3] );
+                push @{$_[1]}, $cmp;
                 return $_[1];
             }
-          | value_list comma operator value
+          | value_list comma value_op_rhs
             {
-                push @{$_[1]}, [ $_[3], $_[4] ];
+                push @{$_[1]}, $_[3];
                 return $_[1];
             }
           ;
 
 value_zip: value value_zip_part
             {
-                return [ [ '=', $_[1] ], $_[2] ];
+                my $cmp = OPTIMADE::Filter::Comparison->new( '=' );
+                $cmp->push_operand( $_[1] );
+                return [ $cmp, $_[2] ];
             }
          | operator value value_zip_part
             {
-                return [ [ $_[1], $_[2] ], $_[3] ];
+                my $cmp = OPTIMADE::Filter::Comparison->new( $_[1] );
+                $cmp->push_operand( $_[2] );
+                return [ $cmp, $_[3] ];
             }
          | value_zip value_zip_part
             {
@@ -69,11 +77,15 @@ value_zip: value value_zip_part
 
 value_zip_part: colon value
                 {
-                    return [ '=', $_[2] ];
+                    my $cmp = OPTIMADE::Filter::Comparison->new( '=' );
+                    $cmp->push_operand( $_[2] );
+                    return $cmp;
                 }
               | colon operator value
                 {
-                    return [ $_[2], $_[3] ];
+                    my $cmp = OPTIMADE::Filter::Comparison->new( $_[2] );
+                    $cmp->push_operand( $_[3] );
+                    return $cmp;
                 }
               ;
 
@@ -219,13 +231,17 @@ fuzzy_string_op_rhs: CONTAINS value
 set_op_rhs: HAS value
             {
                 my $lc = OPTIMADE::Filter::ListComparison->new( $_[1] );
-                $lc->values( [ [ '=', $_[2] ] ] );
+                my $cmp = OPTIMADE::Filter::Comparison->new( '=' );
+                $cmp->push_operand( $_[2] );
+                $lc->values( [ $cmp ] );
                 return $lc;
             }
           | HAS operator value
             {
                 my $lc = OPTIMADE::Filter::ListComparison->new( $_[1] );
-                $lc->values( [ [ $_[2], $_[3] ] ] );
+                my $cmp = OPTIMADE::Filter::Comparison->new( $_[2] );
+                $cmp->push_operand( $_[3] );
+                $lc->values( [ $cmp ] );
                 return $lc;
             }
           | HAS ALL value_list
@@ -289,15 +305,19 @@ property_zip_addon: colon property
 
 length_op_rhs: LENGTH value
                 {
-                    my $cmp = OPTIMADE::Filter::ListComparison->new( $_[1] );
-                    $cmp->values( [ [ '=', $_[2] ] ] );
-                    return $cmp;
+                    my $lc = OPTIMADE::Filter::ListComparison->new( $_[1] );
+                    my $cmp = OPTIMADE::Filter::Comparison->new( '=' );
+                    $cmp->push_operand( $_[2] );
+                    $lc->values( [ $cmp ] );
+                    return $lc;
                 }
              | LENGTH operator value
                 {
-                    my $cmp = OPTIMADE::Filter::ListComparison->new( $_[1] );
-                    $cmp->values( [ [ $_[2], $_[3] ] ] );
-                    return $cmp;
+                    my $lc = OPTIMADE::Filter::ListComparison->new( $_[1] );
+                    my $cmp = OPTIMADE::Filter::Comparison->new( $_[2] );
+                    $cmp->push_operand( $_[3] );
+                    $lc->values( [ $cmp ] );
+                    return $lc;
                 }
              ;
 

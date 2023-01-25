@@ -42,15 +42,15 @@ sub to_filter {
 
     my @values;
     for my $i (0..$#{$self->{values}}) {
-        my( $operator, $arg ) = @{$self->{values}[$i]};
-        if( blessed $arg && $arg->can( 'to_filter' ) ) {
-            $arg = $arg->to_filter;
+        my $value = $self->{values}[$i];
+        if( blessed $value && $value->can( 'to_filter' ) ) {
+            $value = $value->to_filter;
         } else {
-            $arg =~ s/\\/\\\\/g;
-            $arg =~ s/"/\\"/g;
-            $arg = "\"$arg\"";
+            $value =~ s/\\/\\\\/g;
+            $value =~ s/"/\\"/g;
+            $value = "\"$value\"";
         }
-        push @values, "$operator $arg";
+        push @values, $value;
     }
 
     return '(' . join( ' ', $self->{property}->to_filter,
@@ -68,8 +68,7 @@ sub modify {
     my $code = shift;
 
     $self->property( $self->property->modify( $code, @_ ) );
-    $self->{values} = [ map { [ OPTIMADE::Filter::Modifiable::modify( $_->[0], $code, @_ ),
-                                OPTIMADE::Filter::Modifiable::modify( $_->[1], $code, @_ ) ] }
+    $self->{values} = [ map { OPTIMADE::Filter::Modifiable::modify( $_, $code, @_ ) }
                             @{$self->{values}} ];
     return $code->( $self, @_ );
 }
