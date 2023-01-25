@@ -20,46 +20,64 @@ $VAR1 = bless( {
                                  ],
                  'values' => [
                                [
-                                 [
-                                   '>',
-                                   '3'
-                                 ],
-                                 [
-                                   '=',
-                                   'He'
-                                 ],
-                                 [
-                                   '>',
-                                   '55.3'
-                                 ]
+                                 bless( {
+                                          'operands' => [
+                                                          '3'
+                                                        ],
+                                          'operator' => '>'
+                                        }, 'OPTIMADE::Filter::Comparison' ),
+                                 bless( {
+                                          'operands' => [
+                                                          'He'
+                                                        ],
+                                          'operator' => '='
+                                        }, 'OPTIMADE::Filter::Comparison' ),
+                                 bless( {
+                                          'operands' => [
+                                                          '55.3'
+                                                        ],
+                                          'operator' => '>'
+                                        }, 'OPTIMADE::Filter::Comparison' )
                                ],
                                [
-                                 [
-                                   '=',
-                                   '6'
-                                 ],
-                                 [
-                                   '>',
-                                   'Ti'
-                                 ],
-                                 [
-                                   '<',
-                                   '37.6'
-                                 ]
+                                 bless( {
+                                          'operands' => [
+                                                          '6'
+                                                        ],
+                                          'operator' => '='
+                                        }, 'OPTIMADE::Filter::Comparison' ),
+                                 bless( {
+                                          'operands' => [
+                                                          'Ti'
+                                                        ],
+                                          'operator' => '>'
+                                        }, 'OPTIMADE::Filter::Comparison' ),
+                                 bless( {
+                                          'operands' => [
+                                                          '37.6'
+                                                        ],
+                                          'operator' => '<'
+                                        }, 'OPTIMADE::Filter::Comparison' )
                                ],
                                [
-                                 [
-                                   '=',
-                                   '8'
-                                 ],
-                                 [
-                                   '<',
-                                   'Ga'
-                                 ],
-                                 [
-                                   '=',
-                                   '0'
-                                 ]
+                                 bless( {
+                                          'operands' => [
+                                                          '8'
+                                                        ],
+                                          'operator' => '='
+                                        }, 'OPTIMADE::Filter::Comparison' ),
+                                 bless( {
+                                          'operands' => [
+                                                          'Ga'
+                                                        ],
+                                          'operator' => '<'
+                                        }, 'OPTIMADE::Filter::Comparison' ),
+                                 bless( {
+                                          'operands' => [
+                                                          '0'
+                                                        ],
+                                          'operator' => '='
+                                        }, 'OPTIMADE::Filter::Comparison' )
                                ]
                              ]
                }, 'OPTIMADE::Filter::Zip' );
