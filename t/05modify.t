@@ -32,28 +32,34 @@ $VAR1 = [
                                'list'
                              ]
                  }, 'OPTIMADE::Filter::Property' ),
-          '=',
           'a',
-          '=',
+          bless( {
+                   'operands' => [
+                                   'a'
+                                 ],
+                   'operator' => '='
+                 }, 'OPTIMADE::Filter::Comparison' ),
           'b',
-          '=',
+          bless( {
+                   'operands' => [
+                                   'b'
+                                 ],
+                   'operator' => '='
+                 }, 'OPTIMADE::Filter::Comparison' ),
           'c',
+          bless( {
+                   'operands' => [
+                                   'c'
+                                 ],
+                   'operator' => '='
+                 }, 'OPTIMADE::Filter::Comparison' ),
           bless( {
                    'operator' => 'HAS ALL',
                    'property' => $VAR1->[0],
                    'values' => [
-                                 [
-                                   '=',
-                                   'a'
-                                 ],
-                                 [
-                                   '=',
-                                   'b'
-                                 ],
-                                 [
-                                   '=',
-                                   'c'
-                                 ]
+                                 $VAR1->[2],
+                                 $VAR1->[4],
+                                 $VAR1->[6]
                                ]
                  }, 'OPTIMADE::Filter::ListComparison' )
         ];
