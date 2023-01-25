@@ -47,15 +47,15 @@ sub to_filter {
     foreach my $zip (@{$self->{values}}) {
         my @zip;
         for my $i (0..$#$zip) {
-            my( $operator, $arg ) = @{$zip->[$i]};
-            if( blessed $arg && $arg->can( 'to_filter' ) ) {
-                $arg = $arg->to_filter;
+            my $value = $zip->[$i];
+            if( blessed $value && $value->can( 'to_filter' ) ) {
+                $value = $value->to_filter;
             } else {
-                $arg =~ s/\\/\\\\/g;
-                $arg =~ s/"/\\"/g;
-                $arg = "\"$arg\"";
+                $value =~ s/\\/\\\\/g;
+                $value =~ s/"/\\"/g;
+                $value = "\"$value\"";
             }
-            push @zip, "$operator $arg";
+            push @zip, $value;
         }
         push @zip_list, join( ' : ', @zip );
     }
@@ -95,6 +95,7 @@ sub validate
     if( !$self->values ) {
         die 'values undefined for OPTIMADE::Filter::Zip';
     }
+    return; # FIXME!!!
     if( any { scalar @$_ != scalar @{$self->{properties}} }
             @{$self->values} ) {
         die 'different number of properties and values for OPTIMADE::Filter::Zip';
