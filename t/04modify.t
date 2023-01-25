@@ -21,10 +21,10 @@ my $tree_now = OPTIMADE::Filter::Modifiable::modify( $tree,
             my @values = @{$node->{values}};
             my $node_now;
             while( @values ) {
-                my( undef, $value ) = @{shift @values};
+                my $value = shift @values;
                 my $comparison = OPTIMADE::Filter::Comparison->new( 'CONTAINS' );
                 $comparison->push_operand( $node->{property} );
-                $comparison->push_operand( $value );
+                $comparison->push_operand( $value->left );
                 if( $node_now ) {
                     $node_now = [ $node_now, 'AND', $comparison ];
                 } else {
