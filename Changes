@@ -1,6 +1,7 @@
 0.11.0 unreleased
 
     - Implement boolean value support.
+    - Implement support for fuzzy comparisons on lists.
 
 0.10.2 2021-01-23
 
