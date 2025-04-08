@@ -57,6 +57,10 @@ value_list_entry: value
                     {
                         return [ $_[1]->operator, $_[1]->left ];
                     }
+                | fuzzy_string_op_rhs
+                    {
+                        return [ $_[1]->operator, $_[1]->left ];
+                    }
                 ;
 
 value_list: value_list_entry
@@ -258,6 +262,12 @@ set_op_rhs: HAS value
             {
                 my $lc = OPTIMADE::Filter::ListComparison->new( $_[1] );
                 $lc->values( [ [ $_[2], $_[3] ] ] );
+                return $lc;
+            }
+          | HAS fuzzy_string_op_rhs
+            {
+                my $lc = OPTIMADE::Filter::ListComparison->new( $_[1] );
+                $lc->values( [ [ $_[2]->operator, $_[2]->right ] ] );
                 return $lc;
             }
           | HAS ALL value_list
