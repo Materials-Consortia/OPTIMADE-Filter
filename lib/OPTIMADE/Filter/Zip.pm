@@ -95,6 +95,10 @@ sub validate
     if( !$self->values ) {
         die 'values undefined for OPTIMADE::Filter::Zip';
     }
+    if( any { scalar @$_ != scalar @{$self->{properties}} }
+            @{$self->values} ) {
+        die 'different number of properties and values for OPTIMADE::Filter::Zip';
+    }
 }
 
 1;
