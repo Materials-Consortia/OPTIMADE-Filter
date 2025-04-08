@@ -267,7 +267,7 @@ set_op_rhs: HAS value
           | HAS fuzzy_string_op_rhs
             {
                 my $lc = OPTIMADE::Filter::ListComparison->new( $_[1] );
-                $lc->values( [ [ $_[2]->operator, $_[2]->right ] ] );
+                $lc->values( [ [ $_[2]->operator, $_[2]->left ] ] );
                 return $lc;
             }
           | HAS ALL value_list

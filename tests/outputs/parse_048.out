@@ -9,10 +9,10 @@ $VAR1 = bless( {
                  'values' => [
                                [
                                  'ENDS WITH',
-                                 undef
+                                 'MOF'
                                ]
                              ]
                }, 'OPTIMADE::Filter::ListComparison' );
 == Filter ==
-(title HAS ENDS WITH "")
+(title HAS ENDS WITH "MOF")
 == SQL ==
