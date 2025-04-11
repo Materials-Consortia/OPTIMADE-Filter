@@ -1,5 +1,6 @@
 0.11.0 unreleased
 
+    - Declare conformance to OPTIMADE specification v1.2.0.
     - Implement boolean value support.
     - Implement support for fuzzy comparisons on lists.
 
