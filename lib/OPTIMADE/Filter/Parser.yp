@@ -143,10 +143,7 @@ constant_first_comparison: ordered_constant value_op_rhs
 
 property_first_comparison: property
                                 {
-                                    my $cmp = OPTIMADE::Filter::Comparison->new( '=' );
-                                    $cmp->left( $_[1] );
-                                    $cmp->right( OPTIMADE::Filter::Boolean->new( 1 ) );
-                                    return $cmp;
+                                    return OPTIMADE::Filter::Known->new( 1, $_[1] );
                                 }
                          | property value_op_rhs
                                 {
